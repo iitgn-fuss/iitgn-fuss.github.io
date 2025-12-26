@@ -1,7 +1,3 @@
-markup:
-  goldmark:
-    renderer:
-      unsafe: true
 baseURL: https://iitgn-fuss.github.io/
 canonifyURLs: true
 languageCode: en-us

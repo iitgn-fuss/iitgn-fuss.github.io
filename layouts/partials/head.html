@@ -1,5 +1,4 @@
 <head>
-  <script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="d74dbaf3-7a24-4689-9a59-d9f66df17011" data-blockingmode="auto" type="text/javascript"></script>
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-EZGKQP910Z"></script>
   <script>
@@ -8,13 +7,6 @@
     gtag('js', new Date());
 
     gtag('config', 'G-EZGKQP910Z');
-  </script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'G-PVQLJL9K4J');
   </script>
   <meta name="google-site-verification" content="GE4j2k-pPsDxdMZcoBUfrCRfn_Nr1i0zesjJ-il-IuQ" />
   <meta charset="utf-8" />
@@ -71,11 +63,7 @@
     <link href="{{ $customCss.RelPermalink }}" rel="stylesheet" />
   {{- end }}
 
-  <!-- Google Analytics -->
-  {{- if and hugo.IsProduction .Site.Config.Services.GoogleAnalytics.ID }}
-    <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin />
-    {{ partial "google-analytics.html" . -}}
-  {{- end }}
+  <!-- Note: Google Analytics is hardcoded above with ID G-EZGKQP910Z -->
 
   <script>
     // The section must not be in the theme.js file because it can create a quick flash (switch between light and dark).

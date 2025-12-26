@@ -1,5 +1,5 @@
 ---
-title: Hextra Theme
+title: FUSS Group @ IIT Gandhinagar
 layout: hextra-home
 ---
 

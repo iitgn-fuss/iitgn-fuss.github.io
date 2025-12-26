@@ -5,12 +5,12 @@ tags: ["research", "publications"]
 ---
 ## 2026
 
-**“I Wonder if These Warnings Are Accurate”: Security and Privacy Advice in Nine Majority World Countries**   
+**[“I Wonder if These Warnings Are Accurate”: Security and Privacy Advice in Nine Majority World Countries](https://www.computer.org/csdl/proceedings-article/sp/2026/606500a076/2bojv9k3yOk)**   
 Collins W. Munyendo, Veronica A. Rivera, Jackie Hu, Emmanuel Tweneboah, Amna Shahnawaz, Karen Sowon, Dilara Kekulluoglu, Marcos Silva, Yue Deng, Mercy Omeiza, Gayatri Priyadarsini Kancherla, Maria Rosario Niniz Silva, Maryam Mustafa, Abhishek Bichhawat, Francisco Marmolejo-Cossio, Elissa M. Redmiles, Yixin Zou   
 *47th IEEE Symposium on Security and Privacy (Oakland)*, May 2026
 
 ## 2025
-**Fall-through Semantics for Mitigating Timing-based Side Channel Leaks**   
+**[Fall-through Semantics for Mitigating Timing-based Side Channel Leaks](https://drops.dagstuhl.de/entities/document/10.4230/LIPIcs.FSTTCS.2025.44)**   
 Aniket Mishra and Abhishek Bichhawat   
 *45th IARCS Annual Conference on Foundations of Software Technology and Theoretical Computer Science (FSTTCS)*, December 2025
 
