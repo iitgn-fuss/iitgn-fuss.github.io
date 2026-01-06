@@ -120,7 +120,7 @@ type: people
 <h2 class="category-title">M.Tech.</h2>
 <div class="people-grid">
 <!-- Add M.Tech. here -->
-<!-- <div class="person-card" style="cursor: pointer; position: relative;">
+<div class="person-card" style="cursor: pointer; position: relative;">
   <a href="https://www.linkedin.com/in/aniket-asati-204b8522a" target="_blank" style="position: absolute; inset: 0; z-index: 1; opacity: 0;" aria-label="Aniket Asati's homepage"></a>
   <div class="person-content" style="position: relative; z-index: 2; pointer-events: none;">
     <img src="../images/people/aniket.jpg" alt="Aniket Asati" class="person-image">
@@ -135,7 +135,7 @@ type: people
       </div>
     </div>
   </div>
-</div> -->
+</div>
 
 <div class="person-card" style="cursor: pointer; position: relative;">
   <a href="https://www.linkedin.com/in/harshvardhandubey-/" target="_blank" style="position: absolute; inset: 0; z-index: 1; opacity: 0;" aria-label="Harsh Vardhan Dubey's homepage"></a>
