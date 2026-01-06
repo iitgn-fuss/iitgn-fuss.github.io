@@ -93,6 +93,7 @@ type: people
     </div>
   </div>
 </div>
+
 </div>
 </div>
 
@@ -101,6 +102,58 @@ type: people
 <h2 class="category-title">M.Tech.</h2>
 <div class="people-grid">
 <!-- Add M.Tech. here -->
+<!-- <div class="person-card" style="cursor: pointer; position: relative;">
+  <a href="https://www.linkedin.com/in/aniket-asati-204b8522a" target="_blank" style="position: absolute; inset: 0; z-index: 1; opacity: 0;" aria-label="Aniket Asati's homepage"></a>
+  <div class="person-content" style="position: relative; z-index: 2; pointer-events: none;">
+    <img src="../images/people/aniket.jpg" alt="Aniket Asati" class="person-image">
+    <div class="person-info">
+      <h3 class="person-name">Aniket Asati</h3>
+      <p class="person-title">2nd Year M.Tech.</p>
+      <p class="person-period">July 2024 - Present</p>
+      <div class="research-focus-phrases">
+        <span>Distributed Systems</span>
+        <span class="research-focus-separator">|</span>
+        <span>Computer Systems</span>
+      </div>
+    </div>
+  </div>
+</div> -->
+
+<div class="person-card" style="cursor: pointer; position: relative;">
+  <a href="https://www.linkedin.com/in/harshvardhandubey-/" target="_blank" style="position: absolute; inset: 0; z-index: 1; opacity: 0;" aria-label="Harsh Vardhan Dubey's homepage"></a>
+  <div class="person-content" style="position: relative; z-index: 2; pointer-events: none;">
+    <img src="../images/people/harsh.jpg" alt="Harsh Vardhan Dubey" class="person-image">
+    <div class="person-info">
+      <h3 class="person-name">Harsh Vardhan Dubey</h3>
+      <p class="person-title">1st Year M.Tech.</p>
+      <p class="person-period">July 2025 - Present</p>
+      <div class="research-focus-phrases">
+        <span>Distributed Systems</span>
+        <span class="research-focus-separator">|</span>
+        <span>Web Privacy</span>
+        <span class="research-focus-separator">|</span>
+        <span>Cloud Computing</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="person-card" style="cursor: pointer; position: relative;">
+  <a href="https://www.linkedin.com/in/shubham-kumar-523208235" target="_blank" style="position: absolute; inset: 0; z-index: 1; opacity: 0;" aria-label="Shubham Kumar's homepage"></a>
+  <div class="person-content" style="position: relative; z-index: 2; pointer-events: none;">
+    <img src="../images/people/shubham.jpg" alt="Shubham Kumar" class="person-image">
+    <div class="person-info">
+      <h3 class="person-name">Shubham Kumar</h3>
+      <p class="person-title">1st Year M.Tech.</p>
+      <p class="person-period">July 2025 - Present</p>
+      <div class="research-focus-phrases">
+        <span>CPU Parallelism</span>
+        <span class="research-focus-separator">|</span>
+        <span>Compilers</span>
+      </div>
+    </div>
+  </div>
+</div>
 
 </div>
 </div>

@@ -3,25 +3,26 @@
 > Formal and Usable Systems Security (FUSS) Group at IIT Gandhinagar
 
 
-## Interesting-Reads
-- [How to Measure Performance of Your Code](http://localhost:51271/interesting-reads/measure-your-code/): Measuring code performance accurately is crucial, especially when optimizing existing algorithms or … - Published 2025-12-26
-
 ## News
-- [Gayatri got the Google PhD Fellowship 2025!](http://localhost:51271/news/gayatri-google-phd-fellowship/): Gayatri has been awarded the Google PhD Fellowship 2025 in Privacy, Safety, and Security - Published 2025-09-15
-- [Gayatri presented her work at PETS 2025](http://localhost:51271/news/gayatri-pets25/): Gayatri presented her work at the Privacy Enhancing Technologies Symposium 2025 - Published 2025-07-20
-- [Gayatri's Work Accepted at WWW 2025](http://localhost:51271/news/gayatri-web-conf25/): Gayatri&rsquo;s Work has been published at the Web Conference 2025 - Published 2025-01-20
-- [Google India Research Award 2024 goes to Prof. Abhishek Bichhawat!](http://localhost:51271/news/abhishek-google-india-research-award-2024/): Prof. Abhishek Bichhawat has been awarded the Google India Research Award 2024 - Published 2024-12-12
+- [Prof. Abhishek Bichhawat (jointly with IIT Kharagpur) received ANRF ARG Research Grant](https://iitgn-fuss.github.io/news/anrf-arg25/): Prof. Abhishek Bichhawat (jointly with Prof. Mainack Mondal from IIT Kharagpur) has been awarded the … - Published 2025-12-28
+- [Gayatri got the Google PhD Fellowship 2025!](https://iitgn-fuss.github.io/news/gayatri-google-phd-fellowship/): Gayatri has been awarded the Google PhD Fellowship 2025 in Privacy, Safety, and Security - Published 2025-09-15
+- [Gayatri presented her work at PETS 2025](https://iitgn-fuss.github.io/news/gayatri-pets25/): Gayatri presented her work at the Privacy Enhancing Technologies Symposium 2025 - Published 2025-07-20
+- [Gayatri's Work Accepted at WWW 2025](https://iitgn-fuss.github.io/news/gayatri-web-conf25/): Gayatri&rsquo;s Work has been published at the Web Conference 2025 - Published 2025-01-20
+- [Google India Research Award 2024 goes to Prof. Abhishek Bichhawat!](https://iitgn-fuss.github.io/news/abhishek-google-india-research-award-2024/): Prof. Abhishek Bichhawat has been awarded the Google India Research Award 2024 - Published 2024-12-12
+
+## Interesting-Reads
+- [How to Measure Performance of Your Code](https://iitgn-fuss.github.io/interesting-reads/measure-your-code/): Measuring code performance accurately is crucial, especially when optimizing existing algorithms or … - Published 2025-12-26
 
 ## Blog
 
 
 ## Root Pages
-- [About](http://localhost:51271/about/): To be added.
-- [People](http://localhost:51271/people/): Faculty Abhishek Bichhawat Assistant Professor
+- [About](https://iitgn-fuss.github.io/about/): To be added.
+- [People](https://iitgn-fuss.github.io/people/): Faculty Abhishek Bichhawat Assistant Professor
 Formal Methods & Verification | Web Security | …
-- [Projects](http://localhost:51271/projects/): To be added.
-- [Publications](http://localhost:51271/publications/): 2026 “I Wonder if These Warnings Are Accurate”: Security and Privacy Advice in Nine Majority World …
+- [Projects](https://iitgn-fuss.github.io/projects/): To be added.
+- [Publications](https://iitgn-fuss.github.io/publications/): 2026 “I Wonder if These Warnings Are Accurate”: Security and Privacy Advice in Nine Majority World …
 
 ---
-Generated on 2025-12-26 17:04:34 UTC
-Site: http://localhost:51271/
+Generated on 2026-01-06 13:10:43 UTC
+Site: https://iitgn-fuss.github.io/

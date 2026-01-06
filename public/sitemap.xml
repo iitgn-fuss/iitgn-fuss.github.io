@@ -2,57 +2,66 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:51271/</loc>
+    <loc>https://iitgn-fuss.github.io/tags/anrf/</loc>
+    <lastmod>2025-12-28T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://iitgn-fuss.github.io/</loc>
+    <lastmod>2025-12-28T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://iitgn-fuss.github.io/news/</loc>
+    <lastmod>2025-12-28T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://iitgn-fuss.github.io/news/anrf-arg25/</loc>
+    <lastmod>2025-12-28T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://iitgn-fuss.github.io/tags/research-grant/</loc>
+    <lastmod>2025-12-28T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://iitgn-fuss.github.io/tags/</loc>
+    <lastmod>2025-12-28T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://iitgn-fuss.github.io/interesting-reads/measure-your-code/</loc>
     <lastmod>2025-12-26T16:11:00+05:30</lastmod>
   </url><url>
-    <loc>http://localhost:51271/interesting-reads/measure-your-code/</loc>
+    <loc>https://iitgn-fuss.github.io/interesting-reads/</loc>
     <lastmod>2025-12-26T16:11:00+05:30</lastmod>
   </url><url>
-    <loc>http://localhost:51271/interesting-reads/</loc>
-    <lastmod>2025-12-26T16:11:00+05:30</lastmod>
-  </url><url>
-    <loc>http://localhost:51271/tags/award/</loc>
+    <loc>https://iitgn-fuss.github.io/tags/award/</loc>
     <lastmod>2025-09-15T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:51271/news/gayatri-google-phd-fellowship/</loc>
+    <loc>https://iitgn-fuss.github.io/news/gayatri-google-phd-fellowship/</loc>
     <lastmod>2025-09-15T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:51271/news/</loc>
+    <loc>https://iitgn-fuss.github.io/tags/research/</loc>
     <lastmod>2025-09-15T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:51271/tags/research/</loc>
-    <lastmod>2025-09-15T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:51271/tags/</loc>
-    <lastmod>2025-09-15T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:51271/tags/conference/</loc>
+    <loc>https://iitgn-fuss.github.io/tags/conference/</loc>
     <lastmod>2025-07-20T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:51271/news/gayatri-pets25/</loc>
+    <loc>https://iitgn-fuss.github.io/news/gayatri-pets25/</loc>
     <lastmod>2025-07-20T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:51271/tags/presentation/</loc>
+    <loc>https://iitgn-fuss.github.io/tags/presentation/</loc>
     <lastmod>2025-07-20T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:51271/news/gayatri-web-conf25/</loc>
+    <loc>https://iitgn-fuss.github.io/news/gayatri-web-conf25/</loc>
     <lastmod>2025-01-20T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:51271/news/abhishek-google-india-research-award-2024/</loc>
+    <loc>https://iitgn-fuss.github.io/news/abhishek-google-india-research-award-2024/</loc>
     <lastmod>2024-12-12T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:51271/about/</loc>
+    <loc>https://iitgn-fuss.github.io/about/</loc>
   </url><url>
-    <loc>http://localhost:51271/blog/</loc>
+    <loc>https://iitgn-fuss.github.io/blog/</loc>
   </url><url>
-    <loc>http://localhost:51271/categories/</loc>
+    <loc>https://iitgn-fuss.github.io/categories/</loc>
   </url><url>
-    <loc>http://localhost:51271/people/</loc>
+    <loc>https://iitgn-fuss.github.io/people/</loc>
   </url><url>
-    <loc>http://localhost:51271/projects/</loc>
+    <loc>https://iitgn-fuss.github.io/projects/</loc>
   </url><url>
-    <loc>http://localhost:51271/publications/</loc>
+    <loc>https://iitgn-fuss.github.io/publications/</loc>
   </url><url>
-    <loc>http://localhost:51271/tags/publications/</loc>
+    <loc>https://iitgn-fuss.github.io/tags/publications/</loc>
   </url>
 </urlset>
