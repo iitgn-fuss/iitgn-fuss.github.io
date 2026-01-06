@@ -74,6 +74,24 @@ type: people
     </div>
   </div>
 </div>
+<div class="person-card" style="cursor: pointer; position: relative;">
+  <a href="http://www.linkedin.com/in/shruti-saxena-7769472b2" target="_blank" style="position: absolute; inset: 0; z-index: 1; opacity: 0;" aria-label="Shruti Saxena's homepage"></a>
+  <div class="person-content" style="position: relative; z-index: 2; pointer-events: none;">
+    <img src="../images/people/shruti.jpg" alt="Shruti Saxena" class="person-image">
+    <div class="person-info">
+      <h3 class="person-name">Shruti Saxena</h3>
+      <p class="person-title">1st Year Ph.D.</p>
+      <p class="person-period">July 2025 - Present</p>
+      <div class="research-focus-phrases">
+        <span>Web Security</span>
+        <span class="research-focus-separator">|</span>
+        <span>Digital forensics</span>
+        <span class="research-focus-separator">|</span>
+        <span>Incident response and management</span>
+      </div>
+    </div>
+  </div>
+</div>
 
 <div class="person-card" style="cursor: pointer; position: relative;">
   <a href="https://iitgn-fuss.github.io/people/subhrajit/" target="_blank" style="position: absolute; inset: 0; z-index: 1; opacity: 0;" aria-label="Subhrajit Das's homepage"></a>
