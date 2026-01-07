@@ -1,8 +1,17 @@
 <!DOCTYPE html>
-<html lang="en-us" class="m-auto "><head>
+<html lang="en-us" class="m-auto "><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-TNCJNHYTX7"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-TNCJNHYTX7');
+  </script>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="icon" href="https://iitgn-fuss.github.io/people/subhrajit/favicon.ico" type="image/x-icon" />
+  <link rel="icon" href="http://localhost:1313/favicon.ico" type="image/x-icon" />
   
   <link
     rel="stylesheet"
@@ -22,14 +31,7 @@
 
   
   
-  
-  <link
-    rel="stylesheet"
-    href="https://iitgn-fuss.github.io/people/subhrajit/main.min.cefafe98c51df1b9e3597f29f0976570d1a5f77b3a5068224564410b1cff9bc8.css"
-    integrity="sha256-zvr&#43;mMUd8bnjWX8p8JdlcNGl93s6UGgiRWRBCxz/m8g="
-    crossorigin="anonymous"
-  />
-  
+  <link href="http://localhost:1313/main.css" rel="stylesheet" />
   
 
   <style>
@@ -316,104 +318,155 @@
 </head>
 <body class="h-screen p-2 px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16 flex flex-col">
     
-    <header class="nav flex flex-row row py-3 mb-6 w-full border-b-2 border-transparent bg-gradient-to-r from-transparent via-blue-100/30 to-transparent dark:via-slate-700/30 backdrop-blur-sm shadow-sm justify-between sticky top-0 z-50">
-  
-  <div class="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-blue-400 to-transparent dark:via-cyan-500"></div>
-  
-  <div class="flex items-center gap-1">
-    <a class="nav-menu-item" href="https://iitgn-fuss.github.io/people/subhrajit/">Home</a>
-    <a class="nav-menu-item" href="https://iitgn-fuss.github.io/people/subhrajit/files/cv_subhrajit.pdf">CV</a>
-    <a class="nav-menu-item" href="https://iitgn-fuss.github.io/people/subhrajit/gallery/">Gallery</a>
-  </div>
-  
-  <div class="flex items-center gap-3">
     
-    <div class="relative mr-1 sm:mr-2">
-      <button id="search-icon"
-         class="w-8 h-8 flex items-center justify-center rounded-full bg-white/80 dark:bg-slate-800/80 border border-gray-200 dark:border-slate-700 text-blue-600 hover:text-blue-800 dark:text-cyan-400 dark:hover:text-cyan-300 hover:shadow-md cursor-pointer text-sm transition-all duration-300"
-         onclick="toggleSearch()">
-        <i class="fas fa-search"></i>
+<header class="nav sticky top-0 z-50 w-full">
+  
+  <div
+    class="flex flex-row py-3 px-4 sm:px-6 bg-white/90 dark:bg-neutral-900/90 backdrop-blur-md justify-between items-center">
+    
+    <nav class="flex items-center gap-4">
+      <a class="text-neutral-800 dark:text-white font-semibold text-sm hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors no-underline hover:no-underline"
+        href="http://localhost:1313/">Home</a>
+    
+      
+      <div class="relative" id="cv-dropdown-container">
+        <button id="cv-btn"
+          class="text-neutral-600 dark:text-neutral-300 text-sm hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors flex items-center gap-1 cursor-pointer">
+          CV ▾
+        </button>
+        <div id="cv-menu" class="hidden absolute left-0 top-full mt-2 z-50">
+          <div
+            class="bg-white dark:bg-neutral-800 rounded-lg shadow-lg border border-neutral-200 dark:border-neutral-700 py-1 min-w-[100px]">
+            <a href="http://localhost:1313/files/resume_subhrajit.pdf"
+              class="block px-4 py-2 text-sm text-neutral-600 dark:text-neutral-300 hover:bg-cyan-50 dark:hover:bg-neutral-700 hover:text-cyan-600 dark:hover:text-cyan-400 no-underline hover:no-underline">
+              Short
+            </a>
+            <a href="http://localhost:1313/files/cv_subhrajit.pdf"
+              class="block px-4 py-2 text-sm text-neutral-600 dark:text-neutral-300 hover:bg-cyan-50 dark:hover:bg-neutral-700 hover:text-cyan-600 dark:hover:text-cyan-400 no-underline hover:no-underline">
+              Long
+            </a>
+          </div>
+        </div>
+      </div>
+    
+      <a class="text-neutral-600 dark:text-neutral-300 text-sm hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors no-underline hover:no-underline"
+        href="http://localhost:1313/gallery/">Gallery</a>
+    
+      <a class="text-neutral-600 dark:text-neutral-300 text-sm hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors no-underline hover:no-underline"
+        href="http://localhost:1313/posts/">Posts</a>
+    </nav>
+    
+    
+    <div class="flex items-center gap-2">
+      
+      <div class="relative">
+        <button id="search-icon"
+          class="w-8 h-8 flex items-center justify-center rounded-full hover:bg-neutral-100 dark:hover:bg-neutral-800 text-neutral-500 hover:text-cyan-600 dark:text-neutral-400 dark:hover:text-cyan-400 transition-all">
+          <i class="fas fa-search text-sm"></i>
+        </button>
+        <input id="search-input" type="text" placeholder="Search..."
+          class="hidden absolute right-0 top-10 w-48 sm:w-64 px-4 py-2 text-sm border border-neutral-200 dark:border-neutral-700 rounded-lg bg-white dark:bg-neutral-800 text-neutral-800 dark:text-neutral-100 shadow-lg focus:outline-none focus:ring-2 focus:ring-cyan-500">
+      </div>
+      
+      
+      <button id="theme-btn"
+        class="w-8 h-8 flex items-center justify-center rounded-full hover:bg-neutral-100 dark:hover:bg-neutral-800 text-neutral-500 hover:text-cyan-600 dark:text-neutral-400 dark:hover:text-cyan-400 transition-all">
+        <i class="fas fa-sun theme-toggle text-sm"></i>
       </button>
-      <input 
-        id="search-input" 
-        type="text" 
-        placeholder="Search..." 
-        class="hidden absolute right-0 top-10 w-40 sm:w-48 md:w-56 px-3 py-2 text-sm border-2 border-blue-300 dark:border-cyan-600 rounded-lg bg-white dark:bg-slate-800 text-gray-900 dark:text-gray-100 shadow-lg focus:outline-none focus:ring-2 focus:ring-blue-500 dark:focus:ring-cyan-500"
-        onkeypress="handleSearchKeypress(event)"
-        onblur="hideSearch()">
     </div>
-    
-    
-    <button
-      class="w-8 h-8 flex items-center justify-center rounded-full bg-white/80 dark:bg-slate-800/80 border border-gray-200 dark:border-slate-700 text-blue-600 hover:text-blue-800 dark:text-cyan-400 dark:hover:text-cyan-300 hover:shadow-md cursor-pointer text-sm transition-all duration-300 mr-2 sm:mr-0"
-      onclick="toggleTheme()">
-      <i class="fas fa-sun theme-toggle"></i>
-    </button>
   </div>
+  
+  <div style="height: 2px; background: linear-gradient(to right, #22d3d1, #14b8a6, #10b981); margin-bottom: 1rem;"></div>
 </header>
 
 
 
 <script>
-function toggleSearch() {
-  const searchIcon = document.getElementById('search-icon');
-  const searchInput = document.getElementById('search-input');
+                      (function () {
+                        
+                        var cvBtn = document.getElementById('cv-btn');
+                        var cvMenu = document.getElementById('cv-menu');
+
+                        if (cvBtn) {
+                          cvBtn.onclick = function (e) {
+                            e.preventDefault();
+                            e.stopPropagation();
+                            if (cvMenu.classList.contains('hidden')) {
+                              cvMenu.classList.remove('hidden');
+                            } else {
+                              cvMenu.classList.add('hidden');
+                            }
+                          };
+                        }
+
+                        
+                        document.onclick = function (e) {
+                          if (cvMenu && !cvBtn.contains(e.target) && !cvMenu.contains(e.target)) {
+                            cvMenu.classList.add('hidden');
+                          }
+                        };
+
+                        
+                        var searchIcon = document.getElementById('search-icon');
+                        var searchInput = document.getElementById('search-input');
   
-  if (searchInput.classList.contains('hidden')) {
-    searchInput.classList.remove('hidden');
-    searchInput.focus();
-    searchIcon.classList.add('text-blue-800', 'dark:text-cyan-300');
-  } else {
-    searchInput.classList.add('hidden');
-    searchIcon.classList.remove('text-blue-800', 'dark:text-cyan-300');
-  }
-}
-
-function hideSearch() {
-  setTimeout(() => {
-    const searchInput = document.getElementById('search-input');
-    const searchIcon = document.getElementById('search-icon');
-    searchInput.classList.add('hidden');
-    searchIcon.classList.remove('text-blue-800', 'dark:text-cyan-300');
-  }, 100);
-}
-
-function handleSearchKeypress(event) {
-  if (event.key === 'Enter') {
-    const query = event.target.value.trim();
-    if (query) {
-      
-      window.location.href = `\/search?q=${encodeURIComponent(query)}`;
+                      if (searchIcon) {
+                        searchIcon.onclick = function () {
+                        if (searchInput.classList.contains('hidden')) {
+                          searchInput.classList.remove('hidden');
+                          searchInput.focus();
+                        } else {
+                          searchInput.classList.add('hidden');
+                        }
+                      };
+                      }
+                    
+                      if (searchInput) {
+                        searchInput.onblur = function () {
+                          setTimeout(function () { searchInput.classList.add('hidden'); }, 150);
+                        };
+                        searchInput.onkeypress = function (e) {
+                          if (e.key === 'Enter') {
+                            var q = searchInput.value.trim();
+                            if (q) window.location.href = '\/search?q=' + encodeURIComponent(q);
+                          }
+                      };
     }
+
+                      
+                      var themeBtn = document.getElementById('theme-btn');
+                      if (themeBtn) {
+                        themeBtn.onclick = function () { toggleTheme(); };
   }
-}
+                    })();
 </script>
 
     
     <main class="grow w-full">
-<div class="prose prose-stone dark:prose-invert max-w-none">
-<div class="mb-3">
-  <h1 class="top-h1"></h1>
-  <p class="mb-1">January 1, 0001</p>
-  <p>&mdash;</p>
+<div
+  class="prose prose-neutral dark:prose-invert max-w-none prose-a:text-cyan-600 prose-a:dark:text-cyan-400 prose-a:font-medium">
+  <div class="mb-4">
+    <h1 class="top-h1 text-neutral-900 dark:text-white"></h1>
+    <p class="text-neutral-500 dark:text-neutral-400 text-sm mb-1">January 1, 0001</p>
 </div>
 <div class="content ">
   
 </div>
 </div>
-<div class="flex flex-row justify-around my-2">
+<div class="flex flex-row justify-around my-4">
   <h3 class="mb-1 mt-1 text-left mr-4">
     
-    <i class="text-blue-300 dark:text-slate-500 fas fa-chevron-circle-left"></i>
+    <i class="text-neutral-300 dark:text-neutral-600 fas fa-chevron-circle-left text-xl"></i>
     
   </h3>
   <h3 class="mb-1 mt-1 text-left ml-4">
     
     <a
-      href="https://iitgn-fuss.github.io/people/subhrajit/posts/autovectorize-your-code/"
+      href="http://localhost:1313/posts/autovectorize-your-code/"
       title=""
+      class="text-cyan-600 dark:text-cyan-400 hover:text-cyan-700 dark:hover:text-cyan-300 no-underline"
     >
-      <i class="nav-menu fas fa-chevron-circle-right"></i>
+      <i class="fas fa-chevron-circle-right text-xl"></i>
     </a>
     
   </h3>
@@ -422,16 +475,12 @@ function handleSearchKeypress(event) {
 
     </main>
     
-    <footer class="text-xs text-center ">
-  <div class="max-w-4xl mx-auto px-4">
+    <footer class="text-xs text-center mt-6 py-4 text-neutral-400 dark:text-neutral-500">
+  <p class="mb-0">
     
-    
-    <p class="markdownify text-gray-600 dark:text-gray-400 font-light mb-2 leading-relaxed">
-      
-    </p>
-    
-    
-  </div>
+  </p>
+
+  
 </footer>
 
     

@@ -1,68 +1,72 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title></title>
-    <link>https://iitgn-fuss.github.io/people/subhrajit/</link>
-    <description>Recent content on </description>
-    <generator>Hugo</generator>
-    <language>en-us</language>
-    <lastBuildDate>Wed, 22 Oct 2025 11:30:00 +0530</lastBuildDate>
-    <atom:link href="https://iitgn-fuss.github.io/people/subhrajit/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>How to Measure Performance of Your Code</title>
-      <link>https://iitgn-fuss.github.io/people/subhrajit/posts/measure-your-code/</link>
-      <pubDate>Wed, 22 Oct 2025 11:30:00 +0530</pubDate>
-      <guid>https://iitgn-fuss.github.io/people/subhrajit/posts/measure-your-code/</guid>
-      <description>&lt;p&gt;Measuring code performance accurately is crucial, especially when optimizing the existing algorithms or designing new ones. In this post, I’ll share my learnings of measuring code performance using various tools and techniques.&lt;/p&gt;&#xA;&lt;p&gt;For measuring execution time, we can use the following techniques:&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;Wall Clock Time (&lt;code&gt;clock_gettime&lt;/code&gt;)&lt;/li&gt;&#xA;&lt;li&gt;Linux resource usage metrics (&lt;code&gt;getrusage&lt;/code&gt;)&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;p&gt;To measure raw Time Stamp Counter (or, ticks), on x86 architectures we can use:&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;&lt;code&gt;RDTSC&lt;/code&gt; (Read Time-Stamp Counter)&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;p&gt;Finally, to pinpoint performance bottlenecks, we can use the Linux &lt;code&gt;perf&lt;/code&gt; tool; However, there are two ways to use it:&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Some memories during my M.Tech at IIT Gandhinagar</title>
-      <link>https://iitgn-fuss.github.io/people/subhrajit/gallery/mtech-memories-iitgn/</link>
-      <pubDate>Mon, 30 Jun 2025 10:00:59 +0530</pubDate>
-      <guid>https://iitgn-fuss.github.io/people/subhrajit/gallery/mtech-memories-iitgn/</guid>
-      <description>&lt;p&gt;Here are some memories during my M.Tech at IIT Gandhinagar.&lt;/p&gt;&#xA;&lt;h3 id=&#34;convocation---class-of-2025&#34;&gt;Convocation - Class of 2025&lt;/h3&gt;&#xA;&lt;p&gt;&lt;img src=&#34;../IITGn_23_25/people-and-memories/convocation-1.jpg&#34; alt=&#34;Convocation - Class of 2025!&#34;&gt;&#xA;&lt;img src=&#34;../IITGn_23_25/people-and-memories/convocation-2.jpg&#34; alt=&#34;Convocation - Class of 2025!&#34;&gt;&lt;/p&gt;&#xA;&lt;h3 id=&#34;party-thrown-by-our-advisor&#34;&gt;Party thrown by our Advisor&lt;/h3&gt;&#xA;&lt;p&gt;&lt;img src=&#34;../IITGn_23_25/people-and-memories/bichhawat-gang-2.jpg&#34; alt=&#34;Bichhawat Gang!&#34;&gt;&#xA;&lt;img src=&#34;../IITGn_23_25/people-and-memories/bichhawat-gang.jpg&#34; alt=&#34;Bichhawat Gang!&#34;&gt;&lt;/p&gt;&#xA;&lt;h3 id=&#34;mt-abu-trip25&#34;&gt;Mt. Abu Trip&#39;25&lt;/h3&gt;&#xA;&lt;p&gt;&lt;img src=&#34;../IITGn_23_25/people-and-memories/mt-abu-trip-2nd-floor.jpg&#34; alt=&#34;Mt. Abu Trip&#39;25!&#34;&gt;&lt;/p&gt;&#xA;&lt;h3 id=&#34;k-153&#34;&gt;K-153&lt;/h3&gt;&#xA;&lt;p&gt;&lt;img src=&#34;../IITGn_23_25/people-and-memories/K153-room-mates.jpg&#34; alt=&#34;K-153!&#34;&gt;&lt;/p&gt;&#xA;&lt;h3 id=&#34;patils-room&#34;&gt;Patil&amp;rsquo;s Room&lt;/h3&gt;&#xA;&lt;p&gt;&lt;img src=&#34;../IITGn_23_25/people-and-memories/patils-room.jpg&#34; alt=&#34;Patil&amp;rsquo;s Room!&#34;&gt;&lt;/p&gt;&#xA;&lt;h3 id=&#34;pratyush-and-me-during-udaan&#34;&gt;Pratyush and Me (During Udaan)&lt;/h3&gt;&#xA;&lt;p&gt;&lt;img src=&#34;../IITGn_23_25/people-and-memories/pratyush-and-me-udaan.jpg&#34; alt=&#34;Me and Pratyush!&#34;&gt;&lt;/p&gt;&#xA;&lt;h3 id=&#34;post-patils-birthday-celebration&#34;&gt;Post Patil&amp;rsquo;s Birthday Celebration&lt;/h3&gt;&#xA;&lt;p&gt;&lt;img src=&#34;../IITGn_23_25/people-and-memories/someones-bday-celeb.jpg&#34; alt=&#34;Post Patil&amp;rsquo;s Birthday Celebration!&#34;&gt;&lt;/p&gt;&#xA;&lt;h3 id=&#34;coffee-cup-at-my-workspace&#34;&gt;Coffee Cup at my workspace&lt;/h3&gt;&#xA;&lt;p&gt;&lt;img src=&#34;../IITGn_23_25/people-and-memories/workspace-coffee.jpg&#34; alt=&#34;Coffee Cup at my workspace!&#34;&gt;&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Conferences</title>
-      <link>https://iitgn-fuss.github.io/people/subhrajit/gallery/conferences/</link>
-      <pubDate>Mon, 03 Feb 2025 14:40:59 +0530</pubDate>
-      <guid>https://iitgn-fuss.github.io/people/subhrajit/gallery/conferences/</guid>
-      <description>&lt;p&gt;Below you may find some of the conferences I have attended over the years (as of now, only one :P).&lt;/p&gt;&#xA;&lt;h3 id=&#34;buildsec24-19-20-december-2024-new-delhi-india&#34;&gt;BuildSEC&#39;24 (19-20 December 2024, New Delhi, India)&lt;/h3&gt;&#xA;&lt;p&gt;This is my first-ever publication as well as my first-ever conference attended. I presented our work on &amp;ldquo;Online Authentication Habits of Indian Users&amp;rdquo; at BuildSEC&#39;24, Building a Secure &amp;amp; Empowered Cyberspace, held on 19-20 December 2024 in New Delhi, India.&#xA;&lt;img src=&#34;../conferences/buildsec-24.jpg&#34; alt=&#34;BuildSEC&#39;24&#34;&gt;&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>IIT Gandhinagar Campus</title>
-      <link>https://iitgn-fuss.github.io/people/subhrajit/gallery/iit-gandhinagar-campus/</link>
-      <pubDate>Mon, 03 Feb 2025 14:40:59 +0530</pubDate>
-      <guid>https://iitgn-fuss.github.io/people/subhrajit/gallery/iit-gandhinagar-campus/</guid>
-      <description>&lt;p&gt;Let&amp;rsquo;s take a look at the beautiful IIT Gandhinagar campus through my lens.&lt;/p&gt;&#xA;&lt;h2 id=&#34;iit-gandhinagar-campus-2023-2025&#34;&gt;IIT Gandhinagar Campus (2023-2025)&lt;/h2&gt;&#xA;&lt;p&gt;These are taken during my stay at IIT Gandhinagar from 2023 to 2025 for my M.Tech degree.&lt;/p&gt;&#xA;&lt;h3 id=&#34;green-campus&#34;&gt;Green Campus&lt;/h3&gt;&#xA;&lt;p&gt;&lt;img src=&#34;../IITGn_23_25/green-campus.jpg&#34; alt=&#34;New AB!&#34;&gt;&#xA;&lt;img src=&#34;../IITGn_23_25/towards_ab.jpg&#34; alt=&#34;Towards AB!&#34;&gt;&lt;/p&gt;&#xA;&lt;h3 id=&#34;sunset&#34;&gt;Sunset&lt;/h3&gt;&#xA;&lt;p&gt;&lt;img src=&#34;../IITGn_23_25/sunset_basketball_court.jpg&#34; alt=&#34;Sunset1&#34;&gt;&#xA;&lt;img src=&#34;../IITGn_23_25/sunset_new_mess_parking.jpg&#34; alt=&#34;Sunset2&#34;&gt;&#xA;&lt;img src=&#34;../IITGn_23_25/sunset_AB13_roof.jpg&#34; alt=&#34;Sunset3&#34;&gt;&lt;/p&gt;&#xA;&lt;h3 id=&#34;cotton-sky&#34;&gt;Cotton Sky&lt;/h3&gt;&#xA;&lt;p&gt;&lt;img src=&#34;../IITGn_23_25/cotton-sky.jpg&#34; alt=&#34;Cotton Sky!&#34;&gt;&lt;/p&gt;&#xA;&lt;h3 id=&#34;sports-track&#34;&gt;Sports Track&lt;/h3&gt;&#xA;&lt;p&gt;&lt;img src=&#34;../IITGn_23_25/sports_track_morning.jpg&#34; alt=&#34;Sports Track Morning!&#34;&gt;&#xA;&lt;img src=&#34;../IITGn_23_25/sports_track_night_birdeye.jpg&#34; alt=&#34;Sports Track Night Bird-eye!&#34;&gt;&lt;/p&gt;&#xA;&lt;h3 id=&#34;cricket-ground&#34;&gt;Cricket Ground&lt;/h3&gt;&#xA;&lt;p&gt;&lt;img src=&#34;../IITGn_23_25/cricket_ground_night.jpg&#34; alt=&#34;Cricket Ground!&#34;&gt;&lt;/p&gt;&#xA;&lt;h3 id=&#34;night&#34;&gt;Night&lt;/h3&gt;&#xA;&lt;p&gt;&lt;img src=&#34;../IITGn_23_25/night_lamps.jpg&#34; alt=&#34;Night1&#34;&gt;&#xA;&lt;img src=&#34;../IITGn_23_25/diwali_firecrackers.jpg&#34; alt=&#34;Night2&#34;&gt;&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Teaching</title>
-      <link>https://iitgn-fuss.github.io/people/subhrajit/gallery/teaching/</link>
-      <pubDate>Mon, 03 Feb 2025 14:40:59 +0530</pubDate>
-      <guid>https://iitgn-fuss.github.io/people/subhrajit/gallery/teaching/</guid>
-      <description>&lt;p&gt;Below you may find some of the teaching activities I have been involved in over the years (as of now, only one :P).&lt;/p&gt;&#xA;&lt;h3 id=&#34;code-profiling-and-optimization-november-2024&#34;&gt;Code Profiling and Optimization (November 2024)&lt;/h3&gt;&#xA;&lt;p&gt;This was a Student-Run Short Course on Code Profiling and Optimization conducted at IIT Gandhinagar during my final-year of M.Tech. I was principal instructor for the course along with my batchmate Pratyush Choudhary, who was the co-instructor.&#xA;&lt;img src=&#34;../teaching/code-profiling-and-optimization.jpg&#34; alt=&#34;Code Profiling and Optimization&#34;&gt;&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>University of Kalyani</title>
-      <link>https://iitgn-fuss.github.io/people/subhrajit/gallery/university-of-kalyani/</link>
-      <pubDate>Mon, 03 Feb 2025 14:40:59 +0530</pubDate>
-      <guid>https://iitgn-fuss.github.io/people/subhrajit/gallery/university-of-kalyani/</guid>
-      <description>&lt;p&gt;Let&amp;rsquo;s take a look at a few shots of my alma mater, the University of Kalyani. These are taken at the university from 2021 to 2023 during my M.Sc degree.&lt;/p&gt;&#xA;&lt;h3 id=&#34;pictures-with-faculty-members&#34;&gt;Pictures with Faculty Members&lt;/h3&gt;&#xA;&lt;p&gt;&lt;img src=&#34;../KU/photo-with-faculty.jpg&#34; alt=&#34;pic1&#34;&gt;&#xA;&lt;img src=&#34;../KU/photo-with-faculty-2.jpg&#34; alt=&#34;pic2&#34;&gt;&lt;/p&gt;&#xA;&lt;h3 id=&#34;dept-of-cse-building&#34;&gt;Dept. of CSE Building&lt;/h3&gt;&#xA;&lt;p&gt;&lt;img src=&#34;../KU/dept_cse_ku.jpg&#34; alt=&#34;Department of Computer Science and Engineering!&#34;&gt;&lt;/p&gt;&#xA;&lt;h3 id=&#34;view-from-rooftop-of-dept-building&#34;&gt;View from rooftop of Dept. Building&lt;/h3&gt;&#xA;&lt;p&gt;&lt;img src=&#34;../KU/green_view_from_cse_roof.jpg&#34; alt=&#34;View from rooftop!&#34;&gt;&lt;/p&gt;&#xA;&lt;h3 id=&#34;campus-tour-video&#34;&gt;Campus Tour Video&lt;/h3&gt;&#xA;&lt;p&gt;This was captured by my friend &lt;a href=&#34;https://www.linkedin.com/in/pranab-paul-450a14190&#34;&gt;Pranab&lt;/a&gt; while I was riding the bike on a monsoon day at the University of Kalyani. Play it in 4K and enjoy the lush green campus! (You can also try 2x speed for a quick tour :P)&#xA;&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;&#xA;      &lt;iframe allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen&#34; loading=&#34;eager&#34; referrerpolicy=&#34;strict-origin-when-cross-origin&#34; src=&#34;https://www.youtube.com/embed/Ih6dEa0X9-4?autoplay=0&amp;amp;controls=1&amp;amp;end=0&amp;amp;loop=0&amp;amp;mute=0&amp;amp;start=0&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; title=&#34;YouTube video&#34;&gt;&lt;/iframe&gt;&#xA;    &lt;/div&gt;&#xA;&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title></title>
-      <link>https://iitgn-fuss.github.io/people/subhrajit/posts/autovectorize-your-code/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://iitgn-fuss.github.io/people/subhrajit/posts/autovectorize-your-code/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title></title>
-      <link>https://iitgn-fuss.github.io/people/subhrajit/posts/manually-vectorize-your-code/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://iitgn-fuss.github.io/people/subhrajit/posts/manually-vectorize-your-code/</guid>
-      <description></description>
-    </item>
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title/><link>https://iitgn-fuss.github.io/people/subhrajit/</link><description>Recent content on</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Fri, 26 Dec 2025 11:30:00 +0530</lastBuildDate><atom:link href="https://iitgn-fuss.github.io/people/subhrajit/index.xml" rel="self" type="application/rss+xml"/><item><title>How to Measure Performance of Your Code</title><link>https://iitgn-fuss.github.io/people/subhrajit/posts/measure-your-code/</link><pubDate>Fri, 26 Dec 2025 11:30:00 +0530</pubDate><guid>https://iitgn-fuss.github.io/people/subhrajit/posts/measure-your-code/</guid><description>&lt;p&gt;Measuring code performance accurately is crucial, especially when optimizing the existing algorithms or designing new ones. In this post, I’ll share my learnings of measuring code performance using various tools and techniques.&lt;/p&gt;
+&lt;p&gt;For measuring execution time, we can use the following techniques:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Wall Clock Time (&lt;code&gt;clock_gettime&lt;/code&gt;)&lt;/li&gt;
+&lt;li&gt;Linux resource usage metrics (&lt;code&gt;getrusage&lt;/code&gt;)&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;To measure raw Time Stamp Counter (or, ticks), on x86 architectures we can use:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;code&gt;RDTSC&lt;/code&gt; (Read Time-Stamp Counter)&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Finally, to pinpoint performance bottlenecks, we can use the Linux &lt;code&gt;perf&lt;/code&gt; tool; However, there are two ways to use it:&lt;/p&gt;</description></item><item><title>Workshops</title><link>https://iitgn-fuss.github.io/people/subhrajit/gallery/workshops/</link><pubDate>Tue, 04 Nov 2025 14:40:59 +0530</pubDate><guid>https://iitgn-fuss.github.io/people/subhrajit/gallery/workshops/</guid><description>&lt;h3 id="computer-systems-workshop-at-iisc-bangalore-30-31-october-2025-bangalore-india"&gt;Computer Systems Workshop at IISc Bangalore (30-31 October 2025, Bangalore, India)&lt;/h3&gt;
+&lt;p&gt;We attended the invite-only Computer Systems Workshop held at IISc Bangalore on 30-31 October 2025. I presented a poster there. Below are few pictures from those two days.&lt;/p&gt;
+&lt;p&gt;&lt;img src="../workshops/csa_ws_iisc_0.jpg" alt="CS Workshop IISc"&gt;
+&lt;img src="../workshops/csa_ws_iisc_1.jpg" alt="CS Workshop IISc"&gt;
+&lt;img src="../workshops/csa_ws_iisc_2.jpg" alt="CS Workshop IISc"&gt;
+&lt;img src="../workshops/csa_ws_iisc_3.jpg" alt="CS Workshop IISc"&gt;&lt;/p&gt;</description></item><item><title>Some memories during my M.Tech at IIT Gandhinagar</title><link>https://iitgn-fuss.github.io/people/subhrajit/gallery/mtech-memories-iitgn/</link><pubDate>Mon, 30 Jun 2025 10:00:59 +0530</pubDate><guid>https://iitgn-fuss.github.io/people/subhrajit/gallery/mtech-memories-iitgn/</guid><description>&lt;p&gt;Here are some memories during my M.Tech at IIT Gandhinagar.&lt;/p&gt;
+&lt;h3 id="convocation---class-of-2025"&gt;Convocation - Class of 2025&lt;/h3&gt;
+&lt;p&gt;&lt;img src="../IITGn_23_25/people-and-memories/convocation-1.jpg" alt="Convocation - Class of 2025!"&gt;
+&lt;img src="../IITGn_23_25/people-and-memories/convocation-2.jpg" alt="Convocation - Class of 2025!"&gt;&lt;/p&gt;
+&lt;h3 id="party-thrown-by-our-advisor"&gt;Party thrown by our Advisor&lt;/h3&gt;
+&lt;p&gt;&lt;img src="../IITGn_23_25/people-and-memories/bichhawat-gang-2.jpg" alt="Bichhawat Gang!"&gt;
+&lt;img src="../IITGn_23_25/people-and-memories/bichhawat-gang.jpg" alt="Bichhawat Gang!"&gt;&lt;/p&gt;
+&lt;h3 id="mt-abu-trip25"&gt;Mt. Abu Trip'25&lt;/h3&gt;
+&lt;p&gt;&lt;img src="../IITGn_23_25/people-and-memories/mt-abu-trip-2nd-floor.jpg" alt="Mt. Abu Trip'25!"&gt;&lt;/p&gt;
+&lt;h3 id="k-153"&gt;K-153&lt;/h3&gt;
+&lt;p&gt;&lt;img src="../IITGn_23_25/people-and-memories/K153-room-mates.jpg" alt="K-153!"&gt;&lt;/p&gt;
+&lt;h3 id="patils-room"&gt;Patil&amp;rsquo;s Room&lt;/h3&gt;
+&lt;p&gt;&lt;img src="../IITGn_23_25/people-and-memories/patils-room.jpg" alt="Patil&amp;rsquo;s Room!"&gt;&lt;/p&gt;
+&lt;h3 id="pratyush-and-me-during-udaan"&gt;Pratyush and Me (During Udaan)&lt;/h3&gt;
+&lt;p&gt;&lt;img src="../IITGn_23_25/people-and-memories/pratyush-and-me-udaan.jpg" alt="Me and Pratyush!"&gt;&lt;/p&gt;
+&lt;h3 id="post-patils-birthday-celebration"&gt;Post Patil&amp;rsquo;s Birthday Celebration&lt;/h3&gt;
+&lt;p&gt;&lt;img src="../IITGn_23_25/people-and-memories/someones-bday-celeb.jpg" alt="Post Patil&amp;rsquo;s Birthday Celebration!"&gt;&lt;/p&gt;
+&lt;h3 id="coffee-cup-at-my-workspace"&gt;Coffee Cup at my workspace&lt;/h3&gt;
+&lt;p&gt;&lt;img src="../IITGn_23_25/people-and-memories/workspace-coffee.jpg" alt="Coffee Cup at my workspace!"&gt;&lt;/p&gt;</description></item><item><title>Conferences</title><link>https://iitgn-fuss.github.io/people/subhrajit/gallery/conferences/</link><pubDate>Mon, 03 Feb 2025 14:40:59 +0530</pubDate><guid>https://iitgn-fuss.github.io/people/subhrajit/gallery/conferences/</guid><description>&lt;p&gt;Below you may find some of the conferences I have attended over the years (as of now, only one :P).&lt;/p&gt;
+&lt;h3 id="buildsec24-19-20-december-2024-new-delhi-india"&gt;BuildSEC'24 (19-20 December 2024, New Delhi, India)&lt;/h3&gt;
+&lt;p&gt;This is my first-ever publication as well as my first-ever conference attended. I presented our work on &amp;ldquo;Online Authentication Habits of Indian Users&amp;rdquo; at BuildSEC'24, Building a Secure &amp;amp; Empowered Cyberspace, held on 19-20 December 2024 in New Delhi, India.
+&lt;img src="../conferences/buildsec-24.jpg" alt="BuildSEC'24"&gt;&lt;/p&gt;</description></item><item><title>IIT Gandhinagar Campus</title><link>https://iitgn-fuss.github.io/people/subhrajit/gallery/iit-gandhinagar-campus/</link><pubDate>Mon, 03 Feb 2025 14:40:59 +0530</pubDate><guid>https://iitgn-fuss.github.io/people/subhrajit/gallery/iit-gandhinagar-campus/</guid><description>&lt;p&gt;Let&amp;rsquo;s take a look at the beautiful IIT Gandhinagar campus through my lens.&lt;/p&gt;
+&lt;h2 id="iit-gandhinagar-campus-2023-2025"&gt;IIT Gandhinagar Campus (2023-2025)&lt;/h2&gt;
+&lt;p&gt;These are taken during my stay at IIT Gandhinagar from 2023 to 2025 for my M.Tech degree.&lt;/p&gt;
+&lt;h3 id="green-campus"&gt;Green Campus&lt;/h3&gt;
+&lt;p&gt;&lt;img src="../IITGn_23_25/green-campus.jpg" alt="New AB!"&gt;
+&lt;img src="../IITGn_23_25/towards_ab.jpg" alt="Towards AB!"&gt;&lt;/p&gt;
+&lt;h3 id="sunset"&gt;Sunset&lt;/h3&gt;
+&lt;p&gt;&lt;img src="../IITGn_23_25/sunset_basketball_court.jpg" alt="Sunset1"&gt;
+&lt;img src="../IITGn_23_25/sunset_new_mess_parking.jpg" alt="Sunset2"&gt;
+&lt;img src="../IITGn_23_25/sunset_AB13_roof.jpg" alt="Sunset3"&gt;&lt;/p&gt;
+&lt;h3 id="cotton-sky"&gt;Cotton Sky&lt;/h3&gt;
+&lt;p&gt;&lt;img src="../IITGn_23_25/cotton-sky.jpg" alt="Cotton Sky!"&gt;&lt;/p&gt;
+&lt;h3 id="sports-track"&gt;Sports Track&lt;/h3&gt;
+&lt;p&gt;&lt;img src="../IITGn_23_25/sports_track_morning.jpg" alt="Sports Track Morning!"&gt;
+&lt;img src="../IITGn_23_25/sports_track_night_birdeye.jpg" alt="Sports Track Night Bird-eye!"&gt;&lt;/p&gt;
+&lt;h3 id="cricket-ground"&gt;Cricket Ground&lt;/h3&gt;
+&lt;p&gt;&lt;img src="../IITGn_23_25/cricket_ground_night.jpg" alt="Cricket Ground!"&gt;&lt;/p&gt;
+&lt;h3 id="night"&gt;Night&lt;/h3&gt;
+&lt;p&gt;&lt;img src="../IITGn_23_25/night_lamps.jpg" alt="Night1"&gt;
+&lt;img src="../IITGn_23_25/diwali_firecrackers.jpg" alt="Night2"&gt;&lt;/p&gt;</description></item><item><title>Teaching</title><link>https://iitgn-fuss.github.io/people/subhrajit/gallery/teaching/</link><pubDate>Mon, 03 Feb 2025 14:40:59 +0530</pubDate><guid>https://iitgn-fuss.github.io/people/subhrajit/gallery/teaching/</guid><description>&lt;p&gt;Below you may find some of the teaching activities I have been involved in over the years (as of now, only one :P).&lt;/p&gt;
+&lt;h3 id="code-profiling-and-optimization-november-2024"&gt;Code Profiling and Optimization (November 2024)&lt;/h3&gt;
+&lt;p&gt;This was a Student-Run Short Course on Code Profiling and Optimization conducted at IIT Gandhinagar during my final-year of M.Tech. I was principal instructor for the course along with my batchmate Pratyush Choudhary, who was the co-instructor.
+&lt;img src="../teaching/code-profiling-and-optimization.jpg" alt="Code Profiling and Optimization"&gt;&lt;/p&gt;</description></item><item><title>University of Kalyani</title><link>https://iitgn-fuss.github.io/people/subhrajit/gallery/university-of-kalyani/</link><pubDate>Mon, 03 Feb 2025 14:40:59 +0530</pubDate><guid>https://iitgn-fuss.github.io/people/subhrajit/gallery/university-of-kalyani/</guid><description>&lt;p&gt;Let&amp;rsquo;s take a look at a few shots of my alma mater, the University of Kalyani. These are taken at the university from 2021 to 2023 during my M.Sc degree.&lt;/p&gt;
+&lt;h3 id="pictures-with-faculty-members"&gt;Pictures with Faculty Members&lt;/h3&gt;
+&lt;p&gt;&lt;img src="../KU/photo-with-faculty.jpg" alt="pic1"&gt;
+&lt;img src="../KU/photo-with-faculty-2.jpg" alt="pic2"&gt;&lt;/p&gt;
+&lt;h3 id="dept-of-cse-building"&gt;Dept. of CSE Building&lt;/h3&gt;
+&lt;p&gt;&lt;img src="../KU/dept_cse_ku.jpg" alt="Department of Computer Science and Engineering!"&gt;&lt;/p&gt;
+&lt;h3 id="view-from-rooftop-of-dept-building"&gt;View from rooftop of Dept. Building&lt;/h3&gt;
+&lt;p&gt;&lt;img src="../KU/green_view_from_cse_roof.jpg" alt="View from rooftop!"&gt;&lt;/p&gt;
+&lt;h3 id="campus-tour-video"&gt;Campus Tour Video&lt;/h3&gt;
+&lt;p&gt;This was captured by my friend &lt;a href="https://www.linkedin.com/in/pranab-paul-450a14190"&gt;Pranab&lt;/a&gt; while I was riding the bike on a monsoon day at the University of Kalyani. Play it in 4K and enjoy the lush green campus! (You can also try 2x speed for a quick tour :P)
+&lt;div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;"&gt;
+ &lt;iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" loading="eager" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/Ih6dEa0X9-4?autoplay=0&amp;amp;controls=1&amp;amp;end=0&amp;amp;loop=0&amp;amp;mute=0&amp;amp;start=0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="YouTube video"&gt;&lt;/iframe&gt;
+ &lt;/div&gt;
+&lt;/p&gt;</description></item></channel></rss>
