@@ -77,7 +77,7 @@ type: people
 <div class="person-card" style="cursor: pointer; position: relative;">
   <a href="http://www.linkedin.com/in/shruti-saxena-7769472b2" target="_blank" style="position: absolute; inset: 0; z-index: 1; opacity: 0;" aria-label="Shruti Saxena's homepage"></a>
   <div class="person-content" style="position: relative; z-index: 2; pointer-events: none;">
-    <img src="../images/people/shruti.jpg" alt="Shruti Saxena" class="person-image">
+    <img src="../images/people/shruti-saxena.jpg" alt="Shruti Saxena" class="person-image">
     <div class="person-info">
       <h3 class="person-name">Shruti Saxena</h3>
       <p class="person-title">1st Year Ph.D.</p>
@@ -121,6 +121,24 @@ type: people
 <div class="people-grid">
 <!-- Add M.Tech. here -->
 <div class="person-card" style="cursor: pointer; position: relative;">
+  <a href="https://www.linkedin.com/in/shruti-dubey-663b711a9/" target="_blank" style="position: absolute; inset: 0; z-index: 1; opacity: 0;" aria-label="Shruti Dubey's homepage"></a>
+  <div class="person-content" style="position: relative; z-index: 2; pointer-events: none;">
+    <img src="../images/people/shruti-dubey.jpg" alt="Shruti Dubey" class="person-image">
+    <div class="person-info">
+      <h3 class="person-name">Shruti Dubey</h3>
+      <p class="person-title">2nd Year M.Tech.</p>
+      <p class="person-period">July 2024 - Present</p>
+      <div class="research-focus-phrases">
+        <span>Distributed Systems</span>
+        <span class="research-focus-separator">|</span>
+        <span>Web Security</span>
+        <span class="research-focus-separator">|</span>
+        <span>Privacy</span>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="person-card" style="cursor: pointer; position: relative;">
   <a href="https://www.linkedin.com/in/aniket-asati-204b8522a" target="_blank" style="position: absolute; inset: 0; z-index: 1; opacity: 0;" aria-label="Aniket Asati's homepage"></a>
   <div class="person-content" style="position: relative; z-index: 2; pointer-events: none;">
     <img src="../images/people/aniket.jpg" alt="Aniket Asati" class="person-image">
@@ -131,7 +149,7 @@ type: people
       <div class="research-focus-phrases">
         <span>Distributed Systems</span>
         <span class="research-focus-separator">|</span>
-        <span>Computer Systems</span>
+        <span>Parallel Computing</span>
       </div>
     </div>
   </div>
