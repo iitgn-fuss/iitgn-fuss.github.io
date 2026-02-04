@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1314&amp;path=livereload" data-no-instant defer></script>
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Research on Computer Systems Workshop | FUSS Group</title>
@@ -363,6 +363,7 @@
             transition: transform 0.3s cubic-bezier(0.165, 0.84, 0.44, 1),
                 box-shadow 0.3s cubic-bezier(0.165, 0.84, 0.44, 1),
                 border-color 0.3s ease !important;
+            will-change: transform, box-shadow;
             cursor: pointer;
             text-decoration: none !important;
             color: inherit !important;
@@ -396,6 +397,10 @@
             font-weight: 700;
             transition: transform 0.3s cubic-bezier(0.165, 0.84, 0.44, 1) !important;
             overflow: hidden;
+            flex-shrink: 0;
+            will-change: transform;
+            -webkit-mask-image: -webkit-radial-gradient(white, black);
+            mask-image: radial-gradient(white, black);
             transform: translate3d(0, 0, 0);
             backface-visibility: hidden;
         }
@@ -404,6 +409,10 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
+            display: block;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+            transition: none !important;
         }
 
         .speaker-card:hover .speaker-avatar {
@@ -1451,9 +1460,9 @@
     </div>
     </div>
 
-    <script defer src="http://localhost:1314/js/main.js" integrity=""></script>
-<script defer src="http://localhost:1314/js/flexsearch.9f5b5908f93ae86f1ecd4b043b799f580c2d1654e703dd9357d568ac41b2547a.js" integrity="sha256-n1tZCPk66G8ezUsEO3mfWAwtFlTnA92TV9VorEGyVHo=" crossorigin="anonymous"></script>
-        <script defer src="http://localhost:1314/en.search.js" integrity=""></script>
+    <script defer src="http://localhost:1313/js/main.js" integrity=""></script>
+<script defer src="http://localhost:1313/js/flexsearch.9f5b5908f93ae86f1ecd4b043b799f580c2d1654e703dd9357d568ac41b2547a.js" integrity="sha256-n1tZCPk66G8ezUsEO3mfWAwtFlTnA92TV9VorEGyVHo=" crossorigin="anonymous"></script>
+        <script defer src="http://localhost:1313/en.search.js" integrity=""></script>
 </body>
 
 </html>

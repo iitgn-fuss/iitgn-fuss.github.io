@@ -4,28 +4,28 @@
 
 
 ## Events
-- [Research on Computer Systems Workshop](http://localhost:1314/events/rcsw-2026/):  - Published 2026-02-04
+- [Research on Computer Systems Workshop](http://localhost:1313/events/rcsw-2026/):  - Published 2026-02-04
 
 ## News
-- [Prof. Abhishek Bichhawat (jointly with IIT Kharagpur) received ANRF ARG Research Grant](http://localhost:1314/news/anrf-arg25/): Prof. Abhishek Bichhawat (jointly with Prof. Mainack Mondal from IIT Kharagpur) has been awarded the … - Published 2025-12-28
-- [Gayatri got the Google PhD Fellowship 2025!](http://localhost:1314/news/gayatri-google-phd-fellowship/): Gayatri has been awarded the Google PhD Fellowship 2025 in Privacy, Safety, and Security - Published 2025-09-15
-- [Gayatri presented her work at PETS 2025](http://localhost:1314/news/gayatri-pets25/): Gayatri presented her work at the Privacy Enhancing Technologies Symposium 2025 - Published 2025-07-20
-- [Gayatri's Work Accepted at WWW 2025](http://localhost:1314/news/gayatri-web-conf25/): Gayatri&rsquo;s Work has been published at the Web Conference 2025 - Published 2025-01-20
-- [Google India Research Award 2024 goes to Prof. Abhishek Bichhawat!](http://localhost:1314/news/abhishek-google-india-research-award-2024/): Prof. Abhishek Bichhawat has been awarded the Google India Research Award 2024 - Published 2024-12-12
+- [Prof. Abhishek Bichhawat (jointly with IIT Kharagpur) received ANRF ARG Research Grant](http://localhost:1313/news/anrf-arg25/): Prof. Abhishek Bichhawat (jointly with Prof. Mainack Mondal from IIT Kharagpur) has been awarded the … - Published 2025-12-28
+- [Gayatri got the Google PhD Fellowship 2025!](http://localhost:1313/news/gayatri-google-phd-fellowship/): Gayatri has been awarded the Google PhD Fellowship 2025 in Privacy, Safety, and Security - Published 2025-09-15
+- [Gayatri presented her work at PETS 2025](http://localhost:1313/news/gayatri-pets25/): Gayatri presented her work at the Privacy Enhancing Technologies Symposium 2025 - Published 2025-07-20
+- [Gayatri's Work Accepted at WWW 2025](http://localhost:1313/news/gayatri-web-conf25/): Gayatri&rsquo;s Work has been published at the Web Conference 2025 - Published 2025-01-20
+- [Google India Research Award 2024 goes to Prof. Abhishek Bichhawat!](http://localhost:1313/news/abhishek-google-india-research-award-2024/): Prof. Abhishek Bichhawat has been awarded the Google India Research Award 2024 - Published 2024-12-12
 
 ## Interesting-Reads
-- [How to Measure Performance of Your Code](http://localhost:1314/interesting-reads/measure-your-code/): Measuring code performance accurately is crucial, especially when optimizing existing algorithms or … - Published 2025-12-26
+- [How to Measure Performance of Your Code](http://localhost:1313/interesting-reads/measure-your-code/): Measuring code performance accurately is crucial, especially when optimizing existing algorithms or … - Published 2025-12-26
 
 ## Blog
 
 
 ## Root Pages
-- [About](http://localhost:1314/about/): To be added.
-- [People](http://localhost:1314/people/): Faculty Abhishek Bichhawat Assistant Professor
+- [About](http://localhost:1313/about/): To be added.
+- [People](http://localhost:1313/people/): Faculty Abhishek Bichhawat Assistant Professor
 Formal Methods & Verification | Web Security | …
-- [Projects](http://localhost:1314/projects/): To be added.
-- [Publications](http://localhost:1314/publications/): 2026 “I Wonder if These Warnings Are Accurate”: Security and Privacy Advice in Nine Majority World …
+- [Projects](http://localhost:1313/projects/): To be added.
+- [Publications](http://localhost:1313/publications/): 2026 “I Wonder if These Warnings Are Accurate”: Security and Privacy Advice in Nine Majority World …
 
 ---
-Generated on 2026-02-04 13:19:36 UTC
-Site: http://localhost:1314/
+Generated on 2026-02-04 13:30:07 UTC
+Site: http://localhost:1313/
