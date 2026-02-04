@@ -4,7 +4,7 @@
 
 
 ## Events
-- [Research on Computer Systems Workshop](http://localhost:1314/events/rcsw-2026/): ƒ - Published 2026-02-04
+- [Research on Computer Systems Workshop](http://localhost:1314/events/rcsw-2026/):  - Published 2026-02-04
 
 ## News
 - [Prof. Abhishek Bichhawat (jointly with IIT Kharagpur) received ANRF ARG Research Grant](http://localhost:1314/news/anrf-arg25/): Prof. Abhishek Bichhawat (jointly with Prof. Mainack Mondal from IIT Kharagpur) has been awarded the … - Published 2025-12-28
@@ -27,5 +27,5 @@ Formal Methods & Verification | Web Security | …
 - [Publications](http://localhost:1314/publications/): 2026 “I Wonder if These Warnings Are Accurate”: Security and Privacy Advice in Nine Majority World …
 
 ---
-Generated on 2026-02-04 13:17:51 UTC
+Generated on 2026-02-04 13:19:36 UTC
 Site: http://localhost:1314/
