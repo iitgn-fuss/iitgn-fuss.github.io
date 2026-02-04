@@ -3,6 +3,9 @@
 > Formal and Usable Systems Security (FUSS) Group at IIT Gandhinagar
 
 
+## Events
+- [Research on Computer Systems Workshop](https://iitgn-fuss.github.io/events/rcsw-2026/):  - Published 2026-02-21
+
 ## News
 - [Prof. Abhishek Bichhawat (jointly with IIT Kharagpur) received ANRF ARG Research Grant](https://iitgn-fuss.github.io/news/anrf-arg25/): Prof. Abhishek Bichhawat (jointly with Prof. Mainack Mondal from IIT Kharagpur) has been awarded the … - Published 2025-12-28
 - [Gayatri got the Google PhD Fellowship 2025!](https://iitgn-fuss.github.io/news/gayatri-google-phd-fellowship/): Gayatri has been awarded the Google PhD Fellowship 2025 in Privacy, Safety, and Security - Published 2025-09-15
@@ -24,5 +27,5 @@ Formal Methods & Verification | Web Security | …
 - [Publications](https://iitgn-fuss.github.io/publications/): 2026 “I Wonder if These Warnings Are Accurate”: Security and Privacy Advice in Nine Majority World …
 
 ---
-Generated on 2026-01-12 17:35:16 UTC
+Generated on 2026-02-04 13:15:28 UTC
 Site: https://iitgn-fuss.github.io/

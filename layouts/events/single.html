@@ -1,0 +1,941 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ .Title }} | FUSS Group</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Lato:wght@300;400;700;900&display=swap"
+        rel="stylesheet">
+
+    {{ if .Params.show_menu }}
+    {{- $mainCss := resources.Get "css/compiled/main.css" -}}
+    {{- $customCss := resources.Get "css/custom.css" -}}
+    {{- $variablesCss := resources.Get "css/variables.css" | resources.ExecuteAsTemplate "css/variables.css" . -}}
+
+    {{- if hugo.IsProduction }}
+    {{- $styles := slice $variablesCss $mainCss $customCss | resources.Concat "css/compiled/main.css" | minify |
+    fingerprint }}
+    <link rel="stylesheet" href="{{ $styles.RelPermalink }}" integrity="{{ $styles.Data.Integrity }}" />
+    {{- else }}
+    {{- $styles := resources.Get "css/compiled/main.css" -}}
+    <link href="{{ $styles.RelPermalink }}" rel="stylesheet" />
+    <link href="{{ $variablesCss.RelPermalink }}" rel="stylesheet" />
+    <link href="{{ $customCss.RelPermalink }}" rel="stylesheet" />
+    {{- end }}
+    {{ end }}
+
+    <style>
+        /* Reference Styles mimicry: https://events.neeldhara.com/2025/rocs/ */
+
+        .custom-event-page {
+            background-color: rgb(254, 254, 254);
+            color: rgb(52, 58, 64);
+            font-family: 'Lato', sans-serif;
+            font-size: 16px;
+            line-height: 1.5;
+            -webkit-font-smoothing: antialiased;
+            min-height: 100vh;
+        }
+
+        .custom-event-page * {
+            box-sizing: border-box;
+        }
+
+        .custom-event-page h1,
+        .custom-event-page h2,
+        .custom-event-page h3,
+        .custom-event-page h4,
+        .custom-event-page h5,
+        .custom-event-page h6 {
+            margin-top: 0;
+            margin-bottom: 0.5rem;
+            line-height: 1.2;
+            color: inherit;
+            font-family: 'Lato', sans-serif;
+        }
+
+        .custom-event-page a {
+            color: #0d6efd;
+            text-decoration: none;
+            transition: all 0.2s ease-in-out;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .custom-event-page a:hover {
+            color: #0a58ca;
+            text-decoration: underline;
+        }
+
+        .custom-event-page h1 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            text-align: center;
+            color: #212529;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.05);
+        }
+
+        .custom-event-page h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .custom-event-page p {
+            margin-bottom: 0.75rem;
+        }
+
+        /* Container - Compact & Fluid */
+        .event-wrapper {
+            width: 95%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+            background: #fff;
+            transition: max-width 0.3s ease;
+        }
+
+        /* Header logic */
+        .event-header {
+            text-align: center;
+            margin-bottom: 2rem;
+            border-bottom: 1px solid #f0f0f0;
+            padding-bottom: 1.5rem;
+        }
+
+        .event-date {
+            font-size: 1.15rem;
+            font-weight: 700;
+            text-decoration: underline;
+            text-underline-offset: 4px;
+            margin-bottom: 0.5rem;
+        }
+
+        .event-subtitle {
+            font-size: 1rem;
+            color: #6c757d;
+            font-style: italic;
+        }
+
+        /* Info Boxes (Callouts) - Subtle Hover */
+        .info-box {
+            padding: 0.75rem 1rem;
+            margin-bottom: 1rem;
+            background-color: #fff;
+            border: 1px solid #eee;
+            border-left-width: 5px;
+            border-left-style: solid;
+            border-radius: 4px;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .info-box:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+        }
+
+        .info-box.red {
+            border-left-color: rgb(255, 0, 57);
+        }
+
+        .info-box.blue {
+            border-left-color: rgb(39, 128, 227);
+        }
+
+        .info-title {
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            margin-bottom: 0.4rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: inherit;
+        }
+
+        .info-box.red .info-title {
+            color: rgb(255, 0, 57);
+        }
+
+        .info-box.blue .info-title {
+            color: rgb(39, 128, 227);
+        }
+
+        /* Grid */
+        .grid-row {
+            display: grid;
+            grid-template-columns: 1.4fr 1fr;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        @media (max-width: 900px) {
+            .grid-row {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Cards */
+        .card {
+            background-color: #fff;
+            border: 1px solid rgba(0, 0, 0, .125);
+            border-radius: 0.25rem;
+            overflow: hidden;
+            margin-bottom: 1rem;
+            transition: box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+
+        .card-header {
+            padding: 0.6rem 1rem;
+            background-color: rgba(0, 0, 0, .03);
+            border-bottom: 1px solid rgba(0, 0, 0, .125);
+            font-weight: 700;
+            color: #6c757d;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .list-group-item {
+            padding: 0.6rem 1rem;
+            border-bottom: 1px solid rgba(0, 0, 0, .125);
+            display: flex;
+            justify-content: space-between;
+            transition: background-color 0.2s;
+            font-size: 0.95rem;
+        }
+
+        .list-group-item:last-child {
+            border-bottom: none;
+        }
+
+        .list-group-item:hover {
+            background-color: #fafafa;
+        }
+
+        .list-label {
+            font-weight: 700;
+            color: #6c757d;
+        }
+
+        .card-footer {
+            padding: 0.6rem 1rem;
+            background-color: rgba(0, 0, 0, .03);
+            border-top: 1px solid rgba(0, 0, 0, .125);
+            color: #198754;
+            text-align: center;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        /* Tabs */
+        .custom-nav-tabs {
+            border-bottom: 1px solid #dee2e6;
+            display: flex;
+            flex-wrap: wrap;
+            padding-left: 0;
+            margin-bottom: 1rem;
+            list-style: none;
+        }
+
+        .custom-nav-link {
+            display: block;
+            padding: 0.5rem 1rem;
+            color: #495057;
+            text-decoration: none;
+            background: transparent;
+            border: 1px solid transparent;
+            border-top-left-radius: 0.25rem;
+            border-top-right-radius: 0.25rem;
+            margin-bottom: -1px;
+            font-family: 'Lato', sans-serif;
+            font-size: 15px;
+            cursor: pointer;
+            transition: color 0.15s, background-color 0.15s, border-color 0.15s;
+        }
+
+        .custom-nav-link:hover {
+            color: #0d6efd;
+            border-color: #e9ecef #e9ecef #dee2e6;
+            background-color: rgba(0, 0, 0, 0.01);
+        }
+
+        .custom-nav-link.active {
+            color: #495057;
+            background-color: #fff;
+            border-color: #dee2e6 #dee2e6 #fff;
+        }
+
+        /* Utility */
+        .custom-tab-pane {
+            display: none;
+        }
+
+        .custom-tab-pane.active {
+            display: block;
+            animation: fadeEffect 0.4s;
+        }
+
+        @keyframes fadeEffect {
+            from {
+                opacity: 0;
+                transform: translateY(2px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Table */
+        .table-container {
+            overflow-x: auto;
+            border-radius: 0.25rem;
+            border: 1px solid #dee2e6;
+            box-shadow: none;
+            font-size: 0.95rem;
+        }
+
+        .table {
+            width: 100%;
+            margin-bottom: 0;
+            color: #212529;
+            border-collapse: collapse;
+        }
+
+        .table th,
+        .table td {
+            padding: 0.75rem 1rem;
+            vertical-align: top;
+            border-top: 1px solid #dee2e6;
+            transition: background-color 0.15s;
+        }
+
+        .table thead th {
+            vertical-align: bottom;
+            border-bottom: 2px solid #dee2e6;
+            text-align: left;
+            font-weight: 700;
+            background: #fff;
+        }
+
+        .table tbody tr {
+            transition: background-color 0.15s;
+        }
+
+        .table tbody tr:hover {
+            background-color: rgba(0, 0, 0, 0.015) !important;
+        }
+
+        .table-striped tbody tr:nth-of-type(odd) {
+            background-color: rgba(0, 0, 0, .015);
+        }
+
+        /* Modal Links */
+        .table a[onclick] {
+            cursor: pointer;
+            display: inline-block;
+            font-weight: 600;
+            border-bottom: 1px dotted #0d6efd;
+        }
+
+        .table a[onclick]:hover {
+            color: #fd7e14;
+            border-bottom-color: #fd7e14;
+        }
+
+        /* Speakers */
+        .speakers-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        a.speaker-card {
+            display: flex;
+            flex-direction: column;
+            border: 1px solid #dee2e6;
+            border-radius: 0.25rem;
+            padding: 1.25rem;
+            text-align: center;
+            background: #fff;
+            /* Explicitly increase specificity and use !important to override Hextra's global 'a' transitions */
+            transition: transform 0.3s cubic-bezier(0.165, 0.84, 0.44, 1),
+                box-shadow 0.3s cubic-bezier(0.165, 0.84, 0.44, 1),
+                border-color 0.3s ease !important;
+            cursor: pointer;
+            text-decoration: none !important;
+            color: inherit !important;
+            transform: translate3d(0, 0, 0) !important;
+            backface-visibility: hidden;
+            position: relative;
+            z-index: 1;
+        }
+
+        a.speaker-card:hover {
+            transform: translate3d(0, -5px, 0) !important;
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08) !important;
+            border-color: #0d6efd !important;
+            text-decoration: none !important;
+            color: inherit !important;
+            z-index: 2;
+        }
+
+        .speaker-avatar {
+            width: 72px;
+            height: 72px;
+            margin: 0 auto 0.75rem;
+            background: linear-gradient(135deg, #f0f7ff, #e0efff);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+            color: #0d6efd;
+            font-family: 'Dancing Script', cursive;
+            font-weight: 700;
+            transition: transform 0.3s cubic-bezier(0.165, 0.84, 0.44, 1) !important;
+            overflow: hidden;
+            transform: translate3d(0, 0, 0);
+            backface-visibility: hidden;
+        }
+
+        .speaker-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .speaker-card:hover .speaker-avatar {
+            transform: scale(1.1) translate3d(0, 0, 0);
+        }
+
+        /* Modals */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            background-color: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(2px);
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.2s;
+        }
+
+        .modal.show {
+            display: flex;
+            opacity: 1;
+        }
+
+        .modal-dialog {
+            background-color: #fff;
+            margin: auto;
+            border-radius: 0.5rem;
+            width: 90%;
+            max-width: 650px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+            display: flex;
+            flex-direction: column;
+            max-height: 90vh;
+            transform: translateY(15px) scale(0.98);
+            transition: transform 0.2s cubic-bezier(0.19, 1, 0.22, 1);
+        }
+
+        .modal.show .modal-dialog {
+            transform: translateY(0) scale(1);
+        }
+
+        .modal-header {
+            padding: 1.25rem;
+            border-bottom: 1px solid #dee2e6;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .modal-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin: 0;
+        }
+
+        .close-btn {
+            background: none;
+            border: none;
+            font-size: 1.75rem;
+            cursor: pointer;
+            opacity: 0.5;
+            padding: 0 10px;
+            line-height: 1;
+            transition: transform 0.2s ease, opacity 0.2s, color 0.2s;
+        }
+
+        .close-btn:hover {
+            opacity: 1;
+            transform: rotate(90deg);
+            color: #dc3545;
+        }
+
+        .modal-body {
+            padding: 1.5rem;
+            overflow-y: auto;
+            line-height: 1.6;
+        }
+
+        .modal-speaker-row {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.25rem;
+            border-bottom: 1px solid #f0f0f0;
+            padding-bottom: 1rem;
+        }
+    </style>
+</head>
+
+<body>
+    {{ if .Params.show_menu }}
+    {{ partial "navbar.html" . }}
+    {{ end }}
+
+    <div class="custom-event-page">
+        <div class="event-wrapper">
+
+            <header class="event-header">
+                <h1>{{ .Title }}</h1>
+                <div class="event-date">{{ .Params.hero.date_display }}</div>
+                <div class="event-subtitle">{{ .Params.hero.subtitle }}</div>
+            </header>
+
+            <div style="margin-bottom: 2rem; margin-left: auto; margin-right: auto;">
+                {{ .Params.about.intro | markdownify }}
+            </div>
+
+            <div class="grid-row">
+                <!-- Left Column -->
+                <div>
+                    <!-- Target Audience: RED -->
+                    <div class="info-box red">
+                        <div class="info-title"><span
+                                style="display:inline-flex; align-items:center; vertical-align:middle;"><svg
+                                    xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+                                    <circle cx="9" cy="7" r="4"></circle>
+                                    <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
+                                    <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                                </svg></span> {{ .Params.target_audience.title }}</div>
+                        <p style="margin: 0;">{{ .Params.target_audience.content }}</p>
+                    </div>
+
+                    <div class="info-box blue">
+                        <div class="info-title"><span
+                                style="display:inline-flex; align-items:center; vertical-align:middle;"><svg
+                                    xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <circle cx="12" cy="12" r="10"></circle>
+                                    <path d="M12 16v-4"></path>
+                                    <path d="M12 8h.01"></path>
+                                </svg></span> {{ .Params.section_titles.about }}</div>
+                        <p>{{ .Params.about.description | markdownify }}</p>
+                        <p style="margin: 0;">
+                            {{ .Params.labels.inquiry_prefix }}
+                            <a href="mailto:{{ .Params.about.contact_email }}">{{ .Params.about.contact_email }}</a>
+                            {{ .Params.labels.inquiry_connector }}
+                            <code>{{ .Params.about.inquiry_subject }}</code>
+                            {{ .Params.labels.inquiry_suffix }}
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Right Column -->
+                <div>
+                    <div class="card">
+                        <div class="card-header"><span>📅</span> {{ .Params.section_titles.event_details }}</div>
+                        <div class="list-group-item">
+                            <span class="list-label">{{ .Params.labels.date }}</span>
+                            <span>{{ .Params.event_details.date }}</span>
+                        </div>
+                        <div class="list-group-item">
+                            <span class="list-label">{{ .Params.labels.time }}</span>
+                            <span>{{ .Params.event_details.time }}</span>
+                        </div>
+                        <div class="list-group-item">
+                            <span class="list-label">{{ .Params.labels.venue }}</span>
+                            <span>{{ .Params.event_details.venue }}</span>
+                        </div>
+                        <div class="card-footer">
+                            {{ .Params.hero.registration_text | markdownify }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Navigation -->
+            <ul class="custom-nav-tabs">
+                <li><button class="custom-nav-link active" onclick="openTab('schedule', this)">{{ .Params.tabs.schedule
+                        }}</button></li>
+                <li><button class="custom-nav-link" onclick="openTab('logistics', this)">{{ .Params.tabs.logistics
+                        }}</button></li>
+                <li><button class="custom-nav-link" onclick="openTab('faq', this)">{{ .Params.tabs.faq }}</button></li>
+                <li><button class="custom-nav-link" onclick="openTab('spread', this)">{{ .Params.tabs.spread }}</button>
+                </li>
+            </ul>
+
+            <!-- Tab Content -->
+            <div class="custom-tab-content">
+
+                <!-- Schedule -->
+                <div id="schedule" class="custom-tab-pane active">
+                    <p style="font-style: italic; color: #6c757d; margin-bottom: 0.5rem; font-size: 0.9rem;">{{
+                        .Params.labels.note_click_talks }}</p>
+
+                    <div class="table-container">
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th style="width: 20%;">{{ .Params.labels.time }}</th>
+                                    <th style="width: 50%;">{{ .Params.section_titles.schedule }}</th>
+                                    <th style="width: 30%;">{{ .Params.section_titles.speakers }}</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {{ range .Params.schedule }}
+
+                                {{ if eq .type "talk_block" }}
+                                {{ $time := .time }}
+                                {{ $count := len .items }}
+                                {{ range $index, $item := .items }}
+                                <tr>
+                                    {{ if eq $index 0 }}
+                                    <td rowspan="{{ $count }}" style="vertical-align: middle;">{{ $time }}</td>
+                                    {{ end }}
+                                    <td>
+                                        <a onclick="showModal('{{ .modal_id }}')"
+                                            style="text-decoration: none; border-bottom: none; cursor: pointer;">{{
+                                            .title
+                                            }}</a>
+                                    </td>
+                                    <td>
+                                        {{ .speakers }}
+                                    </td>
+                                </tr>
+                                {{ end }}
+
+                                {{ else }}
+                                <tr>
+                                    <td>{{ .time }}</td>
+                                    {{ if eq .type "break" }}
+                                    <td colspan="2"><span
+                                            style="display:inline-flex; align-items:center; vertical-align:middle; margin-right:4px;">
+                                            {{ if eq .icon "chai" }}
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18"
+                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                                stroke-linecap="round" stroke-linejoin="round">
+                                                <path d="M17 8h1a4 4 0 1 1 0 8h-1"></path>
+                                                <path d="M3 8h14v9a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4Z"></path>
+                                                <line x1="6" y1="2" x2="6" y2="4"></line>
+                                                <line x1="10" y1="2" x2="10" y2="4"></line>
+                                                <line x1="14" y1="2" x2="14" y2="4"></line>
+                                            </svg>
+                                            {{ else if eq .icon "lunch" }}
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18"
+                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                                stroke-linecap="round" stroke-linejoin="round">
+                                                <path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"></path>
+                                                <path d="M7 2v20"></path>
+                                                <path d="M21 15V2v0a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"></path>
+                                            </svg>
+                                            {{ else if eq .icon "hightea" }}
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18"
+                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                                stroke-linecap="round" stroke-linejoin="round">
+                                                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                                                <circle cx="9" cy="7" r="4"></circle>
+                                                <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                                                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                                            </svg>
+                                            {{ end }}
+                                        </span> {{ .event }}</td>
+                                    {{ else if eq .type "panel" }}
+                                    <td><a onclick="showModal('{{ .modal_id }}')"
+                                            style="text-decoration: none; border-bottom: none; cursor: pointer;">{{
+                                            .event
+                                            }}</a></td>
+                                    <td>
+                                        {{ .speakers }}<br>
+                                        <span style="font-size: 0.85rem; color: #6c757d;">{{
+                                            $.Params.labels.moderated_by
+                                            }}: {{ .moderator
+                                            }}</span>
+                                    </td>
+                                    {{ else }}
+                                    <td>{{ if .modal_id }}<a onclick="showModal('{{ .modal_id }}')"
+                                            style="text-decoration: none; border-bottom: none; cursor: pointer;">{{
+                                            .event
+                                            }}</a>{{ else
+                                        }}{{ .event }}{{ end }}</td>
+                                    <td>{{ .speakers }}</td>
+                                    {{ end }}
+                                </tr>
+                                {{ end }}
+
+                                {{ end }}
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h3 style="margin-top: 2rem;">{{ .Params.section_titles.speakers }}</h3>
+                    <div class="speakers-grid">
+                        {{ range .Params.speakers }}
+                        <a href="{{ .url }}" class="speaker-card" target="_blank">
+                            <div class="speaker-avatar">
+                                {{ if .image }}
+                                <img src="{{ .image }}" alt="{{ .name }}">
+                                {{ else }}
+                                {{ .initials }}
+                                {{ end }}
+                            </div>
+                            <h4>{{ .name }}</h4>
+                            <p style="color: #6c757d; margin: 0;">{{ .affiliation }}</p>
+                        </a>
+                        {{ end }}
+                    </div>
+                </div>
+
+                <!-- Logistics -->
+                <div id="logistics" class="custom-tab-pane">
+                    <h3>{{ .Params.section_titles.logistics }}</h3>
+                    <div class="info-box blue">
+                        <strong>{{ .Params.labels.venue }}:</strong> {{ .Params.logistics.venue }}
+                    </div>
+                    <!-- Transport Grid -->
+                    <div
+                        style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem; margin-top: 1.5rem;">
+                        {{ range .Params.logistics.transport }}
+                        <div style="border: 1px solid #dee2e6; padding: 1.25rem; border-radius: 6px;">
+                            <h4 style="display: flex; align-items: center; gap: 0.5rem; font-size: 1.1rem;"><span
+                                    style="display:inline-flex; align-items:center; vertical-align:middle;">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round">
+                                        {{ if eq .icon "plane" }}
+                                        <path
+                                            d="M16 10h4a2 2 0 0 1 0 4h-4l-4 7h-3l2 -7h-4l-2 2h-3l2 -4l-2 -4h3l2 2h4l-2 -7h3z" />
+                                        {{ else if eq .icon "train" }}
+                                        <path
+                                            d="M21 13c0 -3.87 -3.37 -7 -7.5 -7s-7.5 3.13 -7.5 7v3c0 1.66 1.34 3 3 3h9c1.66 0 3 -1.34 3 -3v-3z" />
+                                        <path d="M7 15h10" />
+                                        <path d="M12 11v4" />
+                                        <path d="M12 6v2" />
+                                        <path d="M12 22v-3" />
+                                        <path d="M16 22l-1 -3" />
+                                        <path d="M8 22l1 -3" />
+                                        {{ else if eq .icon "bus" }}
+                                        <path
+                                            d="M19 17h2l.64-2.54c.24-.959.24-1.962 0-2.92l-1.07-4.27A3 3 0 0 0 17.66 5H4.34a3 3 0 0 0-2.93 2.27L.36 11.54c-.24.959-.24 1.962 0 2.92l.64 2.54h2">
+                                        </path>
+                                        <path d="M14 17H8"></path>
+                                        <circle cx="5.5" cy="17.5" r="2.5"></circle>
+                                        <circle cx="16.5" cy="17.5" r="2.5"></circle>
+                                        {{ end }}
+                                    </svg></span>
+                                {{ .title }}</h4>
+                            <p style="margin: 0; color: #495057; font-size: 0.95rem;">{{ .description }}</p>
+                        </div>
+                        {{ end }}
+                    </div>
+                </div>
+
+                <!-- FAQ -->
+                <div id="faq" class="custom-tab-pane">
+                    <h3>{{ .Params.section_titles.faq }}</h3>
+                    {{ range .Params.faq }}
+                    <div class="info-box blue" style="border-left-color: #0d6efd;">
+                        <strong>{{ .question }}</strong>
+                        <p style="margin-top: 0.5rem; margin-bottom: 0;">{{ .answer }}</p>
+                    </div>
+                    {{ end }}
+                    <div style="margin-top: 2rem; text-align: center; color: #6c757d;">
+                        {{ .Params.labels.faq_contact_prefix }} <a href="mailto:{{ .Params.about.contact_email }}">{{
+                            .Params.about.contact_email }}</a>
+                    </div>
+                </div>
+
+                <!-- Spread the word -->
+                <div id="spread" class="custom-tab-pane">
+                    <h3>{{ .Params.section_titles.spread }}</h3>
+                    <div class="info-box orange">
+                        <strong>{{ .Params.labels.help_spread }}</strong>
+                        <p>{{ .Params.labels.coming_soon }}</p>
+                    </div>
+                </div>
+
+            </div> <!-- End Tab Content -->
+        </div>
+
+        <!-- Dynamic Modals -->
+        {{ range .Params.schedule }}
+        {{ if eq .type "talk_block" }}
+        {{ range .items }}
+        <div id="{{ .modal_id }}" class="modal">
+            <div class="modal-dialog">
+                <div class="modal-header">
+                    <h5 class="modal-title">{{ .title }}</h5>
+                    <button class="close-btn" onclick="closeModal('{{ .modal_id }}')">×</button>
+                </div>
+                <div class="modal-body">
+                    <div class="modal-speaker-row">
+                        {{ $speakerNames := split .speakers ", " }}
+                        {{ range $speakerNames }}
+                        {{ $currentSpeaker := . }}
+                        {{ $speakerImg := "" }}
+                        {{ $speakerInitials := "" }}
+                        {{ range $.Params.speakers }}
+                        {{ if eq .name $currentSpeaker }}
+                        {{ $speakerImg = .image }}
+                        {{ $speakerInitials = .initials }}
+                        {{ end }}
+                        {{ end }}
+
+                        {{ if $speakerImg }}
+                        <div class="speaker-avatar" style="width: 64px; height: 64px; margin: 0; font-size: 1.25rem;">
+                            <img src="{{ $speakerImg }}" alt="{{ $currentSpeaker }}">
+                        </div>
+                        {{ else if $speakerInitials }}
+                        <div class="speaker-avatar" style="width: 64px; height: 64px; margin: 0; font-size: 1.25rem;">
+                            {{ $speakerInitials }}
+                        </div>
+                        {{ end }}
+                        {{ end }}
+
+                        <div>
+                            <div style="font-weight: 700; font-size: 1.1rem;">{{ .speakers }}</div>
+                        </div>
+                    </div>
+                    <p><strong>Abstract:</strong> {{ .abstract | markdownify }}</p>
+                </div>
+            </div>
+        </div>
+        {{ end }}
+        {{ else if .modal_id }}
+        <div id="{{ .modal_id }}" class="modal">
+            <div class="modal-dialog">
+                <div class="modal-header">
+                    <h5 class="modal-title">{{ .event }}</h5>
+                    <button class="close-btn" onclick="closeModal('{{ .modal_id }}')">×</button>
+                </div>
+                <div class="modal-body">
+                    <div class="modal-speaker-row">
+                        {{ $speakerNames := split .speakers ", " }}
+                        {{ range $speakerNames }}
+                        {{ $currentSpeaker := . }}
+                        {{ $speakerImg := "" }}
+                        {{ $speakerInitials := "" }}
+                        {{ range $.Params.speakers }}
+                        {{ if eq .name $currentSpeaker }}
+                        {{ $speakerImg = .image }}
+                        {{ $speakerInitials = .initials }}
+                        {{ end }}
+                        {{ end }}
+
+                        {{ if $speakerImg }}
+                        <div class="speaker-avatar" style="width: 64px; height: 64px; margin: 0; font-size: 1.25rem;">
+                            <img src="{{ $speakerImg }}" alt="{{ $currentSpeaker }}">
+                        </div>
+                        {{ else if $speakerInitials }}
+                        <div class="speaker-avatar" style="width: 64px; height: 64px; margin: 0; font-size: 1.25rem;">
+                            {{ $speakerInitials }}
+                        </div>
+                        {{ end }}
+                        {{ end }}
+
+                        <div>
+                            <div style="font-weight: 700; font-size: 1.1rem;">{{ .speakers }}</div>
+                            {{ if .moderator }}<div style="color: #6c757d;">{{ $.Params.labels.moderated_by }}: {{
+                                .moderator }}</div>{{ end }}
+                        </div>
+                    </div>
+                    <p><strong>{{ $.Params.labels.abstract }}:</strong> {{ .abstract | markdownify }}</p>
+                </div>
+            </div>
+        </div>
+        {{ end }}
+        {{ end }}
+
+        <script>
+            function openTab(tabId, btnElement) {
+                // Hide all tab panes
+                var panes = document.getElementsByClassName("custom-tab-pane");
+                for (var i = 0; i < panes.length; i++) {
+                    panes[i].classList.remove("active");
+                }
+
+                // Remove active class from all buttons
+                var buttons = document.getElementsByClassName("custom-nav-link");
+                for (var i = 0; i < buttons.length; i++) {
+                    buttons[i].classList.remove("active");
+                }
+
+                // Show the specific tab content
+                document.getElementById(tabId).classList.add("active");
+
+                // Add active class to the button that opened the tab
+                btnElement.classList.add("active");
+            }
+
+            // Modal Logic
+            function showModal(modalId) {
+                const modal = document.getElementById(modalId);
+                if (modal) {
+                    modal.classList.add('show');
+                    document.body.style.overflow = 'hidden'; // Prevent scrolling
+                }
+            }
+
+            function closeModal(modalId) {
+                const modal = document.getElementById(modalId);
+                if (modal) {
+                    modal.classList.remove('show');
+                    document.body.style.overflow = ''; // Restore scrolling
+                }
+            }
+
+            // Close on outside click
+            window.onclick = function (event) {
+                if (event.target.classList.contains('modal')) {
+                    event.target.classList.remove('show');
+                    document.body.style.overflow = '';
+                }
+            }
+        </script>
+    </div>
+    </div>
+
+    {{ partial "scripts.html" . }}
+</body>
+
+</html>
