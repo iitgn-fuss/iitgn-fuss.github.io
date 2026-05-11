@@ -1,0 +1,32 @@
+<svg width="600" height="150" viewBox="0 0 600 150" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <defs>
+        <linearGradient id="fussGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#1e40af;stop-opacity:1" />
+            <stop offset="100%" style="stop-color:#7c3aed;stop-opacity:1" />
+        </linearGradient>
+    </defs>
+    
+    <!-- Icon -->
+    <image xlink:href="logo.svg" x="0" y="0" width="150" height="150" />
+    
+    <!-- Text Rendering -->
+    <!-- Scale Factor ~3.33 (24px -> 80px) -->
+    <!-- Font families: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto... -->
+    <!-- Using generic sans-serif fallback which maps to Arial usually -->
+    
+    <g transform="translate(160, 0)"> 
+        <!-- Title Line: FUSS (80px) + Gap (~13px) + Group (53px) -->
+        <!-- Using dx ensures Group follows FUSS immediately + gap -->
+        <text y="85" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif">
+            <tspan x="0" font-weight="800" font-size="80" fill="url(#fussGradient)" letter-spacing="-1.6">FUSS</tspan>
+            <tspan dx="15" font-weight="600" font-size="53" fill="rgb(71, 85, 105)" letter-spacing="0.5">Group</tspan>
+        </text>
+        
+        <!-- Subtitle: IIT Gandhinagar (37px) -->
+        <!-- Margin top ~6px, Line height adjustments -->
+        <!-- Y = 85 (baseline of above) + ~45px (gap+height) -->
+        <text x="5" y="130" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" 
+              font-weight="500" font-size="37" fill="rgb(100, 116, 139)" 
+              letter-spacing="3" text-transform="uppercase">IIT GANDHINAGAR</text>
+    </g>
+</svg>

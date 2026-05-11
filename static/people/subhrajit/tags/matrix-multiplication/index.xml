@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Matrix Multiplication on Subhrajit Das</title>
+    <link>https://iitgn-fuss.github.io/people/subhrajit/tags/matrix-multiplication/</link>
+    <description>Recent content in Matrix Multiplication on Subhrajit Das</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>© 2026 Subhrajit Das</copyright>
+    <lastBuildDate>Wed, 01 Oct 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://iitgn-fuss.github.io/people/subhrajit/tags/matrix-multiplication/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Distributing Matrix Multiplication over a Network of CPUs</title>
+      <link>https://iitgn-fuss.github.io/people/subhrajit/projects/wimpygpu/</link>
+      <pubDate>Wed, 01 Oct 2025 00:00:00 +0000</pubDate>
+      
+      <guid>https://iitgn-fuss.github.io/people/subhrajit/projects/wimpygpu/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Team Contributor&lt;/strong&gt;, IIT Gandhinagar &amp;amp; University of Edinburgh, &lt;em&gt;Oct 2025 – Present&lt;/em&gt;&lt;/p&gt;&#xA;&lt;p&gt;This project investigates how a network of CPUs can efficiently perform matrix multiplication tasks often handled by specialized hardware like GPUs.&lt;/p&gt;</description>
+      
+    </item>
+    
+  </channel>
+</rss>
