@@ -1,11 +1,233 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Tags on </title>
+    <title>Tags on Subhrajit Das</title>
     <link>https://iitgn-fuss.github.io/people/subhrajit/tags/</link>
-    <description>Recent content in Tags on </description>
-    <generator>Hugo</generator>
-    <language>en-us</language>
-    <atom:link href="https://iitgn-fuss.github.io/people/subhrajit/tags/index.xml" rel="self" type="application/rss+xml" />
+    <description>Recent content in Tags on Subhrajit Das</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>© 2026 Subhrajit Das</copyright>
+    <lastBuildDate>Fri, 26 Dec 2025 11:30:00 +0530</lastBuildDate><atom:link href="https://iitgn-fuss.github.io/people/subhrajit/tags/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Code Measurement</title>
+      <link>https://iitgn-fuss.github.io/people/subhrajit/tags/code-measurement/</link>
+      <pubDate>Fri, 26 Dec 2025 11:30:00 +0530</pubDate>
+      
+      <guid>https://iitgn-fuss.github.io/people/subhrajit/tags/code-measurement/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Execution Time</title>
+      <link>https://iitgn-fuss.github.io/people/subhrajit/tags/execution-time/</link>
+      <pubDate>Fri, 26 Dec 2025 11:30:00 +0530</pubDate>
+      
+      <guid>https://iitgn-fuss.github.io/people/subhrajit/tags/execution-time/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Performance</title>
+      <link>https://iitgn-fuss.github.io/people/subhrajit/tags/performance/</link>
+      <pubDate>Fri, 26 Dec 2025 11:30:00 +0530</pubDate>
+      
+      <guid>https://iitgn-fuss.github.io/people/subhrajit/tags/performance/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Profiling</title>
+      <link>https://iitgn-fuss.github.io/people/subhrajit/tags/profiling/</link>
+      <pubDate>Fri, 26 Dec 2025 11:30:00 +0530</pubDate>
+      
+      <guid>https://iitgn-fuss.github.io/people/subhrajit/tags/profiling/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>CPU Parallelism</title>
+      <link>https://iitgn-fuss.github.io/people/subhrajit/tags/cpu-parallelism/</link>
+      <pubDate>Wed, 01 Oct 2025 00:00:00 +0000</pubDate>
+      
+      <guid>https://iitgn-fuss.github.io/people/subhrajit/tags/cpu-parallelism/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Distributed Systems</title>
+      <link>https://iitgn-fuss.github.io/people/subhrajit/tags/distributed-systems/</link>
+      <pubDate>Wed, 01 Oct 2025 00:00:00 +0000</pubDate>
+      
+      <guid>https://iitgn-fuss.github.io/people/subhrajit/tags/distributed-systems/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Matrix Multiplication</title>
+      <link>https://iitgn-fuss.github.io/people/subhrajit/tags/matrix-multiplication/</link>
+      <pubDate>Wed, 01 Oct 2025 00:00:00 +0000</pubDate>
+      
+      <guid>https://iitgn-fuss.github.io/people/subhrajit/tags/matrix-multiplication/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Usable Privacy and Security</title>
+      <link>https://iitgn-fuss.github.io/people/subhrajit/tags/usable-privacy-and-security/</link>
+      <pubDate>Wed, 01 Oct 2025 00:00:00 +0000</pubDate>
+      
+      <guid>https://iitgn-fuss.github.io/people/subhrajit/tags/usable-privacy-and-security/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Web Security</title>
+      <link>https://iitgn-fuss.github.io/people/subhrajit/tags/web-security/</link>
+      <pubDate>Wed, 01 Oct 2025 00:00:00 +0000</pubDate>
+      
+      <guid>https://iitgn-fuss.github.io/people/subhrajit/tags/web-security/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Password Managers</title>
+      <link>https://iitgn-fuss.github.io/people/subhrajit/tags/password-managers/</link>
+      <pubDate>Sun, 01 Dec 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://iitgn-fuss.github.io/people/subhrajit/tags/password-managers/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Two-Factor Authentication</title>
+      <link>https://iitgn-fuss.github.io/people/subhrajit/tags/two-factor-authentication/</link>
+      <pubDate>Sun, 01 Dec 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://iitgn-fuss.github.io/people/subhrajit/tags/two-factor-authentication/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Large-Number Arithmetic</title>
+      <link>https://iitgn-fuss.github.io/people/subhrajit/tags/large-number-arithmetic/</link>
+      <pubDate>Wed, 01 May 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://iitgn-fuss.github.io/people/subhrajit/tags/large-number-arithmetic/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Scientific Computing</title>
+      <link>https://iitgn-fuss.github.io/people/subhrajit/tags/scientific-computing/</link>
+      <pubDate>Wed, 01 May 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://iitgn-fuss.github.io/people/subhrajit/tags/scientific-computing/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>SIMD</title>
+      <link>https://iitgn-fuss.github.io/people/subhrajit/tags/simd/</link>
+      <pubDate>Wed, 01 May 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://iitgn-fuss.github.io/people/subhrajit/tags/simd/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Parallel Programming</title>
+      <link>https://iitgn-fuss.github.io/people/subhrajit/tags/parallel-programming/</link>
+      <pubDate>Wed, 01 Nov 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://iitgn-fuss.github.io/people/subhrajit/tags/parallel-programming/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Payment Gateway</title>
+      <link>https://iitgn-fuss.github.io/people/subhrajit/tags/payment-gateway/</link>
+      <pubDate>Sun, 01 Oct 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://iitgn-fuss.github.io/people/subhrajit/tags/payment-gateway/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Combinatorial Optimization</title>
+      <link>https://iitgn-fuss.github.io/people/subhrajit/tags/combinatorial-optimization/</link>
+      <pubDate>Sun, 01 May 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://iitgn-fuss.github.io/people/subhrajit/tags/combinatorial-optimization/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Metaheuristics</title>
+      <link>https://iitgn-fuss.github.io/people/subhrajit/tags/metaheuristics/</link>
+      <pubDate>Sun, 01 May 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://iitgn-fuss.github.io/people/subhrajit/tags/metaheuristics/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Operations Research</title>
+      <link>https://iitgn-fuss.github.io/people/subhrajit/tags/operations-research/</link>
+      <pubDate>Sun, 01 May 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://iitgn-fuss.github.io/people/subhrajit/tags/operations-research/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Swarm Intelligence</title>
+      <link>https://iitgn-fuss.github.io/people/subhrajit/tags/swarm-intelligence/</link>
+      <pubDate>Sun, 01 May 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://iitgn-fuss.github.io/people/subhrajit/tags/swarm-intelligence/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Hardware Architecture</title>
+      <link>https://iitgn-fuss.github.io/people/subhrajit/tags/hardware-architecture/</link>
+      <pubDate>Fri, 01 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://iitgn-fuss.github.io/people/subhrajit/tags/hardware-architecture/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Reversible Computing</title>
+      <link>https://iitgn-fuss.github.io/people/subhrajit/tags/reversible-computing/</link>
+      <pubDate>Fri, 01 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://iitgn-fuss.github.io/people/subhrajit/tags/reversible-computing/</guid>
+      <description></description>
+      
+    </item>
+    
   </channel>
 </rss>

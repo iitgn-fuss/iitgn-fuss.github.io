@@ -1,13 +1,13 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>FUSS Group @ IITGn – Presentation</title>
-    <link>http://localhost:1313/tags/presentation/</link>
+    <link>https://iitgn-fuss.github.io/tags/presentation/</link>
     <description>Recent content in Presentation on FUSS Group @ IITGn</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 20 Jul 2025 00:00:00 +0000</lastBuildDate>
     
-	  <atom:link href="http://localhost:1313/tags/presentation/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="https://iitgn-fuss.github.io/tags/presentation/index.xml" rel="self" type="application/rss+xml" />
     
     
       
@@ -17,10 +17,10 @@
     
     <item>
       <title>Gayatri presented her work at PETS 2025</title>
-      <link>http://localhost:1313/news/gayatri-pets25/</link>
+      <link>https://iitgn-fuss.github.io/news/gayatri-pets25/</link>
       <pubDate>Sun, 20 Jul 2025 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/news/gayatri-pets25/</guid>
+      <guid>https://iitgn-fuss.github.io/news/gayatri-pets25/</guid>
       <description>
         
         
@@ -31,10 +31,10 @@
     
     <item>
       <title>Gayatri&#39;s Work Accepted at WWW 2025</title>
-      <link>http://localhost:1313/news/gayatri-web-conf25/</link>
+      <link>https://iitgn-fuss.github.io/news/gayatri-web-conf25/</link>
       <pubDate>Mon, 20 Jan 2025 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/news/gayatri-web-conf25/</guid>
+      <guid>https://iitgn-fuss.github.io/news/gayatri-web-conf25/</guid>
       <description>
         
         
