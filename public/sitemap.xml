@@ -11,19 +11,31 @@
     <loc>http://localhost:1313/events/rcsw-2026/</loc>
     <lastmod>2026-02-04T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/anrf/</loc>
-    <lastmod>2025-12-28T00:00:00+00:00</lastmod>
+    <loc>http://localhost:1313/tags/conference/</loc>
+    <lastmod>2026-01-20T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/news/</loc>
+    <lastmod>2026-01-20T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/news/gayatri-ccs26/</loc>
+    <lastmod>2026-01-20T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/presentation/</loc>
+    <lastmod>2026-01-20T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/research/</loc>
+    <lastmod>2026-01-20T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/</loc>
+    <lastmod>2026-01-20T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/anrf/</loc>
     <lastmod>2025-12-28T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/news/anrf-arg25/</loc>
     <lastmod>2025-12-28T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/research-grant/</loc>
-    <lastmod>2025-12-28T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/</loc>
     <lastmod>2025-12-28T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/interesting-reads/measure-your-code/</loc>
@@ -38,16 +50,7 @@
     <loc>http://localhost:1313/news/gayatri-google-phd-fellowship/</loc>
     <lastmod>2025-09-15T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/research/</loc>
-    <lastmod>2025-09-15T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/conference/</loc>
-    <lastmod>2025-07-20T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>http://localhost:1313/news/gayatri-pets25/</loc>
-    <lastmod>2025-07-20T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/presentation/</loc>
     <lastmod>2025-07-20T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/news/gayatri-web-conf25/</loc>

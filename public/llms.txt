@@ -7,6 +7,7 @@
 - [Research on Computer Systems Workshop](http://localhost:1313/events/rcsw-2026/):  - Published 2026-02-04
 
 ## News
+- [Our New Work on Analyzing Usability and Legal Compliance of Consent Withdrawal on the Web accepted at CCS 2026](http://localhost:1313/news/compliance-ccs26/): Our Work &lsquo;Usability Compliance vs. Legal Compliance of Consent Withdrawal on the Web: An … - Published 2026-01-20
 - [Prof. Abhishek Bichhawat (jointly with IIT Kharagpur) received ANRF ARG Research Grant](http://localhost:1313/news/anrf-arg25/): Prof. Abhishek Bichhawat (jointly with Prof. Mainack Mondal from IIT Kharagpur) has been awarded the … - Published 2025-12-28
 - [Gayatri got the Google PhD Fellowship 2025!](http://localhost:1313/news/gayatri-google-phd-fellowship/): Gayatri has been awarded the Google PhD Fellowship 2025 in Privacy, Safety, and Security - Published 2025-09-15
 - [Gayatri presented her work at PETS 2025](http://localhost:1313/news/gayatri-pets25/): Gayatri presented her work at the Privacy Enhancing Technologies Symposium 2025 - Published 2025-07-20
@@ -24,8 +25,8 @@
 - [People](http://localhost:1313/people/): Faculty Abhishek Bichhawat Assistant Professor
 Formal Methods & Verification | Web Security | …
 - [Projects](http://localhost:1313/projects/): To be added.
-- [Publications](http://localhost:1313/publications/): 2026 “I Wonder if These Warnings Are Accurate”: Security and Privacy Advice in Nine Majority World …
+- [Publications](http://localhost:1313/publications/): 2026 &ldquo;Usability Compliance vs. Legal Compliance of Consent Withdrawal on the Web: An Expert …
 
 ---
-Generated on 2026-05-17 10:52:16 UTC
+Generated on 2026-06-04 11:22:26 UTC
 Site: http://localhost:1313/

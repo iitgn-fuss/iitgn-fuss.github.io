@@ -5,6 +5,10 @@ tags: ["research", "publications"]
 ---
 ## 2026
 
+**["Usability Compliance vs. Legal Compliance of Consent Withdrawal on the Web: An Expert Evaluation of 200 Websites"](#)**  
+S. Ahuja, G. Kancherla, C. Santos, N. Bielova, A. Bichhawat  
+*The 33rd ACM Conference on Computer and Communications Security (CCS)*, November 2026
+
 **[“I Wonder if These Warnings Are Accurate”: Security and Privacy Advice in Nine Majority World Countries](https://www.computer.org/csdl/proceedings-article/sp/2026/606500a076/2bojv9k3yOk)**   
 Collins W. Munyendo, Veronica A. Rivera, Jackie Hu, Emmanuel Tweneboah, Amna Shahnawaz, Karen Sowon, Dilara Kekulluoglu, Marcos Silva, Yue Deng, Mercy Omeiza, Gayatri Priyadarsini Kancherla, Maria Rosario Niniz Silva, Maryam Mustafa, Abhishek Bichhawat, Francisco Marmolejo-Cossio, Elissa M. Redmiles, Yixin Zou   
 *47th IEEE Symposium on Security and Privacy (Oakland)*, May 2026
