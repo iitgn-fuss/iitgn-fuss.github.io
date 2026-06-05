@@ -7,7 +7,8 @@
 - [AsiaCCS 2026 Trip](http://localhost:1313/misc/asiaccs26-trip/): Here are some photos from our group dinner during the AsiaCCS 2026 conference, Bangalore in June … - Published 2026-06-05
 - [IISc CS Workshop 2025](http://localhost:1313/misc/iisc-cs-workshop-2025/): Here are some photos from our trip to the Computer Systems Workshop at the Indian Institute of … - Published 2025-11-05
 - [Teachers' Day 2025](http://localhost:1313/misc/teachers_day_25/): Here are some photos from our Teachers&rsquo; Day celebration in September 2025. - Published 2025-09-05
-- [Group Dinner - June 2025](http://localhost:1313/misc/group_dinner_june_25/): Here are some photos from our group dinner at Yanki Sizzlerr - Gandhinagar for the graduating … - Published 2025-06-22
+- [Group Dinner - June 2025](http://localhost:1313/misc/group_dinner_june_25/): Here&rsquo;s a moment from our group dinner at Yanki Sizzlerr - Gandhinagar for the graduating … - Published 2025-06-22
+- [BuildSec 2024](http://localhost:1313/misc/buildsec_24/): Here are some moments during the BuildSec 2024 conference, New Delhi in December 2024. We also own … - Published 2024-12-24
 
 ## News
 - [Our New Work on Analyzing Usability and Legal Compliance of Consent Withdrawal on the Web accepted at CCS 2026](http://localhost:1313/news/compliance-ccs26/): Our Work &lsquo;Usability Compliance vs. Legal Compliance of Consent Withdrawal on the Web: An … - Published 2026-06-04
@@ -34,5 +35,5 @@ Formal Methods & Verification | Web Security | …
 - [Publications](http://localhost:1313/publications/): 2026 &ldquo;Usability Compliance vs. Legal Compliance of Consent Withdrawal on the Web: An Expert …
 
 ---
-Generated on 2026-06-05 16:12:58 UTC
+Generated on 2026-06-05 18:29:02 UTC
 Site: http://localhost:1313/
