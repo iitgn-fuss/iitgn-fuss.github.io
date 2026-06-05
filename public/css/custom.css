@@ -3381,3 +3381,24 @@ article .highlight {
         font-size: 1.25rem;
     }
 }
+/* Photo Gallery Grid */
+.photo-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.photo-gallery img {
+  width: 100%;
+  height: 400px;
+  object-fit: contain;
+  background-color: rgba(0, 0, 0, 0.02); /* Light background to show the frame */
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease;
+}
+
+.photo-gallery img:hover {
+  transform: scale(1.02);
+}
