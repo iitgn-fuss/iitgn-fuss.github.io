@@ -5,9 +5,12 @@
 
 ## Misc
 - [AsiaCCS 2026 Trip](http://localhost:1313/misc/asiaccs26-trip/): Here are some photos from our group dinner during the AsiaCCS 2026 conference, Bangalore in June … - Published 2026-06-05
+- [Gayatri @ Google PhD Fellow Reception, New Delhi](http://localhost:1313/misc/gayatri-google-phd-reception/): Gayatri was invited for her Google PhD Fellowship fecilitation as part of the program of … - Published 2025-12-17
 - [IISc CS Workshop 2025](http://localhost:1313/misc/iisc-cs-workshop-2025/): Here are some photos from our trip to the Computer Systems Workshop at the Indian Institute of … - Published 2025-11-05
 - [Teachers' Day 2025](http://localhost:1313/misc/teachers_day_25/): Here are some photos from our Teachers&rsquo; Day celebration in September 2025. - Published 2025-09-05
+- [Gayatri @ PETS 2025](http://localhost:1313/misc/gayatri-pets_2025/): Here&rsquo;s a shot of Gayatri presenting our work &lsquo;Johnny Can&rsquo;t Revoke Consent Either: … - Published 2025-07-20
 - [Group Dinner - June 2025](http://localhost:1313/misc/group_dinner_june_25/): Here&rsquo;s a moment from our group dinner at Yanki Sizzlerr - Gandhinagar for the graduating … - Published 2025-06-22
+- [Gayatri @ WWW 2025](http://localhost:1313/misc/gayatri-www-2025-copy/): Here&rsquo;s a shot of Gayatri at the ACM Web Conference 2025. She presented our work &lsquo;Least … - Published 2025-05-04
 - [BuildSec 2024](http://localhost:1313/misc/buildsec_24/): Here are some moments during the BuildSec 2024 conference, New Delhi in December 2024. We also own … - Published 2024-12-24
 
 ## News
@@ -35,5 +38,5 @@ Formal Methods & Verification | Web Security | …
 - [Publications](http://localhost:1313/publications/): 2026 &ldquo;Usability Compliance vs. Legal Compliance of Consent Withdrawal on the Web: An Expert …
 
 ---
-Generated on 2026-06-05 18:29:02 UTC
+Generated on 2026-06-08 13:22:09 UTC
 Site: http://localhost:1313/

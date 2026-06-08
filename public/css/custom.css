@@ -3402,3 +3402,299 @@ article .highlight {
 .photo-gallery img:hover {
   transform: scale(1.02);
 }
+
+/* Homepage Gallery Carousel Styles */
+.gallery-carousel-wrapper {
+  position: relative;
+  width: 100%;
+  margin: 1.5rem auto 3rem auto;
+}
+
+.gallery-carousel-container {
+  display: flex;
+  gap: 1rem;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  padding: 0.5rem 0.25rem 1rem 0.25rem;
+  scrollbar-width: none; /* Firefox */
+}
+
+.gallery-carousel-container::-webkit-scrollbar {
+  display: none; /* Chrome/Safari */
+}
+
+/* Gallery Card - Sleek Clickable Photo Grid Card */
+.gallery-card {
+  flex: 0 0 calc(33.333% - 0.667rem); /* 3 cards visible on desktop matching news card width */
+  height: 240px; /* Fixed height matching news card aspect scale */
+  flex-shrink: 0;
+  scroll-snap-align: start;
+  background-color: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(12px) saturate(180%);
+  -webkit-backdrop-filter: blur(12px) saturate(180%);
+  border-radius: 0.5rem;
+  border: 1px solid rgb(229, 231, 235);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  text-decoration: none !important;
+  color: inherit !important;
+  will-change: transform;
+}
+
+.dark .gallery-card {
+  background-color: rgba(30, 41, 59, 0.4);
+  border: 1px solid rgb(38, 38, 38) !important;
+  box-shadow: none;
+}
+
+/* Override wildcard transition lag inside carousel */
+.gallery-carousel-wrapper *,
+.gallery-carousel-container * {
+  transition: none !important;
+}
+
+/* Specific smooth transitions override matching News Card */
+.gallery-card {
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+.gallery-card-image {
+  transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1) !important;
+}
+
+.carousel-arrow {
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+/* Smooth card hover lift and scale */
+.gallery-card:hover {
+  transform: translateY(-8px) scale(1.02) !important;
+}
+
+/* Blue glow for gallery cards on hover */
+.gallery-card[style*="rgba(59,130,246"]:hover {
+    box-shadow: 0 0 60px 20px rgba(59, 130, 246, 0.6) !important,
+        0 0 120px 40px rgba(59, 130, 246, 0.4) !important,
+        0 0 180px 60px rgba(59, 130, 246, 0.2) !important;
+    border-color: rgba(59, 130, 246, 0.8) !important;
+}
+
+/* Green glow for gallery cards on hover */
+.gallery-card[style*="rgba(16,185,129"]:hover {
+    box-shadow: 0 0 60px 20px rgba(16, 185, 129, 0.6) !important,
+        0 0 120px 40px rgba(16, 185, 129, 0.4) !important,
+        0 0 180px 60px rgba(16, 185, 129, 0.2) !important;
+    border-color: rgba(16, 185, 129, 0.8) !important;
+}
+
+/* Orange glow for gallery cards on hover */
+.gallery-card[style*="rgba(251,146,60"]:hover {
+    box-shadow: 0 0 60px 20px rgba(251, 146, 60, 0.6) !important,
+        0 0 120px 40px rgba(251, 146, 60, 0.4) !important,
+        0 0 180px 60px rgba(251, 146, 60, 0.2) !important;
+    border-color: rgba(251, 146, 60, 0.8) !important;
+}
+
+/* Dark theme versions with more intense glow */
+.dark .gallery-card[style*="rgba(59,130,246"]:hover {
+    box-shadow: 0 0 80px 30px rgba(59, 130, 246, 0.7) !important,
+        0 0 160px 50px rgba(59, 130, 246, 0.5) !important,
+        0 0 240px 80px rgba(59, 130, 246, 0.3) !important;
+    border-color: rgba(59, 130, 246, 0.8) !important;
+}
+
+.dark .gallery-card[style*="rgba(16,185,129"]:hover {
+    box-shadow: 0 0 80px 30px rgba(16, 185, 129, 0.7) !important,
+        0 0 160px 50px rgba(16, 185, 129, 0.5) !important,
+        0 0 240px 80px rgba(16, 185, 129, 0.3) !important;
+    border-color: rgba(16, 185, 129, 0.8) !important;
+}
+
+.dark .gallery-card[style*="rgba(251,146,60"]:hover {
+    box-shadow: 0 0 80px 30px rgba(251, 146, 60, 0.7) !important,
+        0 0 160px 50px rgba(251, 146, 60, 0.5) !important,
+        0 0 240px 80px rgba(251, 146, 60, 0.3) !important;
+    border-color: rgba(251, 146, 60, 0.8) !important;
+}
+
+/* Card Image Section */
+.gallery-card-image-wrapper {
+  width: 100%;
+  height: 180px; /* Fixed height for image area */
+  overflow: hidden;
+  position: relative;
+  background: #0b0f19;
+}
+
+.gallery-card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.gallery-card:hover .gallery-card-image {
+  transform: scale(1.04);
+}
+
+/* Card Content Section */
+.gallery-card-info {
+  padding: 0.5rem 1rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  justify-content: center;
+}
+
+.gallery-card-title {
+  font-size: 0.95rem !important;
+  font-weight: 600 !important;
+  margin: 0 !important;
+  line-height: 1.35 !important;
+  color: rgb(30, 41, 59) !important;
+  transition: color 0.2s ease !important;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.dark .gallery-card-title {
+  color: rgb(241, 245, 249) !important;
+}
+
+/* Highlight title text on hover */
+.gallery-card:hover .gallery-card-title {
+  color: #3b82f6 !important;
+}
+
+.dark .gallery-card:hover .gallery-card-title {
+  color: #60a5fa !important;
+}
+
+/* Arrow Navigation buttons */
+.carousel-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: 50%;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  background: rgba(255, 255, 255, 0.85);
+  color: rgb(30, 41, 59);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  z-index: 10;
+  opacity: 0;
+}
+
+.gallery-carousel-wrapper:hover .carousel-arrow {
+  opacity: 1;
+}
+
+.dark .carousel-arrow {
+  background: rgba(30, 41, 59, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: rgb(241, 245, 249);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.prev-arrow {
+  left: 0.5rem;
+}
+
+.next-arrow {
+  right: 0.5rem;
+}
+
+.carousel-arrow:hover {
+  background: #3b82f6;
+  color: #ffffff;
+  border-color: #3b82f6;
+  box-shadow: 0 6px 16px rgba(59, 130, 246, 0.3);
+  transform: translateY(-50%) scale(1.05);
+}
+
+.dark .carousel-arrow:hover {
+  background: #60a5fa;
+  color: #0f172a;
+  border-color: #60a5fa;
+}
+
+.carousel-arrow:active {
+  transform: translateY(-50%) scale(0.98);
+}
+
+/* Media Queries for Responsive Card layout */
+@media (max-width: 1024px) {
+  .gallery-card {
+    flex: 0 0 calc(50% - 0.5rem); /* 2 cards visible matching news columns */
+  }
+  
+  .carousel-arrow {
+    opacity: 0.8;
+  }
+  
+  .prev-arrow {
+    left: 0.5rem;
+  }
+  
+  .next-arrow {
+    right: 0.5rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .gallery-carousel-container {
+    gap: 1rem;
+    padding-bottom: 1rem;
+  }
+  
+  .gallery-card {
+    flex: 0 0 100%; /* 1 card visible */
+  }
+  
+  .carousel-arrow {
+    display: none !important; /* Hide arrows on mobile, swipe only */
+  }
+}
+
+/* Gallery Section Title Styling */
+.gallery-section-title {
+    font-size: clamp(1.75rem, 3vw, 2.25rem) !important;
+    font-weight: 700 !important;
+    text-align: center !important;
+    color: rgb(30, 41, 59) !important;
+    letter-spacing: -0.01em !important;
+    position: relative !important;
+    display: inline-block !important;
+    width: 100% !important;
+    margin: 0 auto !important;
+    padding-bottom: 0.75rem !important;
+}
+
+.dark .gallery-section-title {
+    color: rgb(241, 245, 249) !important;
+}
+
+.gallery-section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+    border-radius: 2px;
+}
+
+
+
+

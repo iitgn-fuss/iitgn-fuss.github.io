@@ -1,0 +1,173 @@
+{{ $slides := slice }}
+{{ range $page := where .Site.RegularPages "Section" "misc" }}
+  {{ $matches := findRE `!\[.*?\]\(.*?\)` $page.RawContent }}
+  {{ range $match := $matches }}
+    {{ $alt := replaceRE `^!\[(.*?)\]\((.*?)\)$` "$1" $match }}
+    {{ $url := replaceRE `^!\[(.*?)\]\((.*?)\)$` "$2" $match }}
+    {{ $slide := dict "url" $url "caption" $alt "pageUrl" $page.RelPermalink "pageTitle" $page.Title }}
+    {{ $slides = $slides | append $slide }}
+  {{ end }}
+{{ end }}
+
+<div class="gallery-carousel-wrapper" id="carouselWrapper">
+  <div class="gallery-carousel-container" id="carouselContainer">
+    <!-- Cards will be inserted dynamically by JavaScript -->
+  </div>
+
+  <!-- Navigation Arrows -->
+  <button class="carousel-arrow prev-arrow" id="prevBtn" aria-label="Previous Slide">
+    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="15 18 9 12 15 6"></polyline>
+    </svg>
+  </button>
+  <button class="carousel-arrow next-arrow" id="nextBtn" aria-label="Next Slide">
+    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </button>
+</div>
+
+<script id="carousel-data" type="application/json">
+  {{ $slides | jsonify | safeJS }}
+</script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const dataEl = document.getElementById("carousel-data");
+  if (!dataEl) return;
+  let allSlides = [];
+  try {
+    allSlides = JSON.parse(dataEl.textContent);
+  } catch (e) {
+    console.error("Error parsing carousel data", e);
+    return;
+  }
+  if (!allSlides || allSlides.length === 0) return;
+
+  // Fisher-Yates shuffle
+  function shuffle(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [array[i], array[j]] = [array[j], array[i]];
+    }
+    return array;
+  }
+
+  // Shuffle and display up to 9 random slides
+  const pickedSlides = shuffle(allSlides).slice(0, 9);
+  const container = document.getElementById("carouselContainer");
+  const wrapper = document.getElementById("carouselWrapper");
+  const prevBtn = document.getElementById("prevBtn");
+  const nextBtn = document.getElementById("nextBtn");
+
+  if (!container || pickedSlides.length === 0) return;
+
+  const gradients = [
+    "background-image: radial-gradient(ellipse at 50% 80%, rgba(59,130,246,0.15), transparent);",
+    "background-image: radial-gradient(ellipse at 50% 80%, rgba(16,185,129,0.15), transparent);",
+    "background-image: radial-gradient(ellipse at 50% 80%, rgba(251,146,60,0.15), transparent);"
+  ];
+
+  // Render cards
+  pickedSlides.forEach((slide, idx) => {
+    const card = document.createElement("a");
+    card.href = slide.pageUrl;
+    card.className = "gallery-card";
+    card.setAttribute("role", "group");
+    card.setAttribute("aria-roledescription", "slide");
+    card.setAttribute("aria-label", `Slide ${idx + 1} of ${pickedSlides.length}`);
+    
+    // Set dynamic gradient coloring inline style
+    const gradient = gradients[idx % 3];
+    card.setAttribute("style", gradient);
+
+    card.innerHTML = `
+      <div class="gallery-card-image-wrapper">
+        <img src="${slide.url}" alt="${slide.pageTitle}" class="gallery-card-image" loading="lazy" />
+      </div>
+      <div class="gallery-card-info">
+        <h3 class="gallery-card-title">${slide.pageTitle}</h3>
+      </div>
+    `;
+    container.appendChild(card);
+  });
+
+  function getScrollAmount() {
+    const card = container.querySelector(".gallery-card");
+    if (!card) return 300;
+    const cardWidth = card.getBoundingClientRect().width;
+    const gap = parseFloat(window.getComputedStyle(container).gap) || 16;
+    return cardWidth + gap;
+  }
+
+  function scrollNext() {
+    const scrollAmount = getScrollAmount();
+    const maxScroll = container.scrollWidth - container.clientWidth;
+    if (container.scrollLeft >= maxScroll - 10) {
+      container.scrollTo({ left: 0, behavior: "smooth" });
+    } else {
+      container.scrollBy({ left: scrollAmount, behavior: "smooth" });
+    }
+  }
+
+  function scrollPrev() {
+    const scrollAmount = getScrollAmount();
+    if (container.scrollLeft <= 10) {
+      const maxScroll = container.scrollWidth - container.clientWidth;
+      container.scrollTo({ left: maxScroll, behavior: "smooth" });
+    } else {
+      container.scrollBy({ left: -scrollAmount, behavior: "smooth" });
+    }
+  }
+
+  nextBtn.addEventListener("click", () => {
+    scrollNext();
+    resetAutoplay();
+  });
+
+  prevBtn.addEventListener("click", () => {
+    scrollPrev();
+    resetAutoplay();
+  });
+
+  // Autoplay functionality
+  const autoplayDuration = 4000; // 4 seconds
+  let autoplayTimer = setInterval(scrollNext, autoplayDuration);
+
+  function startAutoplay() {
+    if (!autoplayTimer) {
+      autoplayTimer = setInterval(scrollNext, autoplayDuration);
+    }
+  }
+
+  function stopAutoplay() {
+    if (autoplayTimer) {
+      clearInterval(autoplayTimer);
+      autoplayTimer = null;
+    }
+  }
+
+  function resetAutoplay() {
+    stopAutoplay();
+    startAutoplay();
+  }
+
+  // Pause on hover
+  wrapper.addEventListener("mouseenter", stopAutoplay);
+  wrapper.addEventListener("mouseleave", startAutoplay);
+
+  // Hide arrows if not scrollable
+  function toggleArrows() {
+    const isScrollable = container.scrollWidth > container.clientWidth;
+    prevBtn.style.display = isScrollable ? "flex" : "none";
+    nextBtn.style.display = isScrollable ? "flex" : "none";
+  }
+
+  // Run on load and resize
+  window.addEventListener("resize", toggleArrows);
+  // Simple check after rendering
+  setTimeout(toggleArrows, 100);
+});
+</script>
+
+

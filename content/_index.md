@@ -47,9 +47,14 @@ layout: hextra-home
   >}}
 {{< /hextra/feature-grid >}}
 
-<div class="hx:mt-8 hx:mb-4 news-section-header">
+<div class="hx:mt-12 hx:mb-4 news-section-header">
 <h2 class="news-section-title">Latest News</h2>
 </div>
 
 {{< latest-news >}}
 
+<div class="hx:mt-16 hx:mb-4 gallery-section-header">
+<h2 class="gallery-section-title">Life @ FUSS</h2>
+</div>
+
+{{< gallery-carousel >}}
