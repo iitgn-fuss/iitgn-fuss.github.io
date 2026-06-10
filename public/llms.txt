@@ -38,5 +38,5 @@ Formal Methods & Verification | Web Security | …
 - [Publications](https://iitgn-fuss.github.io/publications/): 2026 &ldquo;Usability Compliance vs. Legal Compliance of Consent Withdrawal on the Web: An Expert …
 
 ---
-Generated on 2026-06-10 20:04:57 UTC
+Generated on 2026-06-10 20:14:40 UTC
 Site: https://iitgn-fuss.github.io/
