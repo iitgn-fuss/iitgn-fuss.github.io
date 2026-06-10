@@ -16,7 +16,7 @@ type: people
     <img src="../images/people/abhishek.jpg" alt="Abhishek Bichhawat" class="person-image">
     <div class="person-info">
       <h3 class="person-name">Abhishek Bichhawat</h3>
-      <p class="person-title">Assistant Professor</p>
+      <p class="person-title">Associate Professor</p>
       <div class="research-focus-phrases">
         <span>Formal Methods & Verification</span>
         <span class="research-focus-separator">|</span>
@@ -25,7 +25,7 @@ type: people
         <span>Usable Security</span>
       </div>
       <div class="person-bio" style="position: relative; z-index: 2; pointer-events: none;">
-        Abhishek Bichhawat is an Assistant Professor in the Department of Computer Science and Engineering at IIT Gandhinagar. Previously, he spent three years as a postdoctoral fellow at Cylab, Carnegie Mellon University after he completed his PhD working with Christian Hammer and Deepak Garg at Saarland University, Germany where he was affiliated with CISPA and the International Max Planck Research School for Computer Science. Prior to that he completed his Masters from Indian Insitute of Technology Roorkee and his Bachelors from Anna University. Before joining the PhD program, he worked as a Member of Technical Staff at Oracle India Pvt. Ltd. in Bengaluru, India.
+        Abhishek Bichhawat is an Associate Professor in the Department of Computer Science and Engineering at IIT Gandhinagar. Previously, he spent three years as a postdoctoral fellow at Cylab, Carnegie Mellon University after he completed his PhD working with Christian Hammer and Deepak Garg at Saarland University, Germany where he was affiliated with CISPA and the International Max Planck Research School for Computer Science. Prior to that he completed his Masters from Indian Insitute of Technology Roorkee and his Bachelors from Anna University. Before joining the PhD program, he worked as a Member of Technical Staff at Oracle India Pvt. Ltd. in Bengaluru, India.
       </div>
     </div>
   </div>
@@ -99,7 +99,7 @@ type: people
     <img src="../images/people/subhrajit.jpg" alt="Subhrajit Das" class="person-image">
     <div class="person-info">
       <h3 class="person-name">Subhrajit Das</h3>
-      <p class="person-title">1st Year Ph.D.</p>
+      <p class="person-title">2nd Year Ph.D.</p>
       <p class="person-period">July 2023 - Present</p>
       <div class="research-focus-phrases">
         <span>CPU Parallelism</span>
