@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Web Security on Subhrajit Das</title>
-    <link>https://iitgn-fuss.github.io/people/subhrajit/tags/web-security/</link>
+    <link>http://localhost:61763/people/subhrajit/tags/web-security/</link>
     <description>Recent content in Web Security on Subhrajit Das</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>© 2026 Subhrajit Das</copyright>
-    <lastBuildDate>Wed, 01 Oct 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://iitgn-fuss.github.io/people/subhrajit/tags/web-security/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 01 Oct 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:61763/people/subhrajit/tags/web-security/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Developer Experience of Consent Management Platform Integration</title>
-      <link>https://iitgn-fuss.github.io/people/subhrajit/projects/cmp-integration/</link>
+      <link>http://localhost:61763/people/subhrajit/projects/cmp-integration/</link>
       <pubDate>Wed, 01 Oct 2025 00:00:00 +0000</pubDate>
       
-      <guid>https://iitgn-fuss.github.io/people/subhrajit/projects/cmp-integration/</guid>
+      <guid>http://localhost:61763/people/subhrajit/projects/cmp-integration/</guid>
       <description>&lt;p&gt;&lt;strong&gt;Team Contributor&lt;/strong&gt; at IIT Gandhinagar, &lt;em&gt;Oct 2025 – Present&lt;/em&gt;&lt;/p&gt;&#xA;&lt;p&gt;Investigating the usability challenges developers face when integrating Consent Management Platforms (CMPs) into web applications.&lt;/p&gt;</description>
       
     </item>

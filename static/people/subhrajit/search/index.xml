@@ -2,12 +2,12 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Search on Subhrajit Das</title>
-    <link>https://iitgn-fuss.github.io/people/subhrajit/search/</link>
+    <link>http://localhost:61763/people/subhrajit/search/</link>
     <description>Recent content in Search on Subhrajit Das</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>© 2026 Subhrajit Das</copyright>
-    <lastBuildDate></lastBuildDate><atom:link href="https://iitgn-fuss.github.io/people/subhrajit/search/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate></lastBuildDate><atom:link href="http://localhost:61763/people/subhrajit/search/index.xml" rel="self" type="application/rss+xml" />
     
   </channel>
 </rss>

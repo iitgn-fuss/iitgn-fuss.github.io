@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on Subhrajit Das</title>
-    <link>https://iitgn-fuss.github.io/people/subhrajit/categories/</link>
+    <link>http://localhost:61763/people/subhrajit/categories/</link>
     <description>Recent content in Categories on Subhrajit Das</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>© 2026 Subhrajit Das</copyright>
-    <lastBuildDate>Fri, 26 Dec 2025 11:30:00 +0530</lastBuildDate><atom:link href="https://iitgn-fuss.github.io/people/subhrajit/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 26 Dec 2025 11:30:00 +0530</lastBuildDate><atom:link href="http://localhost:61763/people/subhrajit/categories/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Systems</title>
-      <link>https://iitgn-fuss.github.io/people/subhrajit/categories/systems/</link>
+      <link>http://localhost:61763/people/subhrajit/categories/systems/</link>
       <pubDate>Fri, 26 Dec 2025 11:30:00 +0530</pubDate>
       
-      <guid>https://iitgn-fuss.github.io/people/subhrajit/categories/systems/</guid>
+      <guid>http://localhost:61763/people/subhrajit/categories/systems/</guid>
       <description></description>
       
     </item>
