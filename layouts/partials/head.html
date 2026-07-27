@@ -331,6 +331,15 @@
       var analyticsLoaded = false;
       var consentPollId = null;
       var consentPollAttempts = 0;
+      var nonEssentialConsentGranted = false;
+
+      window.__siteCanLoadNonEssentialContent = function () {
+        return nonEssentialConsentGranted;
+      };
+
+      function markNonEssentialConsentGranted() {
+        nonEssentialConsentGranted = true;
+      }
 
       function loadGoogleAnalytics() {
         if (analyticsLoaded) {
@@ -338,6 +347,7 @@
         }
 
         analyticsLoaded = true;
+        markNonEssentialConsentGranted();
 
         if (consentPollId) {
           window.clearInterval(consentPollId);
@@ -389,6 +399,7 @@
 
         window.__gpp('ping', function (pingData, success) {
           if (success && pingData && pingData.signalStatus === 'ready' && loadIfConsentedFromPing(pingData)) {
+            markNonEssentialConsentGranted();
             loadGoogleAnalytics();
           }
         });
@@ -442,6 +453,112 @@
         document.addEventListener('DOMContentLoaded', initConsentAwareAnalytics, { once: true });
       } else {
         initConsentAwareAnalytics();
+      }
+    })();
+  </script>
+  <style>
+    .site-privacy-button {
+      position: fixed;
+      right: 1rem;
+      bottom: 1rem;
+      z-index: 2147483646;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.7rem 1rem;
+      border-radius: 999px;
+      border: 1px solid color-mix(in srgb, var(--tw-prose-links, #6b7280) 35%, transparent);
+      background: rgba(17, 24, 39, 0.92);
+      color: #f9fafb;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+      font-size: 0.875rem;
+      line-height: 1;
+      cursor: pointer;
+      backdrop-filter: blur(12px);
+    }
+
+    .site-privacy-button:hover {
+      transform: translateY(-1px);
+    }
+
+    .site-privacy-button:focus-visible {
+      outline: 2px solid #93c5fd;
+      outline-offset: 3px;
+    }
+
+    .site-privacy-button__icon {
+      font-size: 1rem;
+    }
+
+    .site-privacy-button__label {
+      font-weight: 600;
+      letter-spacing: 0.01em;
+    }
+
+    @media (max-width: 640px) {
+      .site-privacy-button {
+        right: 0.75rem;
+        bottom: 0.75rem;
+        padding: 0.65rem 0.9rem;
+      }
+    }
+  </style>
+  <script>
+    (function () {
+      function findCmpPrivacyTrigger() {
+        var anchors = Array.prototype.slice.call(document.querySelectorAll('a'));
+
+        for (var i = 0; i < anchors.length; i++) {
+          var anchor = anchors[i];
+          if (anchor.getAttribute('href') === '#' && anchor.textContent && anchor.textContent.trim().toLowerCase() === 'privacy') {
+            return anchor;
+          }
+        }
+
+        return null;
+      }
+
+      function ensureFloatingPrivacyButton() {
+        var cmpTrigger = findCmpPrivacyTrigger();
+
+        if (cmpTrigger) {
+          cmpTrigger.style.display = 'none';
+        }
+
+        if (document.querySelector('.site-privacy-button')) {
+          return;
+        }
+
+        var button = document.createElement('button');
+        button.type = 'button';
+        button.className = 'site-privacy-button';
+        button.setAttribute('aria-label', 'Open privacy settings');
+        button.innerHTML = '<span class="site-privacy-button__icon">\uD83D\uDD12</span><span class="site-privacy-button__label">Privacy</span>';
+
+        button.addEventListener('click', function () {
+          var trigger = findCmpPrivacyTrigger();
+
+          if (trigger) {
+            trigger.click();
+          }
+        });
+
+        document.body.appendChild(button);
+      }
+
+      function bootPrivacyButton() {
+        if (document.body) {
+          ensureFloatingPrivacyButton();
+          return;
+        }
+
+        window.setTimeout(bootPrivacyButton, 100);
+      }
+
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', bootPrivacyButton, { once: true });
+      } else {
+        bootPrivacyButton();
       }
     })();
   </script>

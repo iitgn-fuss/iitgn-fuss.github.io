@@ -1,0 +1,72 @@
+{{- /*
+Shortcode to include a PDF file in a page.
+
+If the PDF URL is remote, delay embedding until the page-level consent helper
+allows non-essential content to load.
+
+@param {string} 0 The path to the PDF file.
+
+@example {{< pdf "path/to/file.pdf" >}}
+*/ -}}
+
+{{- $path := .Get 0 -}}
+{{- $url := partial "utils/file-path" (dict "page" .Page "path" $path) -}}
+{{- $isRemote := or (strings.HasPrefix $url "http://") (strings.HasPrefix $url "https://") -}}
+
+<div class="hextra-pdf" data-hextra-pdf-src="{{ $url | safeURL }}">
+  {{- if $isRemote -}}
+    <div class="hextra-pdf__placeholder">
+      <p>This PDF is hosted on a third-party domain and will load after you accept non-essential cookies.</p>
+    </div>
+  {{- else -}}
+    <iframe src="{{ $url | safeURL }}" width="100%" style="min-height: 32rem;" frameborder="0"></iframe>
+  {{- end -}}
+</div>
+
+{{- if $isRemote -}}
+  <script>
+    (function () {
+      var root = document.currentScript.previousElementSibling;
+      if (!root) {
+        return;
+      }
+
+      var src = root.getAttribute('data-hextra-pdf-src');
+      var loaded = false;
+
+      function canLoadEmbed() {
+        return typeof window.__siteCanLoadNonEssentialContent === 'function' && window.__siteCanLoadNonEssentialContent();
+      }
+
+      function loadPdf() {
+        if (loaded || !canLoadEmbed()) {
+          return;
+        }
+
+        loaded = true;
+        root.innerHTML = '';
+
+        var iframe = document.createElement('iframe');
+        iframe.src = src;
+        iframe.width = '100%';
+        iframe.style.minHeight = '32rem';
+        iframe.frameBorder = '0';
+        root.appendChild(iframe);
+      }
+
+      function pollUntilConsented() {
+        if (loaded) {
+          return;
+        }
+
+        loadPdf();
+
+        if (!loaded) {
+          window.setTimeout(pollUntilConsented, 1000);
+        }
+      }
+
+      pollUntilConsented();
+    })();
+  </script>
+{{- end -}}
