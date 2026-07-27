@@ -324,14 +324,126 @@
   })();
   </script>
 <!-- End InMobi Choice. Consent Manager Tag v3.0 (for TCF 2.2) -->
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-EZGKQP910Z"></script>
+  <!-- Google Analytics is loaded only after CMP consent is available. -->
   <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
+    (function () {
+      var gaId = 'G-EZGKQP910Z';
+      var analyticsLoaded = false;
+      var consentPollId = null;
+      var consentPollAttempts = 0;
 
-    gtag('config', 'G-EZGKQP910Z');
+      function loadGoogleAnalytics() {
+        if (analyticsLoaded) {
+          return;
+        }
+
+        analyticsLoaded = true;
+
+        if (consentPollId) {
+          window.clearInterval(consentPollId);
+          consentPollId = null;
+        }
+
+        window.dataLayer = window.dataLayer || [];
+        window.gtag = window.gtag || function () {
+          window.dataLayer.push(arguments);
+        };
+
+        var script = document.createElement('script');
+        script.async = true;
+        script.src = 'https://www.googletagmanager.com/gtag/js?id=' + gaId;
+        document.head.appendChild(script);
+
+        window.gtag('js', new Date());
+        window.gtag('config', gaId);
+      }
+
+      function loadIfConsentedFromPing(pingData) {
+        if (!pingData) {
+          return false;
+        }
+
+        var parsedSections = pingData.parsedSections || {};
+        var tcfSection = parsedSections.tcfeuv2 || parsedSections['2:tcfeuv2'];
+
+        if (tcfSection && tcfSection.PurposeConsents) {
+          return tcfSection.PurposeConsents[1] === true || tcfSection.PurposeConsents['1'] === true;
+        }
+
+        var usNatSection = parsedSections.usnatv1 || parsedSections['7:usnatv1'];
+
+        if (usNatSection) {
+          var saleOptOut = usNatSection.SaleOptOut || usNatSection.saleOptOut;
+          var targetedAdvertisingOptOut = usNatSection.TargetedAdvertisingOptOut || usNatSection.targetedAdvertisingOptOut;
+
+          return saleOptOut !== true && targetedAdvertisingOptOut !== true;
+        }
+
+        return false;
+      }
+
+      function evaluateConsent() {
+        if (typeof window.__gpp !== 'function') {
+          return;
+        }
+
+        window.__gpp('ping', function (pingData, success) {
+          if (success && pingData && pingData.signalStatus === 'ready' && loadIfConsentedFromPing(pingData)) {
+            loadGoogleAnalytics();
+          }
+        });
+      }
+
+      function onGppEvent(gppData, success) {
+        if (!success || !gppData) {
+          return;
+        }
+
+        if (gppData.eventName === 'signalStatus' && gppData.data === 'ready') {
+          evaluateConsent();
+          return;
+        }
+
+        if (gppData.eventName === 'sectionChange' && gppData.pingData && loadIfConsentedFromPing(gppData.pingData)) {
+          loadGoogleAnalytics();
+        }
+      }
+
+      function initConsentAwareAnalytics() {
+        if (typeof window.__gpp !== 'function') {
+          window.setTimeout(initConsentAwareAnalytics, 250);
+          return;
+        }
+
+        window.__gpp('addEventListener', onGppEvent);
+        evaluateConsent();
+
+        if (!consentPollId) {
+          consentPollId = window.setInterval(function () {
+            if (analyticsLoaded) {
+              window.clearInterval(consentPollId);
+              consentPollId = null;
+              return;
+            }
+
+            consentPollAttempts++;
+            if (consentPollAttempts > 20) {
+              window.clearInterval(consentPollId);
+              consentPollId = null;
+              return;
+            }
+
+            evaluateConsent();
+          }, 1000);
+        }
+      }
+
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initConsentAwareAnalytics, { once: true });
+      } else {
+        initConsentAwareAnalytics();
+      }
+    })();
   </script>
   <meta name="google-site-verification" content="GE4j2k-pPsDxdMZcoBUfrCRfn_Nr1i0zesjJ-il-IuQ" />
   <meta charset="utf-8" />
