@@ -1,4 +1,61 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>FUSS Group @ IITGn – Presentation</title><link>https://iitgn-fuss.github.io/tags/presentation/</link><description>Recent content in Presentation on FUSS Group @ IITGn</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Thu, 04 Jun 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://iitgn-fuss.github.io/tags/presentation/index.xml" rel="self" type="application/rss+xml"/><item><title>Our New Work on Analyzing Usability and Legal Compliance of Consent Withdrawal on the Web accepted at CCS 2026</title><link>https://iitgn-fuss.github.io/news/compliance-ccs26/</link><pubDate>Thu, 04 Jun 2026 00:00:00 +0000</pubDate><guid>https://iitgn-fuss.github.io/news/compliance-ccs26/</guid><description>
-&lt;p&gt;We are happy to share that our new work, &amp;ldquo;&lt;a href="#" &gt;Usability Compliance vs. Legal Compliance of Consent Withdrawal on the Web: An Expert Evaluation of 200 Websites&lt;/a&gt;&amp;rdquo;, has been accepted at the The 33rd ACM Conference on Computer and Communications Security (CCS).&lt;/p&gt;</description></item><item><title>Gayatri presented her work at PETS 2025</title><link>https://iitgn-fuss.github.io/news/gayatri-pets25/</link><pubDate>Sun, 20 Jul 2025 00:00:00 +0000</pubDate><guid>https://iitgn-fuss.github.io/news/gayatri-pets25/</guid><description>
-&lt;p&gt;We are delighted to announce that Gayatri&amp;rsquo;s work &amp;ldquo;&lt;a href="https://petsymposium.org/popets/2025/popets-2025-0133.pdf" target="_blank" rel="noopener"&gt;Johnny can’t revoke consent either: measuring compliance of consent revocation on the web&lt;/a&gt;&amp;rdquo; has been published at the Privacy Enhancing Technologies Symposium 2025.&lt;/p&gt;</description></item><item><title>Gayatri's Work Accepted at WWW 2025</title><link>https://iitgn-fuss.github.io/news/gayatri-web-conf25/</link><pubDate>Mon, 20 Jan 2025 00:00:00 +0000</pubDate><guid>https://iitgn-fuss.github.io/news/gayatri-web-conf25/</guid><description>
-&lt;p&gt;We are delighted to announce that Gayatri&amp;rsquo;s work &amp;ldquo;&lt;a href="https://dl.acm.org/doi/pdf/10.1145/3696410.3714887" target="_blank" rel="noopener"&gt;Least Privilege Access for Persistent Storage Mechanisms in Web Browsers&lt;/a&gt;&amp;rdquo; has been published at the Web Conference 2025.&lt;/p&gt;</description></item></channel></rss>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>FUSS Group @ IITGn – Presentation</title>
+    <link>http://localhost:64418/tags/presentation/</link>
+    <description>Recent content in Presentation on FUSS Group @ IITGn</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 04 Jun 2026 00:00:00 +0000</lastBuildDate>
+    
+	  <atom:link href="http://localhost:64418/tags/presentation/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+    <item>
+      <title>Our New Work on Analyzing Usability and Legal Compliance of Consent Withdrawal on the Web accepted at CCS 2026</title>
+      <link>http://localhost:64418/news/compliance-ccs26/</link>
+      <pubDate>Thu, 04 Jun 2026 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:64418/news/compliance-ccs26/</guid>
+      <description>
+        
+        
+        &lt;p&gt;We are happy to share that our new work, &amp;ldquo;&lt;a href=&#34;#&#34; &gt;Usability Compliance vs. Legal Compliance of Consent Withdrawal on the Web: An Expert Evaluation of 200 Websites&lt;/a&gt;&amp;rdquo;, has been accepted at the The 33rd ACM Conference on Computer and Communications Security (CCS).&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Gayatri presented her work at PETS 2025</title>
+      <link>http://localhost:64418/news/gayatri-pets25/</link>
+      <pubDate>Sun, 20 Jul 2025 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:64418/news/gayatri-pets25/</guid>
+      <description>
+        
+        
+        &lt;p&gt;We are delighted to announce that Gayatri&amp;rsquo;s work &amp;ldquo;&lt;a href=&#34;https://petsymposium.org/popets/2025/popets-2025-0133.pdf&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Johnny can’t revoke consent either: measuring compliance of consent revocation on the web&lt;/a&gt;&amp;rdquo; has been published at the Privacy Enhancing Technologies Symposium 2025.&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Gayatri&#39;s Work Accepted at WWW 2025</title>
+      <link>http://localhost:64418/news/gayatri-web-conf25/</link>
+      <pubDate>Mon, 20 Jan 2025 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:64418/news/gayatri-web-conf25/</guid>
+      <description>
+        
+        
+        &lt;p&gt;We are delighted to announce that Gayatri&amp;rsquo;s work &amp;ldquo;&lt;a href=&#34;https://dl.acm.org/doi/pdf/10.1145/3696410.3714887&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Least Privilege Access for Persistent Storage Mechanisms in Web Browsers&lt;/a&gt;&amp;rdquo; has been published at the Web Conference 2025.&lt;/p&gt;
+
+      </description>
+    </item>
+    
+  </channel>
+</rss>
