@@ -1,170 +1,140 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>FUSS Group @ IITGn – Publications</title>
-    <link>http://localhost:1313/tags/publications/</link>
-    <description>Recent content in Publications on FUSS Group @ IITGn</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    
-	  <atom:link href="http://localhost:1313/tags/publications/index.xml" rel="self" type="application/rss+xml" />
-    
-    
-      
-        
-      
-    
-    
-    <item>
-      <title>Publications</title>
-      <link>http://localhost:1313/publications/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://localhost:1313/publications/</guid>
-      <description>
-        
-        
-        &lt;h2&gt;2026&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;2026&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#2026&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;&lt;a href=&#34;#&#34; &gt;&amp;ldquo;Usability Compliance vs. Legal Compliance of Consent Withdrawal on the Web: An Expert Evaluation of 200 Websites&amp;rdquo;&lt;/a&gt;&lt;/strong&gt;&lt;br&gt;
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>FUSS Group @ IITGn – Publications</title><link>https://iitgn-fuss.github.io/tags/publications/</link><description>Recent content in Publications on FUSS Group @ IITGn</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><atom:link href="https://iitgn-fuss.github.io/tags/publications/index.xml" rel="self" type="application/rss+xml"/><item><title>Publications</title><link>https://iitgn-fuss.github.io/publications/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://iitgn-fuss.github.io/publications/</guid><description>
+&lt;h2&gt;2026&lt;span class="hx:absolute hx:-mt-20" id="2026"&gt;&lt;/span&gt;
+&lt;a href="#2026" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;&lt;a href="#" &gt;&amp;ldquo;Usability Compliance vs. Legal Compliance of Consent Withdrawal on the Web: An Expert Evaluation of 200 Websites&amp;rdquo;&lt;/a&gt;&lt;/strong&gt;&lt;br&gt;
 S. Ahuja, G. Kancherla, C. Santos, N. Bielova, A. Bichhawat&lt;br&gt;
 &lt;em&gt;The 33rd ACM Conference on Computer and Communications Security (CCS)&lt;/em&gt;, November 2026&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;&lt;a href=&#34;https://www.computer.org/csdl/proceedings-article/sp/2026/606500a076/2bojv9k3yOk&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;“I Wonder if These Warnings Are Accurate”: Security and Privacy Advice in Nine Majority World Countries&lt;/a&gt;&lt;/strong&gt;&lt;br&gt;
+&lt;p&gt;&lt;strong&gt;&lt;a href="https://www.computer.org/csdl/proceedings-article/sp/2026/606500a076/2bojv9k3yOk" target="_blank" rel="noopener"&gt;“I Wonder if These Warnings Are Accurate”: Security and Privacy Advice in Nine Majority World Countries&lt;/a&gt;&lt;/strong&gt;&lt;br&gt;
 Collins W. Munyendo, Veronica A. Rivera, Jackie Hu, Emmanuel Tweneboah, Amna Shahnawaz, Karen Sowon, Dilara Kekulluoglu, Marcos Silva, Yue Deng, Mercy Omeiza, Gayatri Priyadarsini Kancherla, Maria Rosario Niniz Silva, Maryam Mustafa, Abhishek Bichhawat, Francisco Marmolejo-Cossio, Elissa M. Redmiles, Yixin Zou&lt;br&gt;
 &lt;em&gt;47th IEEE Symposium on Security and Privacy (Oakland)&lt;/em&gt;, May 2026&lt;/p&gt;
-&lt;h2&gt;2025&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;2025&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#2025&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;&lt;a href=&#34;https://drops.dagstuhl.de/entities/document/10.4230/LIPIcs.FSTTCS.2025.44&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Fall-through Semantics for Mitigating Timing-based Side Channel Leaks&lt;/a&gt;&lt;/strong&gt;&lt;br&gt;
+&lt;h2&gt;2025&lt;span class="hx:absolute hx:-mt-20" id="2025"&gt;&lt;/span&gt;
+&lt;a href="#2025" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;&lt;a href="https://drops.dagstuhl.de/entities/document/10.4230/LIPIcs.FSTTCS.2025.44" target="_blank" rel="noopener"&gt;Fall-through Semantics for Mitigating Timing-based Side Channel Leaks&lt;/a&gt;&lt;/strong&gt;&lt;br&gt;
 Aniket Mishra and Abhishek Bichhawat&lt;br&gt;
 &lt;em&gt;45th IARCS Annual Conference on Foundations of Software Technology and Theoretical Computer Science (FSTTCS)&lt;/em&gt;, December 2025&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;&lt;a href=&#34;https://petsymposium.org/popets/2025/popets-2025-0133.pdf&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Johnny can’t revoke consent either: measuring compliance of consent revocation on the web&lt;/a&gt;&lt;/strong&gt;       &lt;br&gt;
-GP Kancherla, N Bielova, C Santos, A Bichhawat       &lt;br&gt;
+&lt;p&gt;&lt;strong&gt;&lt;a href="https://petsymposium.org/popets/2025/popets-2025-0133.pdf" target="_blank" rel="noopener"&gt;Johnny can’t revoke consent either: measuring compliance of consent revocation on the web&lt;/a&gt;&lt;/strong&gt; &lt;br&gt;
+GP Kancherla, N Bielova, C Santos, A Bichhawat &lt;br&gt;
 &lt;em&gt;Proceedings on Privacy Enhancing Technologies&lt;/em&gt;, July 2025&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;&lt;a href=&#34;https://hal.science/hal-05302086v1/file/APVP_25__Usability_Consent_Withdrawal.pdf&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;How Usable is Consent Withdrawal on the Web? UI Requirements and Expert Evaluation&lt;/a&gt;&lt;/strong&gt; &lt;br&gt;
-S Ahuja, GP Kancherla, CT Santos, N Bielova, A Bichhawat       &lt;br&gt;
+&lt;p&gt;&lt;strong&gt;&lt;a href="https://hal.science/hal-05302086v1/file/APVP_25__Usability_Consent_Withdrawal.pdf" target="_blank" rel="noopener"&gt;How Usable is Consent Withdrawal on the Web? UI Requirements and Expert Evaluation&lt;/a&gt;&lt;/strong&gt; &lt;br&gt;
+S Ahuja, GP Kancherla, CT Santos, N Bielova, A Bichhawat &lt;br&gt;
 &lt;em&gt;HAL open science&lt;/em&gt;, 2025&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;&lt;a href=&#34;https://arxiv.org/pdf/2504.19215&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;On the Prevalence and Usage of Commit Signing on GitHub: A Longitudinal and Cross-Domain Study&lt;/a&gt;&lt;/strong&gt; &lt;br&gt;
+&lt;p&gt;&lt;strong&gt;&lt;a href="https://arxiv.org/pdf/2504.19215" target="_blank" rel="noopener"&gt;On the Prevalence and Usage of Commit Signing on GitHub: A Longitudinal and Cross-Domain Study&lt;/a&gt;&lt;/strong&gt; &lt;br&gt;
 A Sharma, S Karmakar, GP Kancherla, A Bichhawat &lt;br&gt;
 &lt;em&gt;Evaluation and Assessment in Software Engineering (EASE) 2025&lt;/em&gt;, June 2025&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;&lt;a href=&#34;https://dl.acm.org/doi/pdf/10.1145/3696410.3714887&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Least Privilege Access for Persistent Storage Mechanisms in Web Browsers&lt;/a&gt;&lt;/strong&gt; &lt;br&gt;
-GP Kancherla, D Goel, A Bichhawat       &lt;br&gt;
+&lt;p&gt;&lt;strong&gt;&lt;a href="https://dl.acm.org/doi/pdf/10.1145/3696410.3714887" target="_blank" rel="noopener"&gt;Least Privilege Access for Persistent Storage Mechanisms in Web Browsers&lt;/a&gt;&lt;/strong&gt; &lt;br&gt;
+GP Kancherla, D Goel, A Bichhawat &lt;br&gt;
 &lt;em&gt;Proceedings of the ACM on Web Conference 2025&lt;/em&gt;, April 2025&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;&lt;a href=&#34;https://scholar.google.com/citations?view_op=view_citation&amp;amp;hl=en&amp;amp;user=JX0CWckAAAAJ&amp;amp;pagesize=100&amp;amp;citation_for_view=JX0CWckAAAAJ:hFOr9nPyWt4C&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;A Unified Browser-Based Consent Management Framework&lt;/a&gt;&lt;/strong&gt; &lt;br&gt;
+&lt;p&gt;&lt;strong&gt;&lt;a href="https://scholar.google.com/citations?view_op=view_citation&amp;amp;hl=en&amp;amp;user=JX0CWckAAAAJ&amp;amp;pagesize=100&amp;amp;citation_for_view=JX0CWckAAAAJ:hFOr9nPyWt4C" target="_blank" rel="noopener"&gt;A Unified Browser-Based Consent Management Framework&lt;/a&gt;&lt;/strong&gt; &lt;br&gt;
 GP Kancherla, A Bichhawat &lt;br&gt;
 &lt;em&gt;47th International Conference on Software Engineering: New Ideas and Emerging Results (ICSE-NIER)&lt;/em&gt;, April 2025&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;&lt;a href=&#34;https://dl.acm.org/doi/pdf/10.1145/3717383.3717392&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Worst-Case Response Time Analysis for Periodic Programs with Nested Locks&lt;/a&gt;&lt;/strong&gt; &lt;br&gt;
+&lt;p&gt;&lt;strong&gt;&lt;a href="https://dl.acm.org/doi/pdf/10.1145/3717383.3717392" target="_blank" rel="noopener"&gt;Worst-Case Response Time Analysis for Periodic Programs with Nested Locks&lt;/a&gt;&lt;/strong&gt; &lt;br&gt;
 HM Ramolia, SS Kanawade, A Bichhawat &lt;br&gt;
 &lt;em&gt;Proceedings of the 18th Innovations in Software Engineering Conference&lt;/em&gt;, February 2025&lt;/p&gt;
 &lt;hr&gt;
-&lt;h2&gt;2024&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;2024&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#2024&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;&lt;a href=&#34;https://arxiv.org/pdf/2501.14330&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Online Authentication Habits of Indian Users&lt;/a&gt;&lt;/strong&gt; &lt;br&gt;
+&lt;h2&gt;2024&lt;span class="hx:absolute hx:-mt-20" id="2024"&gt;&lt;/span&gt;
+&lt;a href="#2024" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;&lt;a href="https://arxiv.org/pdf/2501.14330" target="_blank" rel="noopener"&gt;Online Authentication Habits of Indian Users&lt;/a&gt;&lt;/strong&gt; &lt;br&gt;
 P Choudhary, S Das, MP Potta, P Das, A Bichhawat &lt;br&gt;
 &lt;em&gt;2024 Conference on Building a Secure &amp;amp; Empowered Cyberspace (BuildSEC)&lt;/em&gt;, December 2024&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;&lt;a href=&#34;https://scholar.google.com/citations?view_op=view_citation&amp;amp;hl=en&amp;amp;user=JX0CWckAAAAJ&amp;amp;pagesize=100&amp;amp;citation_for_view=JX0CWckAAAAJ:ZeXyd9-uunAC&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Web Privacy Perceptions Amongst Indian Users&lt;/a&gt;&lt;/strong&gt; &lt;br&gt;
+&lt;p&gt;&lt;strong&gt;&lt;a href="https://scholar.google.com/citations?view_op=view_citation&amp;amp;hl=en&amp;amp;user=JX0CWckAAAAJ&amp;amp;pagesize=100&amp;amp;citation_for_view=JX0CWckAAAAJ:ZeXyd9-uunAC" target="_blank" rel="noopener"&gt;Web Privacy Perceptions Amongst Indian Users&lt;/a&gt;&lt;/strong&gt; &lt;br&gt;
 G Priyadarsini, A Saxena, A Dey, Prakriti, A Bichhawat &lt;br&gt;
 &lt;em&gt;International Conference on Information Systems Security&lt;/em&gt;, December 2024&lt;/p&gt;
 &lt;hr&gt;
-&lt;h2&gt;2023&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;2023&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#2023&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;&lt;a href=&#34;https://dl.acm.org/doi/pdf/10.1145/3576915.3623110&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Tainted Secure Multi-Execution to Restrict Attacker Influence&lt;/a&gt;&lt;/strong&gt; &lt;br&gt;
+&lt;h2&gt;2023&lt;span class="hx:absolute hx:-mt-20" id="2023"&gt;&lt;/span&gt;
+&lt;a href="#2023" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;&lt;a href="https://dl.acm.org/doi/pdf/10.1145/3576915.3623110" target="_blank" rel="noopener"&gt;Tainted Secure Multi-Execution to Restrict Attacker Influence&lt;/a&gt;&lt;/strong&gt; &lt;br&gt;
 MK McCall, A Bichhawat, L Jia &lt;br&gt;
 &lt;em&gt;Proceedings of the 2023 ACM SIGSAC Conference on Computer and Communications Security&lt;/em&gt;, November 2023&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;&lt;a href=&#34;https://elib.uni-stuttgart.de/bitstreams/c91e5288-7d38-40c6-849b-d0bc54e09cb4/download&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Layered Symbolic Security Analysis in&lt;/a&gt;&lt;/strong&gt; &lt;br&gt;
+&lt;p&gt;&lt;strong&gt;&lt;a href="https://elib.uni-stuttgart.de/bitstreams/c91e5288-7d38-40c6-849b-d0bc54e09cb4/download" target="_blank" rel="noopener"&gt;Layered Symbolic Security Analysis in&lt;/a&gt;&lt;/strong&gt; &lt;br&gt;
 Karthikeyan Bhargavan, Abhishek Bichhawat, Pedram Hosseyni, Ralf Küsters, Klaas Pruiksma, Guido Schmitz, Clara Waldmann, Tim Würtele &lt;br&gt;
 &lt;em&gt;European Symposium on Research in Computer Security&lt;/em&gt;, September 2023&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;&lt;a href=&#34;https://www.usenix.org/system/files/soups2023-mccall.pdf&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Towards Usable Security Analysis Tools for {Trigger-Action} Programming&lt;/a&gt;&lt;/strong&gt; &lt;br&gt;
+&lt;p&gt;&lt;strong&gt;&lt;a href="https://www.usenix.org/system/files/soups2023-mccall.pdf" target="_blank" rel="noopener"&gt;Towards Usable Security Analysis Tools for {Trigger-Action} Programming&lt;/a&gt;&lt;/strong&gt; &lt;br&gt;
 McKenna McCall, Eric Zeng, Faysal Hossain Shezan, Mitchell Yang, Lujo Bauer, Abhishek Bichhawat, Camille Cobb, Limin Jia, Yuan Tian &lt;br&gt;
 &lt;em&gt;Nineteenth Symposium on Usable Privacy and Security (SOUPS 2023)&lt;/em&gt;, August 2023&lt;/p&gt;
 &lt;hr&gt;
-&lt;h2&gt;2022&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;2022&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#2022&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;&lt;a href=&#34;https://par.nsf.gov/servlets/purl/10385222&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Compositional information flow monitoring for reactive programs&lt;/a&gt;&lt;/strong&gt; &lt;br&gt;
+&lt;h2&gt;2022&lt;span class="hx:absolute hx:-mt-20" id="2022"&gt;&lt;/span&gt;
+&lt;a href="#2022" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;&lt;a href="https://par.nsf.gov/servlets/purl/10385222" target="_blank" rel="noopener"&gt;Compositional information flow monitoring for reactive programs&lt;/a&gt;&lt;/strong&gt; &lt;br&gt;
 MK McCall, A Bichhawat, L Jia &lt;br&gt;
 &lt;em&gt;2022 IEEE 7th European Symposium on Security and Privacy (EuroS&amp;amp;P)&lt;/em&gt;, June 2022&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;&lt;a href=&#34;https://inria.hal.science/hal-03946578/document&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Noise: A library of verified high-performance secure channel protocol implementations&lt;/a&gt;&lt;/strong&gt; &lt;br&gt;
+&lt;p&gt;&lt;strong&gt;&lt;a href="https://inria.hal.science/hal-03946578/document" target="_blank" rel="noopener"&gt;Noise: A library of verified high-performance secure channel protocol implementations&lt;/a&gt;&lt;/strong&gt; &lt;br&gt;
 S Ho, J Protzenko, A Bichhawat, K Bhargavan &lt;br&gt;
 &lt;em&gt;2022 IEEE Symposium on Security and Privacy (SP)&lt;/em&gt;, May 2022&lt;/p&gt;
 &lt;hr&gt;
-&lt;h2&gt;2021&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;2021&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#2021&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;&lt;a href=&#34;https://eprint.iacr.org/2021/1457.pdf&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;An in-depth symbolic security analysis of the ACME standard&lt;/a&gt;&lt;/strong&gt; &lt;br&gt;
+&lt;h2&gt;2021&lt;span class="hx:absolute hx:-mt-20" id="2021"&gt;&lt;/span&gt;
+&lt;a href="#2021" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;&lt;a href="https://eprint.iacr.org/2021/1457.pdf" target="_blank" rel="noopener"&gt;An in-depth symbolic security analysis of the ACME standard&lt;/a&gt;&lt;/strong&gt; &lt;br&gt;
 Karthikeyan Bhargavan, Abhishek Bichhawat, Quoc Huy Do, Pedram Hosseyni, Ralf Küsters, Guido Schmitz, Tim Würtele&lt;br&gt;
 &lt;em&gt;Proceedings of the 2021 ACM SIGSAC conference on computer and communications security&lt;/em&gt;, November 2021&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;&lt;a href=&#34;https://publ.sec.uni-stuttgart.de/bhargavanbichhavatdohosseynikuestersschmitzwuertele-guttmanfest-2021.pdf&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;A Tutorial-Style Introduction to DY*&lt;/a&gt;&lt;/strong&gt; &lt;br&gt;
+&lt;p&gt;&lt;strong&gt;&lt;a href="https://publ.sec.uni-stuttgart.de/bhargavanbichhavatdohosseynikuestersschmitzwuertele-guttmanfest-2021.pdf" target="_blank" rel="noopener"&gt;A Tutorial-Style Introduction to DY*&lt;/a&gt;&lt;/strong&gt; &lt;br&gt;
 Karthikeyan Bhargavan, Abhishek Bichhawat, Quoc Huy Do, Pedram Hosseyni, Ralf Küsters, Guido Schmitz, Tim Würtele&lt;br&gt;
 &lt;em&gt;Protocols, Strands, and Logic: Essays Dedicated to Joshua Guttman on the Occasion of his 66.66 th Birthday&lt;/em&gt;, November 2021&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;&lt;a href=&#34;https://inria.hal.science/hal-03178425/file/dy-star-eurosp21.pdf&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;DY*: A Modular Symbolic Verification Framework for Executable Cryptographic Protocol Code&lt;/a&gt;&lt;/strong&gt; &lt;br&gt;
+&lt;p&gt;&lt;strong&gt;&lt;a href="https://inria.hal.science/hal-03178425/file/dy-star-eurosp21.pdf" target="_blank" rel="noopener"&gt;DY*: A Modular Symbolic Verification Framework for Executable Cryptographic Protocol Code&lt;/a&gt;&lt;/strong&gt; &lt;br&gt;
 Karthikeyan Bhargavan, Abhishek Bichhawat, Quoc Huy Do, Pedram Hosseyni, Ralf Küsters, Guido Schmitz, Tim Würtele&lt;br&gt;
 &lt;em&gt;2021 IEEE European Symposium on Security and Privacy (EuroS&amp;amp;P)&lt;/em&gt;, September 2021&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;&lt;a href=&#34;https://kilthub.cmu.edu/articles/report/SafeTAP_An_Efficient_Incremental_Analyzer_for_Trigger-Action_Programs/14792271/1/files/28433025.pdf&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;SAFETAP: An efficient incremental analyzer for trigger-action programs&lt;/a&gt;&lt;/strong&gt; &lt;br&gt;
+&lt;p&gt;&lt;strong&gt;&lt;a href="https://kilthub.cmu.edu/articles/report/SafeTAP_An_Efficient_Incremental_Analyzer_for_Trigger-Action_Programs/14792271/1/files/28433025.pdf" target="_blank" rel="noopener"&gt;SAFETAP: An efficient incremental analyzer for trigger-action programs&lt;/a&gt;&lt;/strong&gt; &lt;br&gt;
 McKenna McCall, Faysal Hossain Shezan, Abhishek Bichhawat, Camille Cobb, Limin Jia, Yuan Tian, Cooper Grace, Mitchell Yang&lt;br&gt;
 &lt;em&gt;Carnegie Mellon University&lt;/em&gt;, 2021&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;&lt;a href=&#34;https://par.nsf.gov/servlets/purl/10385221&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Gradual security types and gradual guarantees&lt;/a&gt;&lt;/strong&gt; &lt;br&gt;
+&lt;p&gt;&lt;strong&gt;&lt;a href="https://par.nsf.gov/servlets/purl/10385221" target="_blank" rel="noopener"&gt;Gradual security types and gradual guarantees&lt;/a&gt;&lt;/strong&gt; &lt;br&gt;
 A Bichhawat, MK McCall, L Jia&lt;br&gt;
 &lt;em&gt;2021 IEEE 34th Computer Security Foundations Symposium (CSF)&lt;/em&gt;, June 2021&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;&lt;a href=&#34;https://people.mpi-sws.org/~dg/papers/jcs21.pdf&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Permissive runtime information flow control in the presence of exceptions&lt;/a&gt;&lt;/strong&gt; &lt;br&gt;
+&lt;p&gt;&lt;strong&gt;&lt;a href="https://people.mpi-sws.org/~dg/papers/jcs21.pdf" target="_blank" rel="noopener"&gt;Permissive runtime information flow control in the presence of exceptions&lt;/a&gt;&lt;/strong&gt; &lt;br&gt;
 A Bichhawat, V Rajani, D Garg, C Hammer&lt;br&gt;
 &lt;em&gt;Journal of Computer Security 29 (4)&lt;/em&gt;, 2021&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;&lt;a href=&#34;https://scholar.google.com/citations?view_op=view_citation&amp;amp;hl=en&amp;amp;user=JX0CWckAAAAJ&amp;amp;pagesize=100&amp;amp;citation_for_view=JX0CWckAAAAJ:Y0pCki6q_DkC&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;DY⋆ Code Repository&lt;/a&gt;&lt;/strong&gt; &lt;br&gt;
+&lt;p&gt;&lt;strong&gt;&lt;a href="https://scholar.google.com/citations?view_op=view_citation&amp;amp;hl=en&amp;amp;user=JX0CWckAAAAJ&amp;amp;pagesize=100&amp;amp;citation_for_view=JX0CWckAAAAJ:Y0pCki6q_DkC" target="_blank" rel="noopener"&gt;DY⋆ Code Repository&lt;/a&gt;&lt;/strong&gt; &lt;br&gt;
 Karthikeyan Bhargavan, Abhishek Bichhawat, Quoc Huy Do, Pedram Hosseyni, Ralf Küsters, Guido Schmitz, Tim Würtele&lt;br&gt;
 &lt;em&gt;URL: https://github. com/reprosec/dolev-yao-star&lt;/em&gt;, 2021&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;&lt;a href=&#34;https://www.cs.cmu.edu/~abichhaw/fullpublication/CSF21.pdf&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Automating Audit with Policy Inference&lt;/a&gt;&lt;/strong&gt; &lt;br&gt;
+&lt;p&gt;&lt;strong&gt;&lt;a href="https://www.cs.cmu.edu/~abichhaw/fullpublication/CSF21.pdf" target="_blank" rel="noopener"&gt;Automating Audit with Policy Inference&lt;/a&gt;&lt;/strong&gt; &lt;br&gt;
 A Bichhawat, M Fredrikson, J Yang&lt;br&gt;
 &lt;em&gt;2021 IEEE 34th Computer Security Foundations Symposium (CSF)&lt;/em&gt;, June 2021&lt;/p&gt;
 &lt;hr&gt;
-&lt;h2&gt;2020&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;2020&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#2020&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;&lt;a href=&#34;https://dl.acm.org/doi/pdf/10.1145/3320269.3384759&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Contextual and granular policy enforcement in database-backed applications&lt;/a&gt;&lt;/strong&gt; &lt;br&gt;
+&lt;h2&gt;2020&lt;span class="hx:absolute hx:-mt-20" id="2020"&gt;&lt;/span&gt;
+&lt;a href="#2020" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;&lt;a href="https://dl.acm.org/doi/pdf/10.1145/3320269.3384759" target="_blank" rel="noopener"&gt;Contextual and granular policy enforcement in database-backed applications&lt;/a&gt;&lt;/strong&gt; &lt;br&gt;
 A Bichhawat, M Fredrikson, J Yang, A Trehan&lt;br&gt;
 &lt;em&gt;Proceedings of the 15th ACM Asia Conference on Computer and Communications Security&lt;/em&gt;, 2020&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;&lt;a href=&#34;https://arxiv.org/pdf/2003.12819&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;First-order Gradual Information Flow Types with Gradual Guarantees&lt;/a&gt;&lt;/strong&gt; &lt;br&gt;
+&lt;p&gt;&lt;strong&gt;&lt;a href="https://arxiv.org/pdf/2003.12819" target="_blank" rel="noopener"&gt;First-order Gradual Information Flow Types with Gradual Guarantees&lt;/a&gt;&lt;/strong&gt; &lt;br&gt;
 A Bichhawat, MK McCall, L Jia&lt;br&gt;
 &lt;em&gt;arXiv preprint arXiv:2003.12819&lt;/em&gt;, 2020&lt;/p&gt;
 &lt;hr&gt;
-&lt;h2&gt;2017&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;2017&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#2017&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;&lt;a href=&#34;https://arxiv.org/pdf/1706.06932&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;WebPol: Fine-grained information flow policies for web browsers&lt;/a&gt;&lt;/strong&gt; &lt;br&gt;
+&lt;h2&gt;2017&lt;span class="hx:absolute hx:-mt-20" id="2017"&gt;&lt;/span&gt;
+&lt;a href="#2017" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;&lt;a href="https://arxiv.org/pdf/1706.06932" target="_blank" rel="noopener"&gt;WebPol: Fine-grained information flow policies for web browsers&lt;/a&gt;&lt;/strong&gt; &lt;br&gt;
 A Bichhawat, V Rajani, J Jain, D Garg, C Hammer
 &lt;em&gt;European Symposium on Research in Computer Security&lt;/em&gt;, 2017&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;&lt;a href=&#34;https://publikationen.sulb.uni-saarland.de/bitstream/20.500.11880/27103/1/thesis.pdf&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Practical dynamic information flow control&lt;/a&gt;&lt;/strong&gt; &lt;br&gt;
+&lt;p&gt;&lt;strong&gt;&lt;a href="https://publikationen.sulb.uni-saarland.de/bitstream/20.500.11880/27103/1/thesis.pdf" target="_blank" rel="noopener"&gt;Practical dynamic information flow control&lt;/a&gt;&lt;/strong&gt; &lt;br&gt;
 A Bichhawat
 &lt;em&gt;Saarländische Universitäts-und Landesbibliothek&lt;/em&gt;, 2017&lt;/p&gt;
 &lt;hr&gt;
-&lt;h2&gt;2015&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;2015&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#2015&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;&lt;a href=&#34;https://people.mpi-sws.org/~dg/papers/csf15-ifc-full.pdf&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Information flow control for event handling and the DOM in web browsers&lt;/a&gt;&lt;/strong&gt; &lt;br&gt;
+&lt;h2&gt;2015&lt;span class="hx:absolute hx:-mt-20" id="2015"&gt;&lt;/span&gt;
+&lt;a href="#2015" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;&lt;a href="https://people.mpi-sws.org/~dg/papers/csf15-ifc-full.pdf" target="_blank" rel="noopener"&gt;Information flow control for event handling and the DOM in web browsers&lt;/a&gt;&lt;/strong&gt; &lt;br&gt;
 V Rajani, A Bichhawat, D Garg, C Hammer&lt;br&gt;
 &lt;em&gt;2015 IEEE 28th Computer Security Foundations Symposium&lt;/em&gt;, 2015&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;&lt;a href=&#34;https://scholar.google.com/citations?view_op=view_citation&amp;amp;hl=en&amp;amp;user=JX0CWckAAAAJ&amp;amp;pagesize=100&amp;amp;citation_for_view=JX0CWckAAAAJ:8k81kl-MbHgC&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Post-dominator analysis for precisely handling implicit flows&lt;/a&gt;&lt;/strong&gt; &lt;br&gt;
+&lt;p&gt;&lt;strong&gt;&lt;a href="https://scholar.google.com/citations?view_op=view_citation&amp;amp;hl=en&amp;amp;user=JX0CWckAAAAJ&amp;amp;pagesize=100&amp;amp;citation_for_view=JX0CWckAAAAJ:8k81kl-MbHgC" target="_blank" rel="noopener"&gt;Post-dominator analysis for precisely handling implicit flows&lt;/a&gt;&lt;/strong&gt; &lt;br&gt;
 A Bichhawat&lt;br&gt;
 &lt;em&gt;IEEE/ACM 37th IEEE International Conference on Software Engineering&lt;/em&gt;, May 2015&lt;/p&gt;
 &lt;hr&gt;
-&lt;h2&gt;2014&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;2014&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#2014&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;&lt;a href=&#34;https://arxiv.org/pdf/1401.4339&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Information flow control in WebKit’s JavaScript bytecode&lt;/a&gt;&lt;/strong&gt; &lt;br&gt;
+&lt;h2&gt;2014&lt;span class="hx:absolute hx:-mt-20" id="2014"&gt;&lt;/span&gt;
+&lt;a href="#2014" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;&lt;a href="https://arxiv.org/pdf/1401.4339" target="_blank" rel="noopener"&gt;Information flow control in WebKit’s JavaScript bytecode&lt;/a&gt;&lt;/strong&gt; &lt;br&gt;
 A Bichhawat, V Rajani, D Garg, C Hammer&lt;br&gt;
 &lt;em&gt;International conference on principles of security and trust&lt;/em&gt;, April 2014&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;&lt;a href=&#34;https://arxiv.org/pdf/1506.03950&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Generalizing permissive-upgrade in dynamic information flow analysis&lt;/a&gt;&lt;/strong&gt; &lt;br&gt;
+&lt;p&gt;&lt;strong&gt;&lt;a href="https://arxiv.org/pdf/1506.03950" target="_blank" rel="noopener"&gt;Generalizing permissive-upgrade in dynamic information flow analysis&lt;/a&gt;&lt;/strong&gt; &lt;br&gt;
 A Bichhawat, V Rajani, D Garg, C Hammer&lt;br&gt;
 &lt;em&gt;Proceedings of the Ninth Workshop on Programming Languages and Analysis for Security&lt;/em&gt;, July 2014&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;&lt;a href=&#34;https://scholar.google.com/citations?view_op=view_citation&amp;amp;hl=en&amp;amp;user=JX0CWckAAAAJ&amp;amp;pagesize=100&amp;amp;citation_for_view=JX0CWckAAAAJ:5nxA0vEk-isC&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Exception handling for dynamic information flow control&lt;/a&gt;&lt;/strong&gt; &lt;br&gt;
+&lt;p&gt;&lt;strong&gt;&lt;a href="https://scholar.google.com/citations?view_op=view_citation&amp;amp;hl=en&amp;amp;user=JX0CWckAAAAJ&amp;amp;pagesize=100&amp;amp;citation_for_view=JX0CWckAAAAJ:5nxA0vEk-isC" target="_blank" rel="noopener"&gt;Exception handling for dynamic information flow control&lt;/a&gt;&lt;/strong&gt; &lt;br&gt;
 A Bichhawat
 &lt;em&gt;Companion Proceedings of the 36th International Conference on Software …&lt;/em&gt;, May 2014&lt;/p&gt;
 &lt;hr&gt;
-&lt;h2&gt;2011&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;2011&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#2011&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;&lt;a href=&#34;https://www.academia.edu/download/47964836/Security_architecture_for_virtual_machines.pdf&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Security architecture for virtual machines&lt;/a&gt;&lt;/strong&gt; &lt;br&gt;
+&lt;h2&gt;2011&lt;span class="hx:absolute hx:-mt-20" id="2011"&gt;&lt;/span&gt;
+&lt;a href="#2011" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;&lt;a href="https://www.academia.edu/download/47964836/Security_architecture_for_virtual_machines.pdf" target="_blank" rel="noopener"&gt;Security architecture for virtual machines&lt;/a&gt;&lt;/strong&gt; &lt;br&gt;
 U Tupakula, V Varadharajan, A Bichhawat&lt;br&gt;
 &lt;em&gt;International Conference on Algorithms and Architectures for Parallel …&lt;/em&gt;, October 2011&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;&lt;a href=&#34;https://scholar.google.com/citations?view_op=view_citation&amp;amp;hl=en&amp;amp;user=JX0CWckAAAAJ&amp;amp;pagesize=100&amp;amp;citation_for_view=JX0CWckAAAAJ:roLk4NBRz8UC&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Proactive Fault Tolerance Technique for a Mobile Grid Environment&lt;/a&gt;&lt;/strong&gt; &lt;br&gt;
+&lt;p&gt;&lt;strong&gt;&lt;a href="https://scholar.google.com/citations?view_op=view_citation&amp;amp;hl=en&amp;amp;user=JX0CWckAAAAJ&amp;amp;pagesize=100&amp;amp;citation_for_view=JX0CWckAAAAJ:roLk4NBRz8UC" target="_blank" rel="noopener"&gt;Proactive Fault Tolerance Technique for a Mobile Grid Environment&lt;/a&gt;&lt;/strong&gt; &lt;br&gt;
 A Bichhawat, RC Joshi&lt;br&gt;
 &lt;em&gt;International Conference on Advances in Computing and Communication&lt;/em&gt;, 2011&lt;/p&gt;
 &lt;hr&gt;
-&lt;h2&gt;2010&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;2010&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#2010&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;&lt;a href=&#34;https://scholar.google.com/citations?view_op=view_citation&amp;amp;hl=en&amp;amp;user=JX0CWckAAAAJ&amp;amp;pagesize=100&amp;amp;citation_for_view=JX0CWckAAAAJ:eQOLeE2rZwMC&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;A survey on issues in mobile grid computing&lt;/a&gt;&lt;/strong&gt; &lt;br&gt;
+&lt;h2&gt;2010&lt;span class="hx:absolute hx:-mt-20" id="2010"&gt;&lt;/span&gt;
+&lt;a href="#2010" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;&lt;a href="https://scholar.google.com/citations?view_op=view_citation&amp;amp;hl=en&amp;amp;user=JX0CWckAAAAJ&amp;amp;pagesize=100&amp;amp;citation_for_view=JX0CWckAAAAJ:eQOLeE2rZwMC" target="_blank" rel="noopener"&gt;A survey on issues in mobile grid computing&lt;/a&gt;&lt;/strong&gt; &lt;br&gt;
 A Bichhawat, RC Joshi&lt;br&gt;
 &lt;em&gt;Int J Recent Trends Eng. Technol 4 (2)&lt;/em&gt;, 2010&lt;/p&gt;
 &lt;hr&gt;
-&lt;h2&gt;Misc.&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;misc&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#misc&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;&lt;a href=&#34;https://kilthub.cmu.edu/articles/report/Restricting_Attacker_Influence_in_Reactive_Programs_with_Dynamic_Secrets/22296628/1/files/39675085.pdf&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Restricting Attacker Influence in Reactive Programs with Dynamic Secrets&lt;/a&gt;&lt;/strong&gt; &lt;br&gt;
+&lt;h2&gt;Misc.&lt;span class="hx:absolute hx:-mt-20" id="misc"&gt;&lt;/span&gt;
+&lt;a href="#misc" class="subheading-anchor" aria-label="Permalink for this section"&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;&lt;a href="https://kilthub.cmu.edu/articles/report/Restricting_Attacker_Influence_in_Reactive_Programs_with_Dynamic_Secrets/22296628/1/files/39675085.pdf" target="_blank" rel="noopener"&gt;Restricting Attacker Influence in Reactive Programs with Dynamic Secrets&lt;/a&gt;&lt;/strong&gt; &lt;br&gt;
 MK McCall, A Bichhawat, L Jia&lt;br&gt;
 &lt;em&gt;Carnegie Mellon University&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;&lt;a href=&#34;https://www.ieee-security.org/TC/SP2015/posters/paper_60.pdf&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Poster: Security in Web-Based Workflows&lt;/a&gt;&lt;/strong&gt; &lt;br&gt;
+&lt;p&gt;&lt;strong&gt;&lt;a href="https://www.ieee-security.org/TC/SP2015/posters/paper_60.pdf" target="_blank" rel="noopener"&gt;Poster: Security in Web-Based Workflows&lt;/a&gt;&lt;/strong&gt; &lt;br&gt;
 Thomas Bauereiß, Abhishek Bichhawat, Iulia Bolosteanu, Peter Faymonville, Bernd Finkbeiner, Deepak Garg, Richard Gay, Sergey Grebenshchikov, Christian Hammer, Dieter Hutter, Ondrej Kuncar, Peter Lammich, Heiko Mantel, Christian Müller, Andrei Popescu, Markus Rabe, Vineet Rajani, Helmut Seidl, Markus Tasch, Leander Tentrup&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;&lt;a href=&#34;https://st.fbk.eu/assets/areas/events/OSW2018/osw2018_paper_1.pdf&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Status Report: Formal Analysis of Web Security&lt;/a&gt;&lt;/strong&gt; &lt;br&gt;
-K Bhargavan, A Bichhawat, QH Do, D Fett, R Küsters, G Schmitz&lt;/p&gt;
-
-      </description>
-    </item>
-    
-  </channel>
-</rss>
+&lt;p&gt;&lt;strong&gt;&lt;a href="https://st.fbk.eu/assets/areas/events/OSW2018/osw2018_paper_1.pdf" target="_blank" rel="noopener"&gt;Status Report: Formal Analysis of Web Security&lt;/a&gt;&lt;/strong&gt; &lt;br&gt;
+K Bhargavan, A Bichhawat, QH Do, D Fett, R Küsters, G Schmitz&lt;/p&gt;</description></item></channel></rss>
