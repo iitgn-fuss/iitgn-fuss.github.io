@@ -1,3 +1,47 @@
-<div class="photo-gallery">
+<section class="photo-gallery" aria-label="Photo gallery">
   {{ .Inner | markdownify }}
-</div>
+</section>
+
+<script>
+  (() => {
+    const gallery = document.currentScript.previousElementSibling;
+    const images = gallery ? Array.from(gallery.querySelectorAll(":scope > img")) : [];
+
+    if (!gallery || images.length === 0) return;
+
+    let layoutFrame;
+    const layoutGallery = () => {
+      layoutFrame = undefined;
+      if (images.some((image) => image.naturalWidth === 0 || image.naturalHeight === 0)) return;
+
+      const styles = window.getComputedStyle(gallery);
+      const rowHeight = Number.parseFloat(styles.getPropertyValue("--photo-gallery-row")) || 8;
+      const rowGap = Number.parseFloat(styles.rowGap) || 16;
+
+      images.forEach((image) => {
+        if (image.clientWidth === 0) return;
+        const imageHeight = image.clientWidth * (image.naturalHeight / image.naturalWidth);
+        const rowSpan = Math.max(1, Math.ceil((imageHeight + rowGap) / (rowHeight + rowGap)));
+        image.style.setProperty("--photo-gallery-span", rowSpan);
+      });
+
+      gallery.classList.add("is-masonry");
+    };
+
+    const scheduleLayout = () => {
+      if (layoutFrame) return;
+      layoutFrame = window.requestAnimationFrame(layoutGallery);
+    };
+
+    images.forEach((image) => {
+      if (image.complete) scheduleLayout();
+      else image.addEventListener("load", scheduleLayout, { once: true });
+    });
+
+    if ("ResizeObserver" in window) {
+      new ResizeObserver(scheduleLayout).observe(gallery);
+    } else {
+      window.addEventListener("resize", scheduleLayout, { passive: true });
+    }
+  })();
+</script>

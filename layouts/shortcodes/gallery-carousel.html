@@ -1,173 +1,212 @@
-{{ $slides := slice }}
-{{ range $page := where .Site.RegularPages "Section" "misc" }}
-  {{ $matches := findRE `!\[.*?\]\(.*?\)` $page.RawContent }}
-  {{ range $match := $matches }}
-    {{ $alt := replaceRE `^!\[(.*?)\]\((.*?)\)$` "$1" $match }}
-    {{ $url := replaceRE `^!\[(.*?)\]\((.*?)\)$` "$2" $match }}
-    {{ $slide := dict "url" $url "caption" $alt "pageUrl" $page.RelPermalink "pageTitle" $page.Title }}
-    {{ $slides = $slides | append $slide }}
-  {{ end }}
-{{ end }}
+{{- $slides := slice -}}
+{{- $pages := where .Site.RegularPages "Section" "misc" -}}
+{{- range $page := $pages.ByDate.Reverse -}}
+  {{- $matches := findRE `!\[.*?\]\(.*?\)` $page.RawContent -}}
+  {{- range $match := $matches -}}
+    {{- $alt := replaceRE `^!\[(.*?)\]\((.*?)\)$` "$1" $match -}}
+    {{- $url := replaceRE `^!\[(.*?)\]\((.*?)\)$` "$2" $match -}}
+    {{- $slides = $slides | append (dict "url" $url "caption" $alt "pageUrl" $page.RelPermalink "pageTitle" $page.Title) -}}
+  {{- end -}}
+{{- end -}}
 
-<div class="gallery-carousel-wrapper" id="carouselWrapper">
-  <div class="gallery-carousel-container" id="carouselContainer">
-    <!-- Cards will be inserted dynamically by JavaScript -->
-  </div>
+{{- if gt (len $slides) 0 -}}
+  <section class="gallery-carousel" aria-label="Life at FUSS photo gallery">
+    <div
+      class="gallery-carousel__track"
+      id="gallery-carousel-track"
+      tabindex="0"
+      role="list"
+      aria-label="Life at FUSS photos. Use the left and right arrow keys to browse."
+    >
+      {{- range $index, $slide := $slides -}}
+        <article class="gallery-carousel__slide" role="listitem" aria-roledescription="slide" aria-label="Photo {{ add $index 1 }} of {{ len $slides }}">
+          <a class="gallery-carousel__card" href="{{ $slide.pageUrl }}">
+            <figure class="gallery-carousel__figure">
+              <img
+                class="gallery-carousel__image"
+                src="{{ $slide.url | relURL }}"
+                alt="{{ $slide.caption }}"
+                loading="lazy"
+                decoding="async"
+              >
+              <figcaption class="gallery-carousel__caption">
+                <span class="gallery-carousel__title">{{ $slide.pageTitle }}</span>
+              </figcaption>
+            </figure>
+          </a>
+        </article>
+      {{- end -}}
+    </div>
 
-  <!-- Navigation Arrows -->
-  <button class="carousel-arrow prev-arrow" id="prevBtn" aria-label="Previous Slide">
-    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
-      <polyline points="15 18 9 12 15 6"></polyline>
-    </svg>
-  </button>
-  <button class="carousel-arrow next-arrow" id="nextBtn" aria-label="Next Slide">
-    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
-      <polyline points="9 18 15 12 9 6"></polyline>
-    </svg>
-  </button>
-</div>
-
-<script id="carousel-data" type="application/json">
-  {{ $slides | jsonify | safeJS }}
-</script>
-
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-  const dataEl = document.getElementById("carousel-data");
-  if (!dataEl) return;
-  let allSlides = [];
-  try {
-    allSlides = JSON.parse(dataEl.textContent);
-  } catch (e) {
-    console.error("Error parsing carousel data", e);
-    return;
-  }
-  if (!allSlides || allSlides.length === 0) return;
-
-  // Fisher-Yates shuffle
-  function shuffle(array) {
-    for (let i = array.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [array[i], array[j]] = [array[j], array[i]];
-    }
-    return array;
-  }
-
-  // Shuffle and display up to 9 random slides
-  const pickedSlides = shuffle(allSlides).slice(0, 9);
-  const container = document.getElementById("carouselContainer");
-  const wrapper = document.getElementById("carouselWrapper");
-  const prevBtn = document.getElementById("prevBtn");
-  const nextBtn = document.getElementById("nextBtn");
-
-  if (!container || pickedSlides.length === 0) return;
-
-  const gradients = [
-    "background-image: radial-gradient(ellipse at 50% 80%, rgba(59,130,246,0.15), transparent);",
-    "background-image: radial-gradient(ellipse at 50% 80%, rgba(16,185,129,0.15), transparent);",
-    "background-image: radial-gradient(ellipse at 50% 80%, rgba(251,146,60,0.15), transparent);"
-  ];
-
-  // Render cards
-  pickedSlides.forEach((slide, idx) => {
-    const card = document.createElement("a");
-    card.href = slide.pageUrl;
-    card.className = "gallery-card";
-    card.setAttribute("role", "group");
-    card.setAttribute("aria-roledescription", "slide");
-    card.setAttribute("aria-label", `Slide ${idx + 1} of ${pickedSlides.length}`);
-    
-    // Set dynamic gradient coloring inline style
-    const gradient = gradients[idx % 3];
-    card.setAttribute("style", gradient);
-
-    card.innerHTML = `
-      <div class="gallery-card-image-wrapper">
-        <img src="${slide.url}" alt="${slide.pageTitle}" class="gallery-card-image" loading="lazy" />
+    <div class="gallery-carousel__footer">
+      <p class="gallery-carousel__hint">Swipe or scroll to explore</p>
+      <div class="gallery-carousel__controls" aria-label="Photo gallery controls">
+        <button class="gallery-carousel__control" type="button" data-carousel-previous aria-controls="gallery-carousel-track" aria-label="Show previous photo">
+          <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round">
+            <path d="m14 18-6-6 6-6"></path>
+          </svg>
+        </button>
+        <output class="gallery-carousel__status" data-carousel-status aria-live="polite">1 / {{ len $slides }}</output>
+        <button class="gallery-carousel__control" type="button" data-carousel-autoplay aria-pressed="true" aria-label="Pause automatic scrolling">
+          <svg aria-hidden="true" data-carousel-autoplay-icon viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M8 6v12M16 6v12"></path>
+          </svg>
+        </button>
+        <button class="gallery-carousel__control" type="button" data-carousel-next aria-controls="gallery-carousel-track" aria-label="Show next photo">
+          <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round">
+            <path d="m10 6 6 6-6 6"></path>
+          </svg>
+        </button>
       </div>
-      <div class="gallery-card-info">
-        <h3 class="gallery-card-title">${slide.pageTitle}</h3>
-      </div>
-    `;
-    container.appendChild(card);
-  });
+    </div>
+  </section>
 
-  function getScrollAmount() {
-    const card = container.querySelector(".gallery-card");
-    if (!card) return 300;
-    const cardWidth = card.getBoundingClientRect().width;
-    const gap = parseFloat(window.getComputedStyle(container).gap) || 16;
-    return cardWidth + gap;
-  }
+  <script>
+    (() => {
+      const carousel = document.currentScript.previousElementSibling;
+      const track = carousel?.querySelector(".gallery-carousel__track");
+      const slides = track ? Array.from(track.querySelectorAll(".gallery-carousel__slide")) : [];
+      const images = track ? Array.from(track.querySelectorAll(".gallery-carousel__image")) : [];
+      const previousButton = carousel?.querySelector("[data-carousel-previous]");
+      const nextButton = carousel?.querySelector("[data-carousel-next]");
+      const status = carousel?.querySelector("[data-carousel-status]");
+      const autoplayButton = carousel?.querySelector("[data-carousel-autoplay]");
+      const autoplayIcon = carousel?.querySelector("[data-carousel-autoplay-icon]");
 
-  function scrollNext() {
-    const scrollAmount = getScrollAmount();
-    const maxScroll = container.scrollWidth - container.clientWidth;
-    if (container.scrollLeft >= maxScroll - 10) {
-      container.scrollTo({ left: 0, behavior: "smooth" });
-    } else {
-      container.scrollBy({ left: scrollAmount, behavior: "smooth" });
-    }
-  }
+      if (!track || slides.length === 0 || !previousButton || !nextButton || !status) return;
 
-  function scrollPrev() {
-    const scrollAmount = getScrollAmount();
-    if (container.scrollLeft <= 10) {
-      const maxScroll = container.scrollWidth - container.clientWidth;
-      container.scrollTo({ left: maxScroll, behavior: "smooth" });
-    } else {
-      container.scrollBy({ left: -scrollAmount, behavior: "smooth" });
-    }
-  }
+      const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      const autoAdvanceDelay = 2500;
+      let activeIndex = 0;
+      let scrollFrame;
+      let autoplayTimer;
+      let autoplayEnabled = !reduceMotion;
 
-  nextBtn.addEventListener("click", () => {
-    scrollNext();
-    resetAutoplay();
-  });
+      const setImageFit = (image) => {
+        if (image.naturalWidth === 0 || image.naturalHeight === 0) return;
+        image.classList.toggle("is-portrait", image.naturalHeight > image.naturalWidth);
+      };
 
-  prevBtn.addEventListener("click", () => {
-    scrollPrev();
-    resetAutoplay();
-  });
+      images.forEach((image) => {
+        if (image.complete) setImageFit(image);
+        else image.addEventListener("load", () => setImageFit(image), { once: true });
+      });
 
-  // Autoplay functionality
-  const autoplayDuration = 4000; // 4 seconds
-  let autoplayTimer = setInterval(scrollNext, autoplayDuration);
+      const getClosestSlideIndex = () => {
+        const firstSlideOffset = slides[0].offsetLeft;
+        return slides.reduce((closestIndex, slide, index) => {
+          const distance = Math.abs(slide.offsetLeft - firstSlideOffset - track.scrollLeft);
+          const closestDistance = Math.abs(slides[closestIndex].offsetLeft - firstSlideOffset - track.scrollLeft);
+          return distance < closestDistance ? index : closestIndex;
+        }, 0);
+      };
 
-  function startAutoplay() {
-    if (!autoplayTimer) {
-      autoplayTimer = setInterval(scrollNext, autoplayDuration);
-    }
-  }
+      const updateControls = () => {
+        activeIndex = getClosestSlideIndex();
+        const maxScroll = track.scrollWidth - track.clientWidth;
+        previousButton.disabled = track.scrollLeft <= 1;
+        nextButton.disabled = track.scrollLeft >= maxScroll - 1;
+        status.textContent = `${activeIndex + 1} / ${slides.length}`;
+      };
 
-  function stopAutoplay() {
-    if (autoplayTimer) {
-      clearInterval(autoplayTimer);
-      autoplayTimer = null;
-    }
-  }
+      const goTo = (index) => {
+        const destination = Math.max(0, Math.min(index, slides.length - 1));
+        const left = slides[destination].offsetLeft - slides[0].offsetLeft;
+        track.scrollTo({
+          left,
+          behavior: reduceMotion ? "auto" : "smooth"
+        });
+      };
 
-  function resetAutoplay() {
-    stopAutoplay();
-    startAutoplay();
-  }
+      const updateAutoplayControl = () => {
+        if (!autoplayButton || !autoplayIcon) return;
+        autoplayButton.disabled = reduceMotion;
+        autoplayButton.setAttribute("aria-pressed", String(autoplayEnabled));
+        autoplayButton.setAttribute(
+          "aria-label",
+          reduceMotion
+            ? "Automatic scrolling is disabled because reduced motion is enabled"
+            : autoplayEnabled
+              ? "Pause automatic scrolling"
+              : "Resume automatic scrolling"
+        );
+        autoplayIcon.innerHTML = autoplayEnabled
+          ? '<path d="M8 6v12M16 6v12"></path>'
+          : '<path d="m9 5 10 7-10 7V5Z"></path>';
+      };
 
-  // Pause on hover
-  wrapper.addEventListener("mouseenter", stopAutoplay);
-  wrapper.addEventListener("mouseleave", startAutoplay);
+      const stopAutoplay = () => {
+        if (!autoplayTimer) return;
+        window.clearTimeout(autoplayTimer);
+        autoplayTimer = undefined;
+      };
 
-  // Hide arrows if not scrollable
-  function toggleArrows() {
-    const isScrollable = container.scrollWidth > container.clientWidth;
-    prevBtn.style.display = isScrollable ? "flex" : "none";
-    nextBtn.style.display = isScrollable ? "flex" : "none";
-  }
+      const startAutoplay = () => {
+        if (!autoplayEnabled || autoplayTimer || document.hidden || slides.length < 2) return;
+        autoplayTimer = window.setTimeout(() => {
+          autoplayTimer = undefined;
+          const atEnd = track.scrollLeft >= track.scrollWidth - track.clientWidth - 1;
+          goTo(atEnd ? 0 : activeIndex + 1);
+          startAutoplay();
+        }, autoAdvanceDelay);
+      };
 
-  // Run on load and resize
-  window.addEventListener("resize", toggleArrows);
-  // Simple check after rendering
-  setTimeout(toggleArrows, 100);
-});
-</script>
+      previousButton.addEventListener("click", () => goTo(activeIndex - 1));
+      nextButton.addEventListener("click", () => goTo(activeIndex + 1));
+      autoplayButton?.addEventListener("click", () => {
+        autoplayEnabled = !autoplayEnabled;
+        stopAutoplay();
+        updateAutoplayControl();
+        startAutoplay();
+      });
 
+      track.addEventListener("keydown", (event) => {
+        if (event.key === "ArrowLeft") {
+          event.preventDefault();
+          goTo(activeIndex - 1);
+        }
+        if (event.key === "ArrowRight") {
+          event.preventDefault();
+          goTo(activeIndex + 1);
+        }
+        if (event.key === "Home") {
+          event.preventDefault();
+          goTo(0);
+        }
+        if (event.key === "End") {
+          event.preventDefault();
+          goTo(slides.length - 1);
+        }
+      });
 
+      track.addEventListener("scroll", () => {
+        if (scrollFrame) return;
+        scrollFrame = window.requestAnimationFrame(() => {
+          scrollFrame = undefined;
+          updateControls();
+        });
+      }, { passive: true });
+
+      if ("ResizeObserver" in window) {
+        new ResizeObserver(updateControls).observe(track);
+      } else {
+        window.addEventListener("resize", updateControls, { passive: true });
+      }
+
+      updateControls();
+      updateAutoplayControl();
+      carousel.addEventListener("focusin", stopAutoplay);
+      carousel.addEventListener("focusout", (event) => {
+        if (!carousel.contains(event.relatedTarget)) startAutoplay();
+      });
+      track.addEventListener("pointerdown", stopAutoplay);
+      track.addEventListener("pointerup", startAutoplay);
+      track.addEventListener("pointercancel", startAutoplay);
+      document.addEventListener("visibilitychange", () => {
+        if (document.hidden) stopAutoplay();
+        else startAutoplay();
+      });
+      startAutoplay();
+    })();
+  </script>
+{{- end -}}
