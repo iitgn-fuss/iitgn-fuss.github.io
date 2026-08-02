@@ -23,6 +23,14 @@
           <a class="gallery-carousel__card" href="{{ $slide.pageUrl }}">
             <figure class="gallery-carousel__figure">
               <img
+                class="gallery-carousel__bg-blur"
+                src="{{ $slide.url | relURL }}"
+                alt=""
+                aria-hidden="true"
+                loading="lazy"
+                decoding="async"
+              >
+              <img
                 class="gallery-carousel__image"
                 src="{{ $slide.url | relURL }}"
                 alt="{{ $slide.caption }}"
@@ -81,6 +89,7 @@
       let scrollFrame;
       let autoplayTimer;
       let autoplayEnabled = !reduceMotion;
+      let isInViewport = !('IntersectionObserver' in window);
 
       const setImageFit = (image) => {
         if (image.naturalWidth === 0 || image.naturalHeight === 0) return;
@@ -142,7 +151,7 @@
       };
 
       const startAutoplay = () => {
-        if (!autoplayEnabled || autoplayTimer || document.hidden || slides.length < 2) return;
+        if (!autoplayEnabled || autoplayTimer || document.hidden || !isInViewport || slides.length < 2) return;
         autoplayTimer = window.setTimeout(() => {
           autoplayTimer = undefined;
           const atEnd = track.scrollLeft >= track.scrollWidth - track.clientWidth - 1;
@@ -191,6 +200,14 @@
         new ResizeObserver(updateControls).observe(track);
       } else {
         window.addEventListener("resize", updateControls, { passive: true });
+      }
+
+      if ("IntersectionObserver" in window) {
+        new IntersectionObserver((entries) => {
+          isInViewport = entries[0].isIntersecting;
+          if (isInViewport) startAutoplay();
+          else stopAutoplay();
+        }, { threshold: 0.35 }).observe(carousel);
       }
 
       updateControls();

@@ -62,7 +62,7 @@ type: people
     <img src="../images/people/sreyashi.jpg" alt="Sreyashi Karmakar" class="person-image">
     <div class="person-info">
       <h3 class="person-name">Sreyashi Karmakar</h3>
-      <p class="person-title">2nd Year Ph.D.</p>
+      <p class="person-title">3rd Year Ph.D.</p>
       <p class="person-period">July 2024 - Present</p>
       <div class="research-focus-phrases">
         <span>Blockchain Security</span>
@@ -102,9 +102,9 @@ type: people
       <p class="person-title">2nd Year Ph.D.</p>
       <p class="person-period">July 2023 - Present</p>
       <div class="research-focus-phrases">
-        <span>CPU Parallelism</span>
+        <span>Systems & Computer Architecture</span>
         <span class="research-focus-separator">|</span>
-        <span>Distributed Systems</span>
+        <span>Distributed Computing</span>
         <span class="research-focus-separator">|</span>
         <span>Usable Security</span>
       </div>
@@ -205,17 +205,9 @@ type: people
       <h3 class="person-name">Shruti Dubey</h3>
       <p class="person-title">M.Tech. in CSE</p>
       <p class="person-period">July 2024 - June 2026</p>
-      <!-- Optional past-member details — add only when known:
-      <p class="person-destination"><span class="person-meta-label">Joined</span><span>Company or institute name</span></p>
-      <p class="person-thesis"><span class="person-meta-label">Thesis</span><span>Thesis title</span></p>
-      -->
-      <!-- <div class="research-focus-phrases">
-        <span>Distributed Systems</span>
-        <span class="research-focus-separator">|</span>
-        <span>Web Security</span>
-        <span class="research-focus-separator">|</span>
-        <span>Privacy</span>
-      </div> -->
+      <!-- Optional past-member details — add only when known: -->
+      <p class="person-destination"><span class="person-meta-label">Joined</span><span>Minix Fintech</span></p>
+      <p class="person-thesis"><span class="person-meta-label">Thesis</span><span>Tracking Information Flow through IndexedDB in Web Browsers</span></p>
     </div>
   </div>
 </div>
@@ -230,6 +222,36 @@ type: people
       <p class="person-destination"><span class="person-meta-label">Joined</span><span>Infosys</span></p>
       <p class="person-thesis"><span class="person-meta-label">Thesis</span><span>Design and Performance Evaluation of a Distributed MapReduce System for Matrix Multiplication on
 Raspberry Pi Clusters</span></p>
+    </div>
+  </div>
+</div>
+
+<div class="person-card" style="cursor: pointer; position: relative;">
+  <a href="https://www.linkedin.com/in/anshika-saxena-248612210/" target="_blank" style="position: absolute; inset: 0; z-index: 1; opacity: 0;" aria-label="Anshika Saxena's homepage"></a>
+  <div class="person-content" style="position: relative; z-index: 2; pointer-events: none;">
+    <img src="../images/people/anshika.jpeg" alt="Anshika Saxena" class="person-image">
+    <div class="person-info">
+      <h3 class="person-name">Anshika Saxena</h3>
+      <p class="person-title">M.Tech. in CSE</p>
+      <p class="person-period">July 2023 - June 2025</p>
+      <!-- Optional past-member details — add only when known: -->
+      <p class="person-destination"><span class="person-meta-label">Joined</span><span>Nexus Cognitive</span></p>
+      <p class="person-thesis"><span class="person-meta-label">Thesis</span><span>Accelerating Container Networking: High-Performance Packet Processing with AF_XDP and DPDK</span></p>
+    </div>
+  </div>
+</div>
+
+<div class="person-card" style="cursor: pointer; position: relative;">
+  <a href="https://www.linkedin.com/in/pro3757/" target="_blank" style="position: absolute; inset: 0; z-index: 1; opacity: 0;" aria-label="Pratyush Choudhary's homepage"></a>
+  <div class="person-content" style="position: relative; z-index: 2; pointer-events: none;">
+    <img src="../images/people/pratyush.webp" alt="Pratyush Choudhary" class="person-image">
+    <div class="person-info">
+      <h3 class="person-name">Pratyush Choudhary</h3>
+      <p class="person-title">M.Tech. in CSE</p>
+      <p class="person-period">July 2023 - June 2025</p>
+      <!-- Optional past-member details — add only when known: -->
+      <p class="person-destination"><span class="person-meta-label">Joined</span><span>Google</span></p>
+      <p class="person-thesis"><span class="person-meta-label">Thesis</span><span>Towards Secure and Fast Control Flow Attestation with Integrity</span></p>
     </div>
   </div>
 </div>

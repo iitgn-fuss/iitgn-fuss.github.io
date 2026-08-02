@@ -9,19 +9,15 @@ layout: hextra-home
   {{< icon name="arrow-circle-right" attributes="height=14" >}}
 {{< /hextra/hero-badge >}} -->
 
-<div class="hx:mt-4 hx:mb-4 hero-title-container">
-{{< hextra/hero-headline >}}
-  <span class="hero-main-title">Formal and Usable Systems Security Group</span>
-{{< /hextra/hero-headline >}}
+<div class="hx:mt-4 hx:mb-3 hero-title-container">
+  <h1 class="hero-main-title">Formal and Usable Systems Security Group</h1>
 </div>
 
-<div class="hx:mb-6 hero-subtitle-container">
+<div class="hero-subtitle-container">
 {{< hextra/hero-subtitle >}}
-  <span class="hero-tagline">We make a <strong class="fuss-emphasis">FUSS</strong> about security, so you don't have to.</span>
+  <span class="hero-tagline"><em>We make a </em><strong class="fuss-emphasis">FUSS</strong><em> about security, so you don’t have to.</em></span>
 {{< /hextra/hero-subtitle >}}
 </div>
-
-<div class="hx:mt-3"></div>
 
 {{< hextra/feature-grid >}}
   {{< hextra/feature-card
@@ -47,13 +43,13 @@ layout: hextra-home
   >}}
 {{< /hextra/feature-grid >}}
 
-<div class="hx:mt-12 hx:mb-4 news-section-header">
+<div class="news-section-header">
 <h2 class="news-section-title">Latest News</h2>
 </div>
 
 {{< latest-news >}}
 
-<div class="hx:mt-16 hx:mb-4 gallery-section-header">
+<div class="gallery-section-header">
 <h2 class="gallery-section-title">Life @ FUSS</h2>
 </div>
 

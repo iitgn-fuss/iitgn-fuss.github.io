@@ -1,5 +1,5 @@
 ---
-title: "BuildSec 2024"
+title: "BuildSec 2024 @ New Delhi"
 date: 2024-12-24
 description: "Some moments from the BuildSec 2024 conference in December 2024."
 ---

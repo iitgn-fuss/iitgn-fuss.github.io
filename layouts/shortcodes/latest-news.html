@@ -2,21 +2,20 @@
 {{ $newsPages := where .Site.RegularPages "Section" "news" }}
 {{ $latestNews := first 3 ($newsPages.ByDate.Reverse) }}
 
-{{/* Define gradient colors for news cards */}}
-{{ $gradients := slice 
-  "background: radial-gradient(ellipse at 50% 80%,rgba(59,130,246,0.15),hsla(0,0%,100%,0));" 
-  "background: radial-gradient(ellipse at 50% 80%,rgba(16,185,129,0.15),hsla(0,0%,100%,0));" 
-  "background: radial-gradient(ellipse at 50% 80%,rgba(251,146,60,0.15),hsla(0,0%,100%,0));" 
+{{/* Keep the original restrained colours that distinguish the three stories. */}}
+{{ $gradients := slice
+  "background: radial-gradient(ellipse at 50% 80%,rgba(59,130,246,0.15),hsla(0,0%,100%,0));"
+  "background: radial-gradient(ellipse at 50% 80%,rgba(16,185,129,0.15),hsla(0,0%,100%,0));"
+  "background: radial-gradient(ellipse at 50% 80%,rgba(251,146,60,0.15),hsla(0,0%,100%,0));"
 }}
 
 <!-- {{/* Define images for variety */}}
 {{ $images := slice "images/hextra-doc.webp" "images/hextra-markdown.webp" "images/hextra-search.webp" }} -->
 
 {{ if $latestNews }}
-<div class="hx:grid hx:gap-4 hx:mt-4 hx:md:grid-cols-2 hx:lg:grid-cols-3">
+<div class="latest-news-grid hx:grid hx:gap-4 hx:md:grid-cols-2 hx:lg:grid-cols-3">
   {{ range $index, $page := $latestNews }}
     {{ $gradient := index $gradients (mod $index 3) }}
-    
     <div class="hx:group hx:overflow-hidden hx:rounded-lg hx:border hx:border-gray-200 hx:text-current hx:no-underline hx:dark:shadow-none hx:dark:border-neutral-800 hx:bg-transparent hx:shadow-gray-100 hx:aspect-auto hx:min-h-[200px] news-card" style="{{ $gradient | safeCSS }}">
       <a href="{{ $page.RelPermalink }}" class="hx:block hx:h-full">
         <div class="hx:p-6 hx:flex hx:flex-col hx:justify-between hx:flex-1 hx:h-full">
@@ -37,9 +36,9 @@
   {{ end }}
 </div>
 
-<div class="hx:mt-8 hx:text-center">
+<div class="latest-news-more">
   <a href="{{ .Site.BaseURL }}news"
-    class="hx:inline-flex hx:items-center hx:justify-center hx:rounded-md hx:bg-blue-600 hx:hover:bg-blue-700 hx:px-6 hx:py-3 hx:text-sm hx:font-medium hx:text-white hx:transition-colors">
+    class="news-all-link hx:inline-flex hx:items-center hx:justify-center hx:px-6 hx:py-3 hx:text-sm hx:font-medium hx:text-white">
     View All News
     <svg class="hx:ml-2 hx:h-4 hx:w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>

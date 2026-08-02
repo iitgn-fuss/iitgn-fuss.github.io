@@ -1,5 +1,5 @@
 ---
-title: "AsiaCCS 2026 Trip"
+title: "AsiaCCS 2026 Visit @ Bengaluru"
 date: 2026-06-05
 description: "Photos from our AsiaCCS 2026 conference visit."
 ---

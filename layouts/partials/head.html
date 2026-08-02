@@ -456,63 +456,6 @@
       }
     })();
   </script>
-  <style>
-    #qc-cmp2-persistent-link,
-    .qc-cmp2-persistent-link {
-      display: none !important;
-      visibility: hidden !important;
-      opacity: 0 !important;
-      pointer-events: none !important;
-    }
-
-    .site-privacy-button {
-      position: fixed;
-      right: 1rem;
-      bottom: 1rem;
-      z-index: 2147483646;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      padding: 0.7rem 1rem;
-      border-radius: 999px;
-      border: 1px solid color-mix(in srgb, var(--tw-prose-links, #6b7280) 35%, transparent);
-      background: rgba(17, 24, 39, 0.92);
-      color: #f9fafb;
-      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
-      font-size: 0.875rem;
-      line-height: 1;
-      cursor: pointer;
-      backdrop-filter: blur(12px);
-    }
-
-    .site-privacy-button:hover {
-      transform: translateY(-1px);
-    }
-
-    .site-privacy-button:focus-visible {
-      outline: 2px solid #93c5fd;
-      outline-offset: 3px;
-    }
-
-    .site-privacy-button__icon {
-      display: inline-flex;
-      width: 1rem;
-      height: 1rem;
-    }
-
-    .site-privacy-button__label {
-      font-weight: 600;
-      letter-spacing: 0.01em;
-    }
-
-    @media (max-width: 640px) {
-      .site-privacy-button {
-        right: 0.75rem;
-        bottom: 0.75rem;
-        padding: 0.65rem 0.9rem;
-      }
-    }
-  </style>
   <script>
     (function () {
       function findCmpPrivacyTrigger() {
@@ -575,6 +518,7 @@
   <meta name="google-site-verification" content="GE4j2k-pPsDxdMZcoBUfrCRfn_Nr1i0zesjJ-il-IuQ" />
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="color-scheme" content="light dark" />
   {{- $noindex := .Params.noindex | default false -}}
   {{ if and (hugo.IsProduction) (not $noindex) -}}
     <meta name="robots" content="index, follow" />
@@ -604,12 +548,13 @@
 
   {{- $mainCss := resources.Get "css/compiled/main.css" -}}
   {{- $customCss := resources.Get "css/custom.css" -}}
+  {{- $galleryCss := resources.Get "css/gallery.css" -}}
+  {{- $peopleTitleCss := resources.Get "css/people-title.css" -}}
   {{- $variablesCss := resources.Get "css/variables.css" | resources.ExecuteAsTemplate "css/variables.css" . -}}
 
   {{- /* Production build */ -}}
   {{- if hugo.IsProduction }}
-    {{- $styles := slice $variablesCss $mainCss $customCss | resources.Concat "css/compiled/main.css" | minify | fingerprint }}
-    <link rel="preload" href="{{ $styles.RelPermalink }}" as="style" integrity="{{ $styles.Data.Integrity }}" />
+    {{- $styles := slice $variablesCss $mainCss $customCss $galleryCss $peopleTitleCss | resources.Concat "css/compiled/main.css" | minify | fingerprint }}
     <link href="{{ $styles.RelPermalink }}" rel="stylesheet" integrity="{{ $styles.Data.Integrity }}" />
 
   {{- /* Theme development mode (non-production + theme environment) */ -}}
@@ -618,6 +563,8 @@
     <link href="{{ $devStyles.RelPermalink }}" rel="stylesheet" />
     <link href="{{ $variablesCss.RelPermalink }}" rel="stylesheet" />
     <link href="{{ $customCss.RelPermalink }}" rel="stylesheet" />
+    <link href="{{ $galleryCss.RelPermalink }}" rel="stylesheet" />
+    <link href="{{ $peopleTitleCss.RelPermalink }}" rel="stylesheet" />
 
   {{- /* User local development */ -}}
   {{- else }}
@@ -625,6 +572,8 @@
     <link href="{{ $styles.RelPermalink }}" rel="stylesheet" />
     <link href="{{ $variablesCss.RelPermalink }}" rel="stylesheet" />
     <link href="{{ $customCss.RelPermalink }}" rel="stylesheet" />
+    <link href="{{ $galleryCss.RelPermalink }}" rel="stylesheet" />
+    <link href="{{ $peopleTitleCss.RelPermalink }}" rel="stylesheet" />
   {{- end }}
 
   <!-- Note: Google Analytics is hardcoded above with ID G-EZGKQP910Z -->
