@@ -103,60 +103,7 @@ html {
   }
 }
 
-/* Privacy control -------------------------------------------------------- */
 
-#qc-cmp2-persistent-link,
-.qc-cmp2-persistent-link {
-  display: none !important;
-  visibility: hidden !important;
-  opacity: 0 !important;
-  pointer-events: none !important;
-}
-
-.site-privacy-button {
-  position: fixed;
-  right: 1rem;
-  bottom: 1rem;
-  z-index: 2147483646;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  min-height: 2.75rem;
-  padding: 0.65rem 0.9rem;
-  border: 1px solid rgb(148 163 184 / 0.35);
-  border-radius: 999px;
-  background: rgb(15 23 42 / 0.94);
-  color: #f8fafc;
-  box-shadow: 0 8px 20px rgb(15 23 42 / 0.22);
-  cursor: pointer;
-  font-size: 0.875rem;
-  line-height: 1;
-  transition: background-color 160ms var(--fuss-ease), box-shadow 160ms var(--fuss-ease), transform 160ms var(--fuss-ease);
-}
-
-.site-privacy-button:hover {
-  background: #1e293b;
-  box-shadow: 0 10px 24px rgb(15 23 42 / 0.28);
-  transform: translateY(-1px);
-}
-
-.site-privacy-button__icon {
-  display: inline-flex;
-  width: 1rem;
-  height: 1rem;
-}
-
-.site-privacy-button__label {
-  font-weight: 650;
-  letter-spacing: 0.01em;
-}
-
-@media (max-width: 640px) {
-  .site-privacy-button {
-    right: 0.75rem;
-    bottom: 0.75rem;
-  }
-}
 
 /* Navigation ------------------------------------------------------------- */
 
@@ -422,7 +369,8 @@ body:has(.hero-main-title) .hextra-max-page-width > div {
 }
 
 .hextra-feature-card,
-.news-card {
+.news-card,
+.person-card {
   border-color: var(--fuss-line) !important;
   background: var(--fuss-card-tint), var(--fuss-surface);
   box-shadow: var(--fuss-shadow);
@@ -430,16 +378,19 @@ body:has(.hero-main-title) .hextra-max-page-width > div {
 }
 
 .hextra-feature-card,
-.news-card {
+.news-card,
+.person-card {
   border-radius: var(--fuss-radius) !important;
 }
 
-.hextra-feature-card::after {
+.hextra-feature-card::after,
+.news-card::after,
+.person-card::after {
   position: absolute;
   inset: 0;
   border: 1px solid color-mix(in srgb, var(--fuss-accent) 32%, transparent);
   border-radius: inherit;
-  background: color-mix(in srgb, var(--fuss-accent) 5%, transparent);
+  background: color-mix(in srgb, var(--fuss-accent) 4%, transparent);
   content: "";
   opacity: 0;
   pointer-events: none;
@@ -525,15 +476,21 @@ body:has(.hero-main-title) .hextra-max-page-width > div {
   .hextra-feature-card:hover,
   .hextra-feature-card:focus-within,
   .news-card:hover,
-  .news-card:focus-within {
+  .news-card:focus-within,
+  .person-card:hover,
+  .person-card:focus-within {
     border-color: color-mix(in srgb, var(--fuss-accent) 45%, var(--fuss-line)) !important;
-    box-shadow: var(--fuss-shadow-raised);
-    transform: translateY(-4px);
+    box-shadow: var(--fuss-shadow-raised) !important;
+    transform: translateY(-4px) !important;
   }
 
   .hextra-feature-card:hover::after,
-  .hextra-feature-card:focus-within::after {
-    opacity: 1;
+  .hextra-feature-card:focus-within::after,
+  .news-card:hover::after,
+  .news-card:focus-within::after,
+  .person-card:hover::after,
+  .person-card:focus-within::after {
+    opacity: 1 !important;
   }
 }
 
@@ -822,12 +779,6 @@ body:has(.people-section) main {
 }
 
 @media (hover: hover) and (pointer: fine) {
-  .person-card:hover {
-    border-color: color-mix(in srgb, var(--fuss-accent) 42%, var(--fuss-line));
-    box-shadow: var(--fuss-shadow-raised);
-    transform: translateY(-4px);
-  }
-
   .person-card:hover .person-image {
     box-shadow: 0 8px 18px rgb(15 23 42 / 0.12);
     transform: scale(1.035);
