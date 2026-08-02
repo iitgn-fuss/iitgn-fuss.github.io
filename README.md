@@ -30,7 +30,7 @@ Deployment is fully automated through **GitHub Pages**:
 ```bash
 git add .
 git commit -m "Update website content"
-git push origin main
+git push
 ```
 
 Within 1–2 minutes, GitHub Pages will automatically build and publish the updated site to `https://iitgn-fuss.github.io/`.
