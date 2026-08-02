@@ -5,7 +5,7 @@
   {{- range $match := $matches -}}
     {{- $alt := replaceRE `^!\[(.*?)\]\((.*?)\)$` "$1" $match -}}
     {{- $url := replaceRE `^!\[(.*?)\]\((.*?)\)$` "$2" $match -}}
-    {{- $slides = $slides | append (dict "url" $url "caption" $alt "pageUrl" $page.RelPermalink "pageTitle" $page.Title) -}}
+    {{- $slides = $slides | append (dict "url" $url "caption" $alt "pageUrl" $page.RelPermalink "pageTitle" $page.Title "date" ($page.Date.Format "Jan 2006")) -}}
   {{- end -}}
 {{- end -}}
 
@@ -42,7 +42,12 @@
                 decoding="async"
               >
               <figcaption class="gallery-carousel__caption">
-                <span class="gallery-carousel__title">{{ $displayCaption }}</span>
+                <div class="gallery-carousel__caption-content">
+                  {{ with $slide.date }}
+                    <span class="gallery-carousel__date-tag">{{ . }}</span>
+                  {{ end }}
+                  <span class="gallery-carousel__title">{{ $displayCaption }}</span>
+                </div>
               </figcaption>
             </figure>
           </a>

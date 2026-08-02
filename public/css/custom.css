@@ -14,7 +14,7 @@
   --fuss-surface-subtle: #fafafa;
   --fuss-accent: #3b82f6;
   --fuss-accent-strong: #8b5cf6;
-  --fuss-accent-soft: #f0f0ff;
+  --fuss-accent-soft: #eef2ff;
   --fuss-focus: #3b82f6;
   --fuss-card-tint: linear-gradient(135deg, color-mix(in srgb, var(--fuss-accent) 6%, transparent), transparent 66%);
   --fuss-card-tint-violet: radial-gradient(ellipse at 50% 80%, rgb(76 109 255 / 0.10), transparent 72%);
@@ -34,7 +34,7 @@
   --fuss-surface-subtle: #111111;
   --fuss-accent: #60a5fa;
   --fuss-accent-strong: #a78bfa;
-  --fuss-accent-soft: #1a1a2e;
+  --fuss-accent-soft: rgba(167, 139, 250, 0.18);
   --fuss-focus: #60a5fa;
   --fuss-card-tint: linear-gradient(135deg, color-mix(in srgb, var(--fuss-accent) 8%, transparent), transparent 66%);
   --fuss-card-tint-violet: radial-gradient(ellipse at 50% 80%, rgb(96 165 250 / 0.12), transparent 72%);
@@ -189,29 +189,52 @@ html {
 }
 
 .site-nav-link,
-.site-nav-icon,
-.site-nav-toggle {
-  border-radius: 0.5rem;
-  transition: background-color 160ms var(--fuss-ease), color 160ms var(--fuss-ease), box-shadow 160ms var(--fuss-ease);
+nav a.hx\:text-base {
+  border-radius: 0.55rem !important;
+  color: #64748b !important;
+  font-size: 1.05rem !important;
+  font-weight: 500 !important;
+  letter-spacing: -0.01em;
+  padding: 0.45rem 0.85rem !important;
+  transition: all 180ms var(--fuss-ease) !important;
 }
 
-.site-nav-link {
-  color: var(--fuss-muted) !important;
-  font-size: 1.1rem !important;
-  font-weight: 560 !important;
-  letter-spacing: -0.005em;
+.dark .site-nav-link,
+.dark nav a.hx\:text-base {
+  color: #94a3b8 !important;
 }
 
 .site-nav-link:hover,
-.site-nav-link:focus-visible {
-  background: var(--fuss-accent-soft);
-  color: var(--fuss-accent-strong) !important;
+.site-nav-link:focus-visible,
+nav a.hx\:text-base:hover,
+nav a.hx\:text-base:focus-visible {
+  background: transparent !important;
+  color: #0f172a !important;
 }
 
+.dark .site-nav-link:hover,
+.dark .site-nav-link:focus-visible,
+.dark nav a.hx\:text-base:hover,
+.dark nav a.hx\:text-base:focus-visible {
+  background: transparent !important;
+  color: #ffffff !important;
+}
+
+/* Active / Selected Page Highlight */
 .site-nav-link[aria-current="page"],
-.site-nav-link.hx\:font-medium {
-  color: var(--fuss-accent-strong) !important;
+nav a[aria-current="page"] {
+  background: transparent !important;
+  color: #0f172a !important;
   font-weight: 680 !important;
+  box-shadow: none !important;
+}
+
+.dark .site-nav-link[aria-current="page"],
+.dark nav a[aria-current="page"] {
+  background: transparent !important;
+  color: #ffffff !important;
+  font-weight: 680 !important;
+  box-shadow: none !important;
 }
 
 .site-nav-icon,
@@ -247,6 +270,48 @@ html {
 }
 
 /* The logo lockup intentionally keeps its existing size and layout. */
+
+.navbar-title-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  line-height: 1;
+  user-select: none;
+}
+
+.navbar-title-main {
+  display: flex;
+  align-items: baseline;
+  line-height: 1.08;
+}
+
+.navbar-fuss {
+  font-weight: 800;
+  font-size: 1.35rem;
+  letter-spacing: -0.035em;
+  color: var(--fuss-accent-strong);
+  background: linear-gradient(135deg, var(--fuss-accent-strong) 0%, var(--fuss-accent) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.navbar-group {
+  margin-left: 0.28rem;
+  font-weight: 650;
+  font-size: 1.15rem;
+  letter-spacing: -0.015em;
+  color: var(--fuss-ink);
+}
+
+.navbar-subtitle {
+  margin-top: 0.1rem;
+  color: var(--fuss-muted);
+  font-size: 0.64rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
 
 @media (max-width: 767px) {
   .site-nav {

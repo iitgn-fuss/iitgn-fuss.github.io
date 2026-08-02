@@ -88,13 +88,13 @@ params:
   staticPath: "/"
 
   navbar:
-    displayTitle: false
+    displayTitle: true
     displayLogo: true
     logo:
-      path: logo/fuss-logo.png
-      dark: logo/fuss-logo.png
-      width: 200
-      height: 50
+      path: logo/logo.svg
+      dark: logo/logo.svg
+      width: 48
+      height: 48
       # link: /
     width: wide
 
