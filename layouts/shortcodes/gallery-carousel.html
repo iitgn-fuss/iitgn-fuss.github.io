@@ -19,6 +19,10 @@
       aria-label="Life at FUSS photos. Use the left and right arrow keys to browse."
     >
       {{- range $index, $slide := $slides -}}
+        {{- $displayCaption := replaceRE `\s*\d+$` "" $slide.caption -}}
+        {{- if or (eq $displayCaption "") (eq $displayCaption "Image") -}}
+          {{- $displayCaption = $slide.pageTitle -}}
+        {{- end -}}
         <article class="gallery-carousel__slide" role="listitem" aria-roledescription="slide" aria-label="Photo {{ add $index 1 }} of {{ len $slides }}">
           <a class="gallery-carousel__card" href="{{ $slide.pageUrl }}">
             <figure class="gallery-carousel__figure">
@@ -33,12 +37,12 @@
               <img
                 class="gallery-carousel__image"
                 src="{{ $slide.url | relURL }}"
-                alt="{{ $slide.caption }}"
+                alt="{{ $displayCaption }}"
                 loading="lazy"
                 decoding="async"
               >
               <figcaption class="gallery-carousel__caption">
-                <span class="gallery-carousel__title">{{ $slide.pageTitle }}</span>
+                <span class="gallery-carousel__title">{{ $displayCaption }}</span>
               </figcaption>
             </figure>
           </a>
