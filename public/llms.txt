@@ -41,5 +41,5 @@ Formal Methods & Verification | Web Security | …
 - [Publications](http://localhost:1313/publications/): 2026 &ldquo;Usability Compliance vs. Legal Compliance of Consent Withdrawal on the Web: An Expert …
 
 ---
-Generated on 2026-08-02 17:12:50 UTC
+Generated on 2026-08-03 11:33:55 UTC
 Site: http://localhost:1313/
