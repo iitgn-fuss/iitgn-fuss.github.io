@@ -1,3 +1,0 @@
-User-agent: *
-Allow: /
-Sitemap: https://iitgn-fuss.github.io/people/subhrajit/sitemap.xml
