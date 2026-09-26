@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Execution Time on Subhrajit Das</title>
+    <link>https://iitgn-fuss.github.io/people/subhrajit/tags/execution-time/</link>
+    <description>Recent content in Execution Time on Subhrajit Das</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>© 2026 Subhrajit Das</copyright>
+    <lastBuildDate>Fri, 26 Dec 2025 11:30:00 +0530</lastBuildDate><atom:link href="https://iitgn-fuss.github.io/people/subhrajit/tags/execution-time/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>How to Measure Performance of Your Code</title>
+      <link>https://iitgn-fuss.github.io/people/subhrajit/posts/measure-your-code/</link>
+      <pubDate>Fri, 26 Dec 2025 11:30:00 +0530</pubDate>
+      
+      <guid>https://iitgn-fuss.github.io/people/subhrajit/posts/measure-your-code/</guid>
+      <description>&lt;p&gt;Measuring code performance accurately is crucial, especially when optimizing the existing algorithms or designing new ones. In this post, I&amp;rsquo;ll share my learnings of measuring code performance using various tools and techniques.&lt;/p&gt;&#xA;&lt;p&gt;For measuring execution time, we can use the following techniques:&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;Wall Clock Time (&lt;code&gt;clock_gettime&lt;/code&gt;)&lt;/li&gt;&#xA;&lt;li&gt;Linux resource usage metrics (&lt;code&gt;getrusage&lt;/code&gt;)&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;p&gt;To measure raw Time Stamp Counter (or, ticks), on x86 architectures we can use:&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;&lt;code&gt;RDTSC&lt;/code&gt; (Read Time-Stamp Counter)&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;p&gt;Finally, to pinpoint performance bottlenecks, we can use the Linux &lt;code&gt;perf&lt;/code&gt; tool; However, there are two ways to use it:&lt;/p&gt;</description>
+      
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Gallery on Subhrajit Das</title>
+    <link>https://iitgn-fuss.github.io/people/subhrajit/gallery/</link>
+    <description>Recent content in Gallery on Subhrajit Das</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>© 2026 Subhrajit Das</copyright>
+    <lastBuildDate>Sat, 06 Jun 2026 14:40:59 +0530</lastBuildDate><atom:link href="https://iitgn-fuss.github.io/people/subhrajit/gallery/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Conferences</title>
+      <link>https://iitgn-fuss.github.io/people/subhrajit/gallery/conferences/</link>
+      <pubDate>Sat, 06 Jun 2026 14:40:59 +0530</pubDate>
+      
+      <guid>https://iitgn-fuss.github.io/people/subhrajit/gallery/conferences/</guid>
+      <description>Snaps from the conferences I have attended: AsiaCCS&#39;26 in Bengaluru and BuildSEC&#39;24 in New Delhi.</description>
+      
+    </item>
+    
+    <item>
+      <title>Misc</title>
+      <link>https://iitgn-fuss.github.io/people/subhrajit/gallery/misc/</link>
+      <pubDate>Thu, 12 Feb 2026 14:40:59 +0530</pubDate>
+      
+      <guid>https://iitgn-fuss.github.io/people/subhrajit/gallery/misc/</guid>
+      <description>AI Day 2026 at IIT Gandhinagar, where I presented a poster for our work &amp;ldquo;Davids vs. Goliath — Achieving GPU-like performance using Network of Stations&amp;rdquo;.</description>
+      
+    </item>
+    
+    <item>
+      <title>Workshops</title>
+      <link>https://iitgn-fuss.github.io/people/subhrajit/gallery/workshops/</link>
+      <pubDate>Tue, 04 Nov 2025 14:40:59 +0530</pubDate>
+      
+      <guid>https://iitgn-fuss.github.io/people/subhrajit/gallery/workshops/</guid>
+      <description>Computer Systems Workshop at IISc Bangalore (30–31 October 2025), where I presented a poster.</description>
+      
+    </item>
+    
+    <item>
+      <title>Some memories during my M.Tech at IIT Gandhinagar</title>
+      <link>https://iitgn-fuss.github.io/people/subhrajit/gallery/mtech-memories-iitgn/</link>
+      <pubDate>Mon, 30 Jun 2025 10:00:59 +0530</pubDate>
+      
+      <guid>https://iitgn-fuss.github.io/people/subhrajit/gallery/mtech-memories-iitgn/</guid>
+      <description>Some memories from my M.Tech at IIT Gandhinagar: convocation, the Mt. Abu trip, Blithchron&#39;25, and more.</description>
+      
+    </item>
+    
+    <item>
+      <title>IIT Gandhinagar Campus</title>
+      <link>https://iitgn-fuss.github.io/people/subhrajit/gallery/iit-gandhinagar-campus/</link>
+      <pubDate>Mon, 03 Feb 2025 14:40:59 +0530</pubDate>
+      
+      <guid>https://iitgn-fuss.github.io/people/subhrajit/gallery/iit-gandhinagar-campus/</guid>
+      <description>The beautiful IIT Gandhinagar campus through my lens, captured during my M.Tech (2023–2025).</description>
+      
+    </item>
+    
+    <item>
+      <title>Teaching</title>
+      <link>https://iitgn-fuss.github.io/people/subhrajit/gallery/teaching/</link>
+      <pubDate>Mon, 03 Feb 2025 14:40:59 +0530</pubDate>
+      
+      <guid>https://iitgn-fuss.github.io/people/subhrajit/gallery/teaching/</guid>
+      <description>Student-Run Short Course on Code Profiling and Optimization at IIT Gandhinagar (November 2024), where I was the principal instructor.</description>
+      
+    </item>
+    
+    <item>
+      <title>University of Kalyani</title>
+      <link>https://iitgn-fuss.github.io/people/subhrajit/gallery/university-of-kalyani/</link>
+      <pubDate>Mon, 03 Feb 2025 14:40:59 +0530</pubDate>
+      
+      <guid>https://iitgn-fuss.github.io/people/subhrajit/gallery/university-of-kalyani/</guid>
+      <description>A few shots of my alma mater, the University of Kalyani, taken during my M.Sc (2021–2023).</description>
+      
+    </item>
+    
+  </channel>
+</rss>

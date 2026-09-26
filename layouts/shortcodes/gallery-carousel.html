@@ -1,5 +1,8 @@
 {{- $slides := slice -}}
 {{- $pages := where .Site.RegularPages "Section" "misc" -}}
+{{- /* Photos live in content/misc/gallery/, i.e. resources of the misc section,
+       so they can be resized here instead of shipping the multi-MB originals. */ -}}
+{{- $misc := site.GetPage "/misc" -}}
 {{- range $page := $pages.ByDate.Reverse -}}
   {{- $matches := findRE `!\[.*?\]\(.*?\)` $page.RawContent -}}
   {{- range $match := $matches -}}
@@ -23,12 +26,25 @@
         {{- if or (eq $displayCaption "") (eq $displayCaption "Image") -}}
           {{- $displayCaption = $slide.pageTitle -}}
         {{- end -}}
+        {{- $src := $slide.url | relURL -}}
+        {{- $srcset := "" -}}
+        {{- $blur := $src -}}
+        {{- with $misc -}}
+          {{- with .Resources.GetMatch (strings.TrimPrefix "/misc/" $slide.url) -}}
+            {{- $small := . -}}{{- $large := . -}}
+            {{- if gt .Width 640 -}}{{- $small = .Resize "640x q80" -}}{{- end -}}
+            {{- if gt .Width 1280 -}}{{- $large = .Resize "1280x q80" -}}{{- end -}}
+            {{- $src = $small.RelPermalink -}}
+            {{- $srcset = printf "%s %dw, %s %dw" $small.RelPermalink $small.Width $large.RelPermalink $large.Width -}}
+            {{- $blur = (.Resize "48x q60").RelPermalink -}}
+          {{- end -}}
+        {{- end -}}
         <article class="gallery-carousel__slide" role="listitem" aria-roledescription="slide" aria-label="Photo {{ add $index 1 }} of {{ len $slides }}">
           <a class="gallery-carousel__card" href="{{ $slide.pageUrl }}">
             <figure class="gallery-carousel__figure">
               <img
                 class="gallery-carousel__bg-blur"
-                src="{{ $slide.url | relURL }}"
+                src="{{ $blur }}"
                 alt=""
                 aria-hidden="true"
                 loading="lazy"
@@ -36,7 +52,8 @@
               >
               <img
                 class="gallery-carousel__image"
-                src="{{ $slide.url | relURL }}"
+                src="{{ $src }}"
+                {{ with $srcset }}srcset="{{ . }}" sizes="(max-width: 640px) 86vw, min(44vw, 42rem)"{{ end }}
                 alt="{{ $displayCaption }}"
                 loading="lazy"
                 decoding="async"

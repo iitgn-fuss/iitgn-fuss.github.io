@@ -1,0 +1,71 @@
+{{- $alt := .PlainText | safeHTML -}}
+{{- $lazyLoading := .Page.Site.Params.enableImageLazyLoading | default true -}}
+{{- $dest := .Destination -}}
+{{- $url := urls.Parse $dest -}}
+
+{{- $isLocal := not $url.Scheme -}}
+{{- $isPage := and (eq .Page.Kind "page") (not .Page.BundleType) -}}
+{{- $startsWithSlash := hasPrefix $dest "/" -}}
+{{- $startsWithRelative := hasPrefix $dest "../" -}}
+
+{{- /* Site override of Hextra's hook: photos that are section resources (e.g.
+       /misc/gallery/x.jpg lives in content/misc/gallery/) get resized copies and
+       a srcset instead of the multi-MB original. Everything else is unchanged. */ -}}
+{{- $srcset := "" -}}
+{{- $size := dict -}}
+{{- if and $dest $isLocal $startsWithSlash -}}
+  {{- $parts := split (strings.TrimPrefix "/" $url.Path) "/" -}}
+  {{- if gt (len $parts) 1 -}}
+    {{- with site.GetPage (printf "/%s" (index $parts 0)) -}}
+      {{- with .Resources.GetMatch (delimit (after 1 $parts) "/") -}}
+        {{- if in (slice "jpeg" "png" "webp") .MediaType.SubType -}}
+          {{- $m := . -}}{{- $l := . -}}
+          {{- if gt .Width 800 -}}{{- $m = .Resize "800x q80" -}}{{- end -}}
+          {{- if gt .Width 1600 -}}{{- $l = .Resize "1600x q80" -}}{{- end -}}
+          {{- $srcset = printf "%s %dw, %s %dw" $m.RelPermalink $m.Width $l.RelPermalink $l.Width -}}
+          {{- $size = dict "width" $m.Width "height" $m.Height -}}
+          {{- $dest = $m.RelPermalink -}}
+          {{- $isLocal = false -}}
+        {{- end -}}
+      {{- end -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+
+{{- if and $dest $isLocal -}}
+  {{- if $startsWithSlash -}}
+    {{- with or (.PageInner.Resources.Get $url.Path) (resources.Get $url.Path) -}}
+      {{/* Images under assets directory */}}
+      {{- $query := cond $url.RawQuery (printf "?%s" $url.RawQuery) "" -}}
+      {{- $fragment := cond $url.Fragment (printf "#%s" $url.Fragment) "" -}}
+      {{- $dest = printf "%s%s%s" .RelPermalink $query $fragment -}}
+    {{- else -}}
+      {{/* Images under static directory */}}
+      {{- $dest = (relURL (strings.TrimPrefix "/" $dest)) -}}
+    {{- end -}}
+  {{- else if and $isPage (not $startsWithRelative) -}}
+    {{/* Images that are sibling to the individual page file */}}
+    {{ $dest = (printf "../%s" $dest) }}
+  {{- end -}}
+{{- end -}}
+
+{{- $attributes := "" -}}
+{{- range $key, $value := .Attributes -}}
+  {{- if $value -}}
+    {{- $pair := printf "%s=%q" $key ($value | transform.HTMLEscape) -}}
+    {{- $attributes = printf "%s %s" $attributes $pair -}}
+  {{- end -}}
+{{- end -}}
+
+{{- with $srcset -}}
+  {{- $attributes = printf `%s srcset="%s" sizes="(max-width: 800px) 100vw, 800px" width="%d" height="%d"` $attributes . $size.width $size.height -}}
+{{- end -}}
+
+{{- with .Title -}}
+  <figure>
+    <img src="{{ $dest | safeURL }}" title="{{ . }}" alt="{{ $alt }}" {{ $attributes | safeHTMLAttr }} {{ if $lazyLoading }}loading="lazy"{{ end }} />
+    <figcaption>{{ . }}</figcaption>
+  </figure>
+{{- else -}}
+  <img src="{{ $dest | safeURL }}" alt="{{ $alt }}" {{ $attributes | safeHTMLAttr }} {{ if $lazyLoading }}loading="lazy"{{ end }} />
+{{- end -}}

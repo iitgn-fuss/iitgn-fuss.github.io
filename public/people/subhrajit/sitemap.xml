@@ -3,324 +3,366 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
 
   <url>
-    <loc>http://localhost:61763/people/subhrajit/projects/wimpygpu/</loc>
+    <loc>https://iamsubhrajit10.me/projects/wimpygpu/</loc>
     <lastmod>2025-10-01T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:61763/people/subhrajit/projects/cmp-integration/</loc>
+    <loc>https://iamsubhrajit10.me/projects/cmp-integration/</loc>
     <lastmod>2025-10-01T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:61763/people/subhrajit/projects/large-integer-arithmetic/</loc>
+    <loc>https://iamsubhrajit10.me/projects/large-integer-arithmetic/</loc>
     <lastmod>2024-05-01T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:61763/people/subhrajit/projects/maximal-covering-location/</loc>
+    <loc>https://iamsubhrajit10.me/projects/maximal-covering-location/</loc>
     <lastmod>2022-05-01T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:61763/people/subhrajit/projects/reversible-multiplier/</loc>
+    <loc>https://iamsubhrajit10.me/projects/reversible-multiplier/</loc>
     <lastmod>2020-05-01T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:61763/people/subhrajit/projects/instant-payment-gateway/</loc>
+    <loc>https://iamsubhrajit10.me/projects/instant-payment-gateway/</loc>
     <lastmod>2023-10-01T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:61763/people/subhrajit/projects/tennisserve/</loc>
+    <loc>https://iamsubhrajit10.me/projects/tennisserve/</loc>
     <lastmod>2023-11-01T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:61763/people/subhrajit/gallery/conferences/</loc>
+    <loc>https://iamsubhrajit10.me/tags/addition/</loc>
+    <lastmod>2027-04-11T00:00:00+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://iamsubhrajit10.me/publications/digitsonturbo/</loc>
+    <lastmod>2027-04-11T00:00:00+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://iamsubhrajit10.me/</loc>
+    <lastmod>2027-04-11T00:00:00+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://iamsubhrajit10.me/tags/large-number-arithmetic/</loc>
+    <lastmod>2027-04-11T00:00:00+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://iamsubhrajit10.me/tags/multiplication/</loc>
+    <lastmod>2027-04-11T00:00:00+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://iamsubhrajit10.me/publications/</loc>
+    <lastmod>2027-04-11T00:00:00+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://iamsubhrajit10.me/tags/simd/</loc>
+    <lastmod>2027-04-11T00:00:00+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://iamsubhrajit10.me/tags/subtraction/</loc>
+    <lastmod>2027-04-11T00:00:00+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://iamsubhrajit10.me/tags/</loc>
+    <lastmod>2027-04-11T00:00:00+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://iamsubhrajit10.me/updates/digitsonturbo-asplos27/</loc>
+    <lastmod>2026-09-25T00:00:00+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://iamsubhrajit10.me/updates/</loc>
+    <lastmod>2026-09-25T00:00:00+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://iamsubhrajit10.me/updates/cfc-iict26/</loc>
+    <lastmod>2026-08-18T00:00:00+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://iamsubhrajit10.me/gallery/conferences/</loc>
     <lastmod>2026-06-06T14:40:59+05:30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:61763/people/subhrajit/gallery/</loc>
+    <loc>https://iamsubhrajit10.me/gallery/</loc>
     <lastmod>2026-06-06T14:40:59+05:30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:61763/people/subhrajit/</loc>
-    <lastmod>2026-06-06T14:40:59+05:30</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>http://localhost:61763/people/subhrajit/updates/asia-ccs/</loc>
+    <loc>https://iamsubhrajit10.me/updates/asia-ccs/</loc>
     <lastmod>2026-06-06T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:61763/people/subhrajit/updates/</loc>
-    <lastmod>2026-06-06T00:00:00+00:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>http://localhost:61763/people/subhrajit/gallery/misc/</loc>
+    <loc>https://iamsubhrajit10.me/gallery/misc/</loc>
     <lastmod>2026-02-12T14:40:59+05:30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:61763/people/subhrajit/updates/ai-day/</loc>
+    <loc>https://iamsubhrajit10.me/updates/ai-day/</loc>
     <lastmod>2026-02-12T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:61763/people/subhrajit/categories/</loc>
+    <loc>https://iamsubhrajit10.me/categories/</loc>
     <lastmod>2025-12-26T11:30:00+05:30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:61763/people/subhrajit/tags/code-measurement/</loc>
+    <loc>https://iamsubhrajit10.me/tags/code-measurement/</loc>
     <lastmod>2025-12-26T11:30:00+05:30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:61763/people/subhrajit/tags/execution-time/</loc>
+    <loc>https://iamsubhrajit10.me/tags/execution-time/</loc>
     <lastmod>2025-12-26T11:30:00+05:30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:61763/people/subhrajit/tags/performance/</loc>
+    <loc>https://iamsubhrajit10.me/tags/performance/</loc>
     <lastmod>2025-12-26T11:30:00+05:30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:61763/people/subhrajit/posts/</loc>
+    <loc>https://iamsubhrajit10.me/posts/</loc>
     <lastmod>2025-12-26T11:30:00+05:30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:61763/people/subhrajit/tags/profiling/</loc>
+    <loc>https://iamsubhrajit10.me/tags/profiling/</loc>
     <lastmod>2025-12-26T11:30:00+05:30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:61763/people/subhrajit/categories/systems/</loc>
+    <loc>https://iamsubhrajit10.me/categories/systems/</loc>
     <lastmod>2025-12-26T11:30:00+05:30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:61763/people/subhrajit/tags/</loc>
-    <lastmod>2025-12-26T11:30:00+05:30</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>http://localhost:61763/people/subhrajit/gallery/workshops/</loc>
+    <loc>https://iamsubhrajit10.me/gallery/workshops/</loc>
     <lastmod>2025-11-04T14:40:59+05:30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:61763/people/subhrajit/updates/iisc-poster/</loc>
+    <loc>https://iamsubhrajit10.me/updates/iisc-poster/</loc>
     <lastmod>2025-10-31T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:61763/people/subhrajit/tags/cpu-parallelism/</loc>
+    <loc>https://iamsubhrajit10.me/tags/cpu-parallelism/</loc>
     <lastmod>2025-10-01T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:61763/people/subhrajit/tags/distributed-systems/</loc>
+    <loc>https://iamsubhrajit10.me/projects/</loc>
     <lastmod>2025-10-01T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:61763/people/subhrajit/tags/matrix-multiplication/</loc>
+    <loc>https://iamsubhrajit10.me/tags/distributed-systems/</loc>
     <lastmod>2025-10-01T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:61763/people/subhrajit/projects/</loc>
+    <loc>https://iamsubhrajit10.me/tags/matrix-multiplication/</loc>
     <lastmod>2025-10-01T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:61763/people/subhrajit/tags/usable-privacy-and-security/</loc>
+    <loc>https://iamsubhrajit10.me/tags/usable-privacy-and-security/</loc>
     <lastmod>2025-10-01T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:61763/people/subhrajit/tags/web-security/</loc>
+    <loc>https://iamsubhrajit10.me/tags/web-security/</loc>
     <lastmod>2025-10-01T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:61763/people/subhrajit/updates/ican-ctf/</loc>
+    <loc>https://iamsubhrajit10.me/updates/ican-ctf/</loc>
     <lastmod>2025-07-15T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:61763/people/subhrajit/gallery/mtech-memories-iitgn/</loc>
+    <loc>https://iamsubhrajit10.me/gallery/mtech-memories-iitgn/</loc>
     <lastmod>2025-06-30T10:00:59+05:30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:61763/people/subhrajit/gallery/iit-gandhinagar-campus/</loc>
+    <loc>https://iamsubhrajit10.me/gallery/iit-gandhinagar-campus/</loc>
     <lastmod>2025-02-03T14:40:59+05:30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:61763/people/subhrajit/gallery/teaching/</loc>
+    <loc>https://iamsubhrajit10.me/gallery/teaching/</loc>
     <lastmod>2025-02-03T14:40:59+05:30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:61763/people/subhrajit/gallery/university-of-kalyani/</loc>
+    <loc>https://iamsubhrajit10.me/gallery/university-of-kalyani/</loc>
     <lastmod>2025-02-03T14:40:59+05:30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:61763/people/subhrajit/updates/phd-fellowship/</loc>
+    <loc>https://iamsubhrajit10.me/updates/phd-fellowship/</loc>
     <lastmod>2025-01-15T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:61763/people/subhrajit/updates/buildsec-award/</loc>
+    <loc>https://iamsubhrajit10.me/updates/buildsec-award/</loc>
     <lastmod>2024-12-20T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:61763/people/subhrajit/tags/password-managers/</loc>
+    <loc>https://iamsubhrajit10.me/publications/online-authentication-habits/</loc>
     <lastmod>2024-12-01T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:61763/people/subhrajit/publications/</loc>
+    <loc>https://iamsubhrajit10.me/tags/password-managers/</loc>
     <lastmod>2024-12-01T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:61763/people/subhrajit/tags/two-factor-authentication/</loc>
+    <loc>https://iamsubhrajit10.me/tags/two-factor-authentication/</loc>
     <lastmod>2024-12-01T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:61763/people/subhrajit/search/</loc>
+    <loc>https://iamsubhrajit10.me/search/</loc>
     <lastmod>2024-10-06T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:61763/people/subhrajit/tags/large-number-arithmetic/</loc>
+    <loc>https://iamsubhrajit10.me/tags/scientific-computing/</loc>
     <lastmod>2024-05-01T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:61763/people/subhrajit/tags/scientific-computing/</loc>
-    <lastmod>2024-05-01T00:00:00+00:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>http://localhost:61763/people/subhrajit/tags/simd/</loc>
-    <lastmod>2024-05-01T00:00:00+00:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>http://localhost:61763/people/subhrajit/tags/parallel-programming/</loc>
+    <loc>https://iamsubhrajit10.me/tags/parallel-programming/</loc>
     <lastmod>2023-11-01T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:61763/people/subhrajit/tags/payment-gateway/</loc>
+    <loc>https://iamsubhrajit10.me/tags/payment-gateway/</loc>
     <lastmod>2023-10-01T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:61763/people/subhrajit/tags/combinatorial-optimization/</loc>
+    <loc>https://iamsubhrajit10.me/tags/combinatorial-optimization/</loc>
     <lastmod>2022-05-01T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:61763/people/subhrajit/tags/metaheuristics/</loc>
+    <loc>https://iamsubhrajit10.me/tags/metaheuristics/</loc>
     <lastmod>2022-05-01T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:61763/people/subhrajit/tags/operations-research/</loc>
+    <loc>https://iamsubhrajit10.me/tags/operations-research/</loc>
     <lastmod>2022-05-01T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:61763/people/subhrajit/tags/swarm-intelligence/</loc>
+    <loc>https://iamsubhrajit10.me/tags/swarm-intelligence/</loc>
     <lastmod>2022-05-01T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:61763/people/subhrajit/tags/hardware-architecture/</loc>
+    <loc>https://iamsubhrajit10.me/tags/hardware-architecture/</loc>
     <lastmod>2020-05-01T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:61763/people/subhrajit/tags/reversible-computing/</loc>
+    <loc>https://iamsubhrajit10.me/tags/reversible-computing/</loc>
     <lastmod>2020-05-01T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:61763/people/subhrajit/authors/</loc>
+    <loc>https://iamsubhrajit10.me/authors/</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:61763/people/subhrajit/series/</loc>
+    <loc>https://iamsubhrajit10.me/series/</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Publications on Subhrajit Das</title>
+    <link>https://iitgn-fuss.github.io/people/subhrajit/publications/</link>
+    <description>Recent content in Publications on Subhrajit Das</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>© 2026 Subhrajit Das</copyright>
+    <lastBuildDate>Sun, 11 Apr 2027 00:00:00 +0000</lastBuildDate><atom:link href="https://iitgn-fuss.github.io/people/subhrajit/publications/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>DigitsOnTurbo: Leveraging SIMD for Accelerating Large-number Arithmetic</title>
+      <link>https://iitgn-fuss.github.io/people/subhrajit/publications/digitsonturbo/</link>
+      <pubDate>Sun, 11 Apr 2027 00:00:00 +0000</pubDate>
+      
+      <guid>https://iitgn-fuss.github.io/people/subhrajit/publications/digitsonturbo/</guid>
+      <description>Subhrajit Das, Abhishek Bichhawat, and Yuvraj Patel · ASPLOS 2027, Heraklion, Crete, Greece</description>
+      
+    </item>
+    
+    <item>
+      <title>Online Authentication Habits of Indian Users</title>
+      <link>https://iitgn-fuss.github.io/people/subhrajit/publications/online-authentication-habits/</link>
+      <pubDate>Sun, 01 Dec 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://iitgn-fuss.github.io/people/subhrajit/publications/online-authentication-habits/</guid>
+      <description>Pratyush Choudhary, Subhrajit Das, Mukul Paras Potta, Prasuj Das, and Abhishek Bichhawat · BuildSec 2024, New Delhi, India</description>
+      
+    </item>
+    
+  </channel>
+</rss>

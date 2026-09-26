@@ -1,0 +1,33 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>FUSS Group @ IITGn – ASPLOS</title>
+    <link>https://iitgn-fuss.github.io/tags/asplos/</link>
+    <description>Recent content in ASPLOS on FUSS Group @ IITGn</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 23 Sep 2026 00:00:00 +0000</lastBuildDate>
+    
+	  <atom:link href="https://iitgn-fuss.github.io/tags/asplos/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+    <item>
+      <title>DigitsOnTurbo accepted at ASPLOS 2027</title>
+      <link>https://iitgn-fuss.github.io/news/digitsonturbo/</link>
+      <pubDate>Wed, 23 Sep 2026 00:00:00 +0000</pubDate>
+      
+      <guid>https://iitgn-fuss.github.io/news/digitsonturbo/</guid>
+      <description>
+        
+        
+        &lt;p&gt;Our work &amp;ldquo;&lt;a href=&#34;https://arxiv.org/abs/2604.21566&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;DigitsOnTurbo: Leveraging SIMD for Accelerating Large-number Arithmetic&lt;/a&gt;&amp;rdquo; has been accepted at the 32nd ACM International Conference on Architectural Support for Programming Languages and Operating Systems (ASPLOS), April 2027.&lt;/p&gt;
+
+      </description>
+    </item>
+    
+  </channel>
+</rss>

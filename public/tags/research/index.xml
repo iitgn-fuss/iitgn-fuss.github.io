@@ -5,7 +5,7 @@
     <description>Recent content in Research on FUSS Group @ IITGn</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 04 Jun 2026 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 23 Sep 2026 00:00:00 +0000</lastBuildDate>
     
 	  <atom:link href="https://iitgn-fuss.github.io/tags/research/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,6 +14,20 @@
         
       
     
+    
+    <item>
+      <title>DigitsOnTurbo accepted at ASPLOS 2027</title>
+      <link>https://iitgn-fuss.github.io/news/digitsonturbo/</link>
+      <pubDate>Wed, 23 Sep 2026 00:00:00 +0000</pubDate>
+      
+      <guid>https://iitgn-fuss.github.io/news/digitsonturbo/</guid>
+      <description>
+        
+        
+        &lt;p&gt;Our work &amp;ldquo;&lt;a href=&#34;https://arxiv.org/abs/2604.21566&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;DigitsOnTurbo: Leveraging SIMD for Accelerating Large-number Arithmetic&lt;/a&gt;&amp;rdquo; has been accepted at the 32nd ACM International Conference on Architectural Support for Programming Languages and Operating Systems (ASPLOS), April 2027.&lt;/p&gt;
+
+      </description>
+    </item>
     
     <item>
       <title>Our New Work on Analyzing Usability and Legal Compliance of Consent Withdrawal on the Web accepted at CCS 2026</title>
@@ -96,7 +110,11 @@
       <description>
         
         
-        &lt;h2&gt;2026&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;2026&#34;&gt;&lt;/span&gt;
+        &lt;h2&gt;2027&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;2027&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#2027&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;&lt;a href=&#34;https://arxiv.org/abs/2604.21566&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&amp;ldquo;DigitsOnTurbo: Leveraging SIMD for Accelerating Large-number Arithmetic&amp;rdquo;&lt;/a&gt;&lt;/strong&gt;&lt;br&gt;
+Subhrajit Das, Abhishek Bichhawat, Yuvraj Patel&lt;br&gt;
+&lt;em&gt;The 32nd ACM International Conference on Architectural Support for Programming Languages and Operating Systems (ASPLOS)&lt;/em&gt;, April 2027&lt;/p&gt;
+&lt;h2&gt;2026&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;2026&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#2026&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;&lt;a href=&#34;#&#34; &gt;&amp;ldquo;Usability Compliance vs. Legal Compliance of Consent Withdrawal on the Web: An Expert Evaluation of 200 Websites&amp;rdquo;&lt;/a&gt;&lt;/strong&gt;&lt;br&gt;
 S. Ahuja, G. Kancherla, C. Santos, N. Bielova, A. Bichhawat&lt;br&gt;
 &lt;em&gt;The 33rd ACM Conference on Computer and Communications Security (CCS)&lt;/em&gt;, November 2026&lt;/p&gt;

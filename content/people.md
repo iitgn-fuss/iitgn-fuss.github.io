@@ -102,9 +102,9 @@ type: people
       <p class="person-title">2nd Year Ph.D.</p>
       <p class="person-period">July 2023 - Present</p>
       <div class="research-focus-phrases">
-        <span>Systems & Computer Architecture</span>
+        <span>Computer Architecture</span>
         <span class="research-focus-separator">|</span>
-        <span>Distributed Computing</span>
+        <span>Distributed Systems</span>
         <span class="research-focus-separator">|</span>
         <span>Usable Security</span>
       </div>

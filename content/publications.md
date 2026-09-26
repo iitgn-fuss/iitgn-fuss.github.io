@@ -3,6 +3,12 @@ title: "Publications"
 layout: "single"
 tags: ["research", "publications"]
 ---
+## 2027
+
+**["DigitsOnTurbo: Leveraging SIMD for Accelerating Large-number Arithmetic"](https://arxiv.org/abs/2604.21566)**   
+Subhrajit Das, Abhishek Bichhawat, Yuvraj Patel   
+*The 32nd ACM International Conference on Architectural Support for Programming Languages and Operating Systems (ASPLOS)*, April 2027
+
 ## 2026
 
 **["Usability Compliance vs. Legal Compliance of Consent Withdrawal on the Web: An Expert Evaluation of 200 Websites"](#)**  
