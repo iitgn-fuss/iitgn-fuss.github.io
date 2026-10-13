@@ -52,6 +52,12 @@
   transform: translateX(-50%);
 }
 
+@property --carousel-edge-fade {
+  syntax: "<length>";
+  inherits: false;
+  initial-value: 0px;
+}
+
 .gallery-carousel__track {
   display: grid;
   grid-auto-columns: min(44vw, 42rem);
@@ -61,11 +67,19 @@
   overscroll-behavior-inline: contain;
   padding: 0.25rem 0.1rem 1rem;
   scroll-padding-inline: 0.1rem;
-  scroll-snap-type: inline mandatory;
+  scroll-snap-type: inline proximity;
   scrollbar-color: rgb(100 116 139 / 0.45) transparent;
   scrollbar-width: thin;
   touch-action: pan-x;
   -webkit-overflow-scrolling: touch;
+  /* Faint fade on the right edge while there is more to scroll to. */
+  -webkit-mask-image: linear-gradient(to right, #000 calc(100% - var(--carousel-edge-fade)), transparent);
+  mask-image: linear-gradient(to right, #000 calc(100% - var(--carousel-edge-fade)), transparent);
+  transition: --carousel-edge-fade 300ms var(--fuss-ease);
+}
+
+.gallery-carousel.has-more .gallery-carousel__track {
+  --carousel-edge-fade: 3rem;
 }
 
 .gallery-carousel__track::-webkit-scrollbar {
@@ -83,7 +97,27 @@
   min-width: 0;
   list-style: none;
   scroll-snap-align: start;
-  scroll-snap-stop: always;
+  opacity: 0.7;
+  transition: opacity 320ms var(--fuss-ease);
+}
+
+.gallery-carousel__slide.is-active {
+  opacity: 1;
+}
+
+/* JS drives scrollLeft during drags and eased moves, so native snapping steps aside. */
+.gallery-carousel__track.is-dragging,
+.gallery-carousel__track.is-animating {
+  scroll-snap-type: none;
+}
+
+.gallery-carousel.is-enhanced .gallery-carousel__track {
+  cursor: grab;
+}
+
+.gallery-carousel.is-enhanced .gallery-carousel__track.is-dragging {
+  cursor: grabbing;
+  user-select: none;
 }
 
 .gallery-carousel__card {
@@ -132,7 +166,12 @@
   background: transparent;
   object-fit: cover;
   object-position: center;
-  transition: transform 240ms var(--fuss-ease);
+  transition: transform 240ms var(--fuss-ease), opacity 400ms var(--fuss-ease);
+}
+
+/* Fade each photo in over its blurred thumbnail instead of popping in. */
+.gallery-carousel.is-enhanced .gallery-carousel__image:not(.is-loaded) {
+  opacity: 0;
 }
 
 .gallery-carousel__image.is-portrait {
@@ -216,7 +255,7 @@
 }
 
 .gallery-carousel__status {
-  min-width: 3.5rem;
+  min-width: 5rem;
   font-variant-numeric: tabular-nums;
   text-align: center;
 }
@@ -252,6 +291,10 @@
 }
 
 @media (hover: hover) and (pointer: fine) {
+  .gallery-carousel__slide:hover {
+    opacity: 1;
+  }
+
   .gallery-carousel__card:hover {
     border-color: color-mix(in srgb, var(--fuss-accent) 48%, var(--gallery-border));
     box-shadow: var(--fuss-shadow-raised);
@@ -295,6 +338,10 @@
   .gallery-carousel {
     width: calc(100vw - 2.5rem);
     margin-block: 1.25rem 2.5rem;
+  }
+
+  .gallery-carousel.has-more .gallery-carousel__track {
+    --carousel-edge-fade: 1.5rem;
   }
 
   .gallery-carousel__track {

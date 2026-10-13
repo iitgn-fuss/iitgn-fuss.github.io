@@ -1,13 +1,13 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>FUSS Group @ IITGn – ANRF</title>
-    <link>https://iitgn-fuss.github.io/tags/anrf/</link>
+    <link>http://localhost:1313/tags/anrf/</link>
     <description>Recent content in ANRF on FUSS Group @ IITGn</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 28 Dec 2025 00:00:00 +0000</lastBuildDate>
     
-	  <atom:link href="https://iitgn-fuss.github.io/tags/anrf/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="http://localhost:1313/tags/anrf/index.xml" rel="self" type="application/rss+xml" />
     
     
       
@@ -17,10 +17,10 @@
     
     <item>
       <title>Prof. Abhishek Bichhawat (jointly with IIT Kharagpur) received ANRF ARG Research Grant</title>
-      <link>https://iitgn-fuss.github.io/news/anrf-arg25/</link>
+      <link>http://localhost:1313/news/anrf-arg25/</link>
       <pubDate>Sun, 28 Dec 2025 00:00:00 +0000</pubDate>
       
-      <guid>https://iitgn-fuss.github.io/news/anrf-arg25/</guid>
+      <guid>http://localhost:1313/news/anrf-arg25/</guid>
       <description>
         
         

@@ -111,20 +111,31 @@
 
       const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
       const autoAdvanceDelay = 4000;
+      // After the visitor acts (click, key, drag) wait longer before autoplay takes over again.
+      const resumeDelay = 8000;
+      const canHover = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
+      let isHovered = false;
       let activeIndex = 0;
       let scrollFrame;
       let autoplayTimer;
       let autoplayEnabled = !reduceMotion;
       let isInViewport = !('IntersectionObserver' in window);
 
+      carousel.classList.add("is-enhanced");
+
       const setImageFit = (image) => {
-        if (image.naturalWidth === 0 || image.naturalHeight === 0) return;
-        image.classList.toggle("is-portrait", image.naturalHeight > image.naturalWidth);
+        if (image.naturalWidth !== 0 && image.naturalHeight !== 0) {
+          image.classList.toggle("is-portrait", image.naturalHeight > image.naturalWidth);
+        }
+        image.classList.add("is-loaded");
       };
 
       images.forEach((image) => {
         if (image.complete) setImageFit(image);
-        else image.addEventListener("load", () => setImageFit(image), { once: true });
+        else {
+          image.addEventListener("load", () => setImageFit(image), { once: true });
+          image.addEventListener("error", () => image.classList.add("is-loaded"), { once: true });
+        }
       });
 
       const getClosestSlideIndex = () => {
@@ -141,16 +152,80 @@
         const maxScroll = track.scrollWidth - track.clientWidth;
         previousButton.disabled = track.scrollLeft <= 1;
         nextButton.disabled = track.scrollLeft >= maxScroll - 1;
-        status.textContent = `${activeIndex + 1} / ${slides.length}`;
+        carousel.classList.toggle("has-more", track.scrollLeft < maxScroll - 1);
+        // Every fully visible slide reads as "current"; only the partly cut-off one dims.
+        const firstOffset = slides[0].offsetLeft;
+        const viewStart = track.scrollLeft;
+        const viewEnd = viewStart + track.clientWidth;
+        let firstVisible = activeIndex;
+        let lastVisible = activeIndex;
+        slides.forEach((slide, index) => {
+          const start = slide.offsetLeft - firstOffset;
+          const fullyVisible = start >= viewStart - 4 && start + slide.offsetWidth <= viewEnd + 4;
+          slide.classList.toggle("is-active", fullyVisible || index === activeIndex);
+          if (fullyVisible) {
+            firstVisible = Math.min(firstVisible, index);
+            lastVisible = Math.max(lastVisible, index);
+          }
+        });
+        status.textContent = firstVisible === lastVisible
+          ? `${firstVisible + 1} / ${slides.length}`
+          : `${firstVisible + 1}\u2013${lastVisible + 1} / ${slides.length}`;
       };
+
+      // One eased scroll shared by buttons, keys and autoplay (wrapping to the start included),
+      // so every move has the same feel and long jumps stay quick.
+      const easeInOutCubic = (t) => (t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2);
+      const easeOutCubic = (t) => 1 - Math.pow(1 - t, 3);
+      let animationFrame;
+
+      const stopAnimation = () => {
+        if (!animationFrame) return;
+        window.cancelAnimationFrame(animationFrame);
+        animationFrame = undefined;
+        track.classList.remove("is-animating");
+      };
+
+      const scrollToLeft = (left, easing = easeInOutCubic) => {
+        stopAnimation();
+        const from = track.scrollLeft;
+        const distance = left - from;
+        if (reduceMotion || Math.abs(distance) < 1) {
+          track.scrollLeft = left;
+          return;
+        }
+        const duration = Math.min(800, 450 + Math.abs(distance) / 4);
+        const start = performance.now();
+        track.classList.add("is-animating");
+        const step = (now) => {
+          const t = Math.min(1, Math.max(0, (now - start) / duration));
+          track.scrollLeft = from + distance * easing(t);
+          if (t < 1) {
+            animationFrame = window.requestAnimationFrame(step);
+          } else {
+            animationFrame = undefined;
+            track.classList.remove("is-animating");
+          }
+        };
+        animationFrame = window.requestAnimationFrame(step);
+      };
+
+      const slideLeft = (index) => slides[index].offsetLeft - slides[0].offsetLeft;
+
+      // Images are lazy; promote the ones about to scroll into view so they're ready on arrival.
+      const slideImage = (index) => slides[index]?.querySelector(".gallery-carousel__image");
+      const preload = (...indexes) => {
+        indexes.forEach((index) => {
+          const image = slideImage(index);
+          if (image && image.loading === "lazy") image.loading = "eager";
+        });
+      };
+      const isReady = (...indexes) => indexes.every((index) => !slideImage(index) || slideImage(index).complete);
 
       const goTo = (index) => {
         const destination = Math.max(0, Math.min(index, slides.length - 1));
-        const left = slides[destination].offsetLeft - slides[0].offsetLeft;
-        track.scrollTo({
-          left,
-          behavior: reduceMotion ? "auto" : "smooth"
-        });
+        preload(destination, destination + 1);
+        scrollToLeft(slideLeft(destination));
       };
 
       const updateAutoplayControl = () => {
@@ -176,18 +251,40 @@
         autoplayTimer = undefined;
       };
 
-      const startAutoplay = () => {
-        if (!autoplayEnabled || autoplayTimer || document.hidden || !isInViewport || slides.length < 2) return;
-        autoplayTimer = window.setTimeout(() => {
+      const startAutoplay = (delay = autoAdvanceDelay) => {
+        if (!autoplayEnabled || autoplayTimer || isHovered || document.hidden || !isInViewport || slides.length < 2) return;
+        preload(activeIndex + 1, activeIndex + 2);
+        let slowImageChecks = 0;
+        const advance = () => {
           autoplayTimer = undefined;
           const atEnd = track.scrollLeft >= track.scrollWidth - track.clientWidth - 1;
-          goTo(atEnd ? 0 : activeIndex + 1);
+          const target = atEnd ? 0 : activeIndex + 1;
+          // If the photo about to appear is still downloading, hold on a moment (up to ~4s) rather than reveal a blank card.
+          if (slowImageChecks < 10 && !isReady(target, target + 1)) {
+            slowImageChecks += 1;
+            autoplayTimer = window.setTimeout(advance, 400);
+            return;
+          }
+          goTo(target);
           startAutoplay();
-        }, autoAdvanceDelay);
+        };
+        autoplayTimer = window.setTimeout(advance, delay);
       };
 
-      previousButton.addEventListener("click", () => goTo(activeIndex - 1));
-      nextButton.addEventListener("click", () => goTo(activeIndex + 1));
+      // Restart the countdown with the longer, gentler delay after any deliberate interaction.
+      const deferAutoplay = () => {
+        stopAutoplay();
+        startAutoplay(resumeDelay);
+      };
+
+      previousButton.addEventListener("click", () => {
+        goTo(activeIndex - 1);
+        deferAutoplay();
+      });
+      nextButton.addEventListener("click", () => {
+        goTo(activeIndex + 1);
+        deferAutoplay();
+      });
       autoplayButton?.addEventListener("click", () => {
         autoplayEnabled = !autoplayEnabled;
         stopAutoplay();
@@ -196,6 +293,7 @@
       });
 
       track.addEventListener("keydown", (event) => {
+        if (["ArrowLeft", "ArrowRight", "Home", "End"].includes(event.key)) deferAutoplay();
         if (event.key === "ArrowLeft") {
           event.preventDefault();
           goTo(activeIndex - 1);
@@ -238,13 +336,77 @@
 
       updateControls();
       updateAutoplayControl();
-      carousel.addEventListener("focusin", stopAutoplay);
-      carousel.addEventListener("focusout", (event) => {
-        if (!carousel.contains(event.relatedTarget)) startAutoplay();
+      // Pause for keyboard focus only; a mouse click on a button shouldn't leave autoplay stuck off.
+      carousel.addEventListener("focusin", (event) => {
+        if (event.target.matches(":focus-visible")) stopAutoplay();
       });
-      track.addEventListener("pointerdown", stopAutoplay);
-      track.addEventListener("pointerup", startAutoplay);
-      track.addEventListener("pointercancel", startAutoplay);
+      carousel.addEventListener("focusout", (event) => {
+        if (!carousel.contains(event.relatedTarget)) startAutoplay(resumeDelay);
+      });
+      // Hovering a photo means someone is looking at it, so hold still until the pointer leaves.
+      if (canHover) {
+        carousel.addEventListener("mouseenter", () => {
+          isHovered = true;
+          stopAutoplay();
+        });
+        carousel.addEventListener("mouseleave", () => {
+          isHovered = false;
+          startAutoplay();
+        });
+      }
+      track.addEventListener("pointerdown", () => {
+        stopAnimation();
+        stopAutoplay();
+      });
+      track.addEventListener("pointerup", () => startAutoplay(resumeDelay));
+      track.addEventListener("pointercancel", () => startAutoplay(resumeDelay));
+
+      // Mouse drag-to-scroll with a short glide on release. Touch and trackpads stay native.
+      let drag = null;
+      let suppressClick = false;
+      track.addEventListener("pointerdown", (event) => {
+        if (event.pointerType !== "mouse" || event.button !== 0) return;
+        drag = { id: event.pointerId, x: event.clientX, left: track.scrollLeft, moved: false, v: 0, lastX: event.clientX, lastT: event.timeStamp };
+      });
+      track.addEventListener("pointermove", (event) => {
+        if (!drag || event.pointerId !== drag.id) return;
+        const dx = event.clientX - drag.x;
+        if (!drag.moved) {
+          if (Math.abs(dx) < 5) return;
+          drag.moved = true;
+          track.classList.add("is-dragging");
+          track.setPointerCapture(event.pointerId);
+        }
+        track.scrollLeft = drag.left - dx;
+        const dt = event.timeStamp - drag.lastT;
+        if (dt > 0) drag.v = drag.v * 0.6 + ((event.clientX - drag.lastX) / dt) * 0.4;
+        drag.lastX = event.clientX;
+        drag.lastT = event.timeStamp;
+      });
+      const endDrag = (event) => {
+        if (!drag || event.pointerId !== drag.id) return;
+        const finished = drag;
+        drag = null;
+        if (!finished.moved) return;
+        suppressClick = true;
+        window.setTimeout(() => { suppressClick = false; }, 60);
+        // Project the flick a little further, then glide to the nearest slide.
+        const projected = track.scrollLeft - finished.v * 220;
+        let nearest = 0;
+        slides.forEach((_, index) => {
+          if (Math.abs(slideLeft(index) - projected) < Math.abs(slideLeft(nearest) - projected)) nearest = index;
+        });
+        scrollToLeft(slideLeft(nearest), easeOutCubic);
+        track.classList.remove("is-dragging");
+      };
+      track.addEventListener("pointerup", endDrag);
+      track.addEventListener("pointercancel", endDrag);
+      track.addEventListener("dragstart", (event) => event.preventDefault());
+      track.addEventListener("click", (event) => {
+        if (!suppressClick) return;
+        event.preventDefault();
+        event.stopPropagation();
+      }, true);
       document.addEventListener("visibilitychange", () => {
         if (document.hidden) stopAutoplay();
         else startAutoplay();
