@@ -11,6 +11,7 @@ hero:
   badge: "National Faculty Development Initiative"
   title: "ICAN Faculty Development Program (FDP) on Cybersecurity"
   tagline: "Empowering Educators. Strengthening Cybersecurity Education."
+  organized_by: "Organized by Trust Lab - IIT Bombay, C3iHub - IIT Kanpur, CyStar - IIT Madras, and ITEL Foundation."
   consortium: "Hosted this year at IIT Gandhinagar."
   banner_image: "/images/ican-fdp/banner.webp"
   host_institution: "IIT Gandhinagar"
@@ -40,12 +41,23 @@ about:
       description: "Top 25–30 faculty receive advanced training with full accommodation and hospitality support at IIT Gandhinagar."
 
 organizers:
+  description: "Indian Cybersecurity Academic Network (ICAN) is an independent academic group in the Cybersecurity and Encryption Technology domain. The lead entities that form ICAN are IIT Bombay, IIT Kanpur, IIT Madras and ITEL (Immersive Technology and Entrepreneurship Labs) Foundation with participation from premier institutes in India."
   entities:
     - name: "IIT Gandhinagar"
-      centre: "Department of Computer Science and Engineering"
       role: "Host Institute (2026)"
       logo: "/images/ican-fdp/iitgn-seal.svg"
-      url: "https://iitgn-fuss.github.io/"
+    - name: "IIT Bombay"
+      role: "Lead Partner"
+      logo: "/images/ican-fdp/iitb.webp"
+    - name: "IIT Kanpur"
+      role: "Lead Partner"
+      logo: "/images/ican-fdp/iitk.webp"
+    - name: "IIT Madras"
+      role: "Lead Partner"
+      logo: "/images/ican-fdp/iitm.webp"
+    - name: "ITEL Foundation"
+      role: "Lead Partner"
+      logo: "/images/ican-fdp/itel.webp"
 
 structure:
   phase1:

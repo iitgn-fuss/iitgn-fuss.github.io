@@ -686,6 +686,14 @@
       font-weight: 600;
     }
 
+    .hero-host-text {
+      font-family: 'Red Hat Display', sans-serif;
+      font-size: 15.5px;
+      color: #334155;
+      line-height: 1.65;
+      margin-top: 4px;
+    }
+
     .host-highlight {
       color: #006FD1;
       font-weight: 700 !important;
@@ -757,16 +765,17 @@
     /* ORGANIZERS GRID - 5 BALANCED COLUMNS (NO HEAVY CARDS) */
     .organizers-row {
       display: flex;
-      justify-content: space-between;
+      justify-content: center;
       align-items: flex-start;
       flex-wrap: wrap;
-      gap: 16px;
+      gap: 20px;
       margin: 20px 0 10px;
       text-align: center;
     }
 
     .organizer-col {
-      flex: 1 1 170px;
+      flex: 1 1 150px;
+      max-width: 190px;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -1139,6 +1148,9 @@
               </div>
             </div>
             <div class="hero-organizers-text">
+              Organized by <strong>Trust Lab - IIT Bombay</strong>, <strong>C3iHub - IIT Kanpur</strong>, <strong>CyStar - IIT Madras</strong>, and <strong>ITEL Foundation</strong>.
+            </div>
+            <div class="hero-host-text">
               Hosted this year at <strong class="host-highlight">IIT Gandhinagar</strong>.
             </div>
           </div>
@@ -1182,10 +1194,10 @@
         <h2 class="section-title">Organizers</h2>
       </div>
 
-      <div class="organizers-row" style="justify-content: center;">
+      <div class="organizers-row">
         <!-- IIT Gandhinagar (Host Institute) -->
-        <div class="organizer-col" style="max-width: 220px;">
-          <div class="organizer-logo-frame" style="width: 96px; height: 96px;">
+        <div class="organizer-col">
+          <div class="organizer-logo-frame">
             <img src="{{ "/images/ican-fdp/iitgn-seal.svg" | relURL }}"
                  data-fallback="/images/ican-fdp/iitgn-seal.png"
                  onerror="fixImgSrc(this)"
@@ -1196,10 +1208,79 @@
                  width="80"
                  height="80">
           </div>
-          <div class="organizer-name" style="font-size: 17px;">IIT Gandhinagar</div>
+          <div class="organizer-name">IIT Gandhinagar</div>
           <div class="host-tag">Host Institute</div>
         </div>
+
+        <!-- IIT Bombay -->
+        <div class="organizer-col">
+          <div class="organizer-logo-frame">
+            <img src="{{ "/images/ican-fdp/iitb.webp" | relURL }}"
+                 data-fallback="/images/ican-fdp/iitb.webp"
+                 onerror="fixImgSrc(this)"
+                 alt="IIT Bombay Official Logo"
+                 class="organizer-logo"
+                 loading="lazy"
+                 decoding="async"
+                 width="80"
+                 height="80">
+          </div>
+          <div class="organizer-name">IIT Bombay</div>
+        </div>
+
+        <!-- IIT Kanpur -->
+        <div class="organizer-col">
+          <div class="organizer-logo-frame">
+            <img src="{{ "/images/ican-fdp/iitk.webp" | relURL }}"
+                 data-fallback="/images/ican-fdp/iitk.webp"
+                 onerror="fixImgSrc(this)"
+                 alt="IIT Kanpur Official Logo"
+                 class="organizer-logo"
+                 loading="lazy"
+                 decoding="async"
+                 width="80"
+                 height="80">
+          </div>
+          <div class="organizer-name">IIT Kanpur</div>
+        </div>
+
+        <!-- IIT Madras -->
+        <div class="organizer-col">
+          <div class="organizer-logo-frame">
+            <img src="{{ "/images/ican-fdp/iitm.webp" | relURL }}"
+                 data-fallback="/images/ican-fdp/iitm.webp"
+                 onerror="fixImgSrc(this)"
+                 alt="IIT Madras Official Logo"
+                 class="organizer-logo"
+                 loading="lazy"
+                 decoding="async"
+                 width="80"
+                 height="80">
+          </div>
+          <div class="organizer-name">IIT Madras</div>
+        </div>
+
+        <!-- ITEL Foundation -->
+        <div class="organizer-col">
+          <div class="organizer-logo-frame">
+            <img src="{{ "/images/ican-fdp/itel.webp" | relURL }}"
+                 data-fallback="/images/ican-fdp/itel.webp"
+                 onerror="fixImgSrc(this)"
+                 alt="ITEL Foundation Official Logo"
+                 class="organizer-logo"
+                 loading="lazy"
+                 decoding="async"
+                 width="80"
+                 height="80">
+          </div>
+          <div class="organizer-name">ITEL Foundation</div>
+        </div>
       </div>
+
+      <!-- ICAN CONSORTIUM DESCRIPTION PARAGRAPH (EXACT CYSTAR WORDING) -->
+      <p class="intro-paragraph" style="margin-top: 24px; margin-bottom: 0;">
+        Indian Cybersecurity Academic Network (ICAN) is an independent academic group in the Cybersecurity and Encryption Technology domain. The lead entities that form ICAN are IIT Bombay, IIT Kanpur, IIT Madras and ITEL (Immersive Technology and Entrepreneurship Labs) Foundation with participation from premier institutes in India.
+      </p>
     </section>
 
     <!-- SIGNATURE 2.7px CYSTAR NAVY DIVIDER -->
