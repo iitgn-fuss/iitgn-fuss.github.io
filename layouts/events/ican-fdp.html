@@ -122,7 +122,7 @@
                 isClickNavigating = false;
               }, 800);
 
-              var targetY = targetSec.getBoundingClientRect().top + window.pageYOffset - 124;
+              var targetY = targetSec.getBoundingClientRect().top + window.pageYOffset - 114;
               window.scrollTo({
                 top: Math.max(0, targetY),
                 behavior: 'smooth'
@@ -174,7 +174,7 @@
               isClickNavigating = false;
             }, 800);
 
-            var targetY = targetSec.getBoundingClientRect().top + window.pageYOffset - 124;
+            var targetY = targetSec.getBoundingClientRect().top + window.pageYOffset - 114;
             window.scrollTo({
               top: Math.max(0, targetY),
               behavior: 'smooth'
@@ -265,7 +265,7 @@
       color-scheme: light !important;
       background-color: #FFFFFF !important;
       scroll-behavior: smooth;
-      scroll-padding-top: 124px !important;
+      scroll-padding-top: 114px !important;
     }
 
     body {
@@ -279,6 +279,19 @@
       -moz-osx-font-smoothing: grayscale;
     }
 
+    /* ISOLATE GLOBAL FUSS HEADER (Preserves identical system font & logo lockup across all pages) */
+    .hextra-nav-container,
+    .site-nav,
+    .navbar-title-text,
+    .navbar-title-main,
+    .navbar-fuss,
+    .navbar-group,
+    .navbar-subtitle,
+    .site-nav-link {
+      font-family: var(--hx-default-font-family, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif) !important;
+      -webkit-font-smoothing: antialiased;
+    }
+
     .hextra-nav-container-blur {
       background-color: rgba(255, 255, 255, 0.96) !important;
       box-shadow: 0 1px 0 rgba(0, 0, 0, 0.08) !important;
@@ -290,10 +303,10 @@
 
     /* SECTION ANCHOR SCROLL MARGIN (Leaves clean breathing room below sticky navbars) */
     .page-section {
-      scroll-margin-top: 124px;
+      scroll-margin-top: 114px;
     }
 
-    /* SUB-NAVBAR (MATHEMATICALLY CENTERED, ALIGNED WITH FUSS NAVBAR STYLE) */
+    /* SUB-NAVBAR (FLUSH WITH TOP NAVBAR, SEAMLESS SECOND TIER) */
     .quick-nav {
       position: sticky;
       top: 64px;
