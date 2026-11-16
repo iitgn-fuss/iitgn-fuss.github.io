@@ -1,0 +1,1428 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.Language.Lang | default `en` }}" dir="{{ .Site.Language.LanguageDirection | default `ltr` }}" class="light" style="color-scheme: light;">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="light">
+  
+  <title>{{ .Title }} | IIT Gandhinagar</title>
+  <meta name="description" content="{{ .Params.description }}">
+  <link rel="canonical" href="https://iitgn-fuss.github.io/ican-fdp/">
+  
+  <!-- Open Graph & Meta -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://iitgn-fuss.github.io/ican-fdp/">
+  <meta property="og:title" content="{{ .Title }}">
+  <meta property="og:description" content="{{ .Params.description }}">
+  <meta property="og:image" content="{{ "/images/ican-fdp/banner.webp" | absURL }}">
+  
+  <!-- Favicon -->
+  <link rel="icon shortcut" href="/favicon.ico" sizes="32x32" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+
+  <!-- Google Fonts: Libre Baskerville (Headings) & Red Hat Display (Body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Red+Hat+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,700&display=swap" rel="stylesheet">
+
+  <!-- IITGN-FUSS Default Compiled Styles & Variables -->
+  {{- $mainCss := resources.Get "css/compiled/main.css" -}}
+  {{- $customCss := resources.Get "css/custom.css" -}}
+  {{- $galleryCss := resources.Get "css/gallery.css" -}}
+  {{- $peopleTitleCss := resources.Get "css/people-title.css" -}}
+  {{- $variablesCss := resources.Get "css/variables.css" | resources.ExecuteAsTemplate "css/variables.css" . -}}
+
+  {{- if hugo.IsProduction }}
+    {{- $styles := slice $variablesCss $mainCss $customCss $galleryCss $peopleTitleCss | resources.Concat "css/compiled/main.css" | minify | fingerprint }}
+    <link rel="stylesheet" href="{{ $styles.RelPermalink }}" integrity="{{ $styles.Data.Integrity }}" />
+  {{- else }}
+    {{- $styles := resources.Get "css/compiled/main.css" -}}
+    <link href="{{ $styles.RelPermalink }}" rel="stylesheet" />
+    <link href="{{ $variablesCss.RelPermalink }}" rel="stylesheet" />
+    <link href="{{ $customCss.RelPermalink }}" rel="stylesheet" />
+    <link href="{{ $galleryCss.RelPermalink }}" rel="stylesheet" />
+    <link href="{{ $peopleTitleCss.RelPermalink }}" rel="stylesheet" />
+  {{- end }}
+
+  <script>
+    // Strictly force light mode exclusively for the ICAN FDP page
+    (function() {
+      function forceLight() {
+        document.documentElement.classList.remove("dark");
+        document.documentElement.classList.add("light");
+        document.documentElement.style.colorScheme = "light";
+      }
+      forceLight();
+      window.setTheme = forceLight;
+      document.addEventListener("DOMContentLoaded", forceLight);
+      window.addEventListener("pageshow", forceLight);
+    })();
+
+    if (localStorage.getItem('banner-closed')) {
+      document.documentElement.style.setProperty("--hextra-banner-height", "0px");
+      document.documentElement.classList.add("hextra-banner-hidden");
+    }
+  </script>
+
+  <script>
+    // Robust image URL handler for local preview & production environments
+    function fixImgSrc(img) {
+      if (!img) return;
+      var cur = img.getAttribute('src') || '';
+      if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
+        if (cur.indexOf('https://iitgn-fuss.github.io/') === 0) {
+          img.src = cur.replace('https://iitgn-fuss.github.io/', window.location.origin + '/');
+          return;
+        }
+      }
+      var fallback = img.getAttribute('data-fallback');
+      if (fallback && img.src !== fallback) {
+        img.src = fallback;
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+      // Localhost absolute link fix
+      if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
+        document.querySelectorAll('img').forEach(function(img) {
+          var src = img.getAttribute('src');
+          if (src && src.indexOf('https://iitgn-fuss.github.io/') === 0) {
+            img.src = src.replace('https://iitgn-fuss.github.io/', window.location.origin + '/');
+          }
+        });
+      }
+
+      // Smooth scrollspy and click navigation for in-page section navbar
+      var navLinks = Array.from(document.querySelectorAll('.section-nav-link'));
+      var sections = [];
+      navLinks.forEach(function(link) {
+        var id = link.getAttribute('href').replace('#', '');
+        var sec = document.getElementById(id);
+        if (sec) {
+          sections.push({ id: id, el: sec, link: link });
+        }
+      });
+
+      // Flag to prevent scroll events during programmatic click animation from bouncing active state
+      var isClickNavigating = false;
+      var clickNavTimer = null;
+
+      // Precise click handler with navbar offset for section links
+      navLinks.forEach(function(link) {
+        link.addEventListener('click', function(e) {
+          var href = this.getAttribute('href');
+          if (href && href.startsWith('#')) {
+            var targetSec = document.getElementById(href.slice(1));
+            if (targetSec) {
+              e.preventDefault();
+              setActive(this);
+              isClickNavigating = true;
+              clearTimeout(clickNavTimer);
+              clickNavTimer = setTimeout(function() {
+                isClickNavigating = false;
+              }, 800);
+
+              var targetY = targetSec.getBoundingClientRect().top + window.pageYOffset - 124;
+              window.scrollTo({
+                top: Math.max(0, targetY),
+                behavior: 'smooth'
+              });
+              if (history.pushState) {
+                history.pushState(null, null, href);
+              }
+            }
+          }
+        });
+      });
+
+      // Brand logo/text click -> smooth scroll to top (#about)
+      var brandLink = document.querySelector('.quick-nav-brand');
+      if (brandLink) {
+        brandLink.addEventListener('click', function(e) {
+          e.preventDefault();
+          if (navLinks.length > 0) {
+            setActive(navLinks[0]);
+          }
+          isClickNavigating = true;
+          clearTimeout(clickNavTimer);
+          clickNavTimer = setTimeout(function() {
+            isClickNavigating = false;
+          }, 800);
+
+          window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+          });
+          if (history.pushState) {
+            history.pushState(null, null, '#about');
+          }
+        });
+      }
+
+      // Quick-nav Register button click -> smooth scroll to #registration
+      var quickRegisterBtn = document.querySelector('.quick-nav-btn');
+      if (quickRegisterBtn) {
+        quickRegisterBtn.addEventListener('click', function(e) {
+          var targetSec = document.getElementById('registration');
+          if (targetSec) {
+            e.preventDefault();
+            var regNavLink = document.querySelector('a[href="#registration"]');
+            if (regNavLink) setActive(regNavLink);
+            isClickNavigating = true;
+            clearTimeout(clickNavTimer);
+            clickNavTimer = setTimeout(function() {
+              isClickNavigating = false;
+            }, 800);
+
+            var targetY = targetSec.getBoundingClientRect().top + window.pageYOffset - 124;
+            window.scrollTo({
+              top: Math.max(0, targetY),
+              behavior: 'smooth'
+            });
+            if (history.pushState) {
+              history.pushState(null, null, '#registration');
+            }
+          }
+        });
+      }
+
+      // ScrollSpy on window scroll
+      var isTicking = false;
+      function updateScrollSpy() {
+        if (isClickNavigating) return;
+
+        var scrollY = window.pageYOffset || document.documentElement.scrollTop;
+        var windowHeight = window.innerHeight;
+        var docHeight = document.documentElement.scrollHeight;
+
+        // Top boundary -> activate first (About)
+        if (scrollY < 90 && sections.length > 0) {
+          setActive(sections[0].link);
+          return;
+        }
+
+        // Bottom boundary check when scrolled near the very bottom
+        if (windowHeight + scrollY >= docHeight - 20 && sections.length > 0) {
+          var lastSec = sections[sections.length - 1];
+          var secondLastSec = sections.length > 1 ? sections[sections.length - 2] : null;
+          if (lastSec && lastSec.el.getBoundingClientRect().top <= windowHeight * 0.5) {
+            setActive(lastSec.link);
+          } else if (secondLastSec) {
+            setActive(secondLastSec.link);
+          }
+          return;
+        }
+
+        // Standard detection: find active section (trigger when top is within 150px)
+        var currentActive = sections[0].link;
+        for (var i = 0; i < sections.length; i++) {
+          var rect = sections[i].el.getBoundingClientRect();
+          if (rect.top <= 150) {
+            currentActive = sections[i].link;
+          }
+        }
+        setActive(currentActive);
+      }
+
+      function setActive(activeLink) {
+        if (!activeLink) return;
+        navLinks.forEach(function(l) { l.classList.remove('active'); });
+        activeLink.classList.add('active');
+
+        // Scroll active item into view inside the menu container only if menu overflows
+        var menu = document.querySelector('.quick-nav-menu');
+        if (menu && menu.scrollWidth > menu.clientWidth + 10) {
+          var item = activeLink.parentElement;
+          if (item) {
+            var itemRect = item.getBoundingClientRect();
+            var menuRect = menu.getBoundingClientRect();
+            var targetScroll = menu.scrollLeft + (itemRect.left - menuRect.left) - (menu.clientWidth / 2) + (itemRect.width / 2);
+            menu.scrollTo({
+              left: Math.max(0, targetScroll),
+              behavior: 'smooth'
+            });
+          }
+        }
+      }
+
+      window.addEventListener('scroll', function() {
+        if (!isTicking) {
+          window.requestAnimationFrame(function() {
+            updateScrollSpy();
+            isTicking = false;
+          });
+          isTicking = true;
+        }
+      }, { passive: true });
+
+      updateScrollSpy();
+    });
+  </script>
+
+  <style>
+    /* STRICTLY ENFORCE LIGHT MODE STYLING ON THIS PAGE */
+    html, html.light, html.dark {
+      color-scheme: light !important;
+      background-color: #FFFFFF !important;
+      scroll-behavior: smooth;
+      scroll-padding-top: 124px !important;
+    }
+
+    body {
+      background-color: #FFFFFF !important;
+      color: #1E293B !important;
+      font-family: 'Red Hat Display', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      font-size: 16.5px;
+      margin: 0;
+      padding: 0;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    .hextra-nav-container-blur {
+      background-color: rgba(255, 255, 255, 0.96) !important;
+      box-shadow: 0 1px 0 rgba(0, 0, 0, 0.08) !important;
+    }
+
+    .hextra-theme-toggle {
+      display: none !important;
+    }
+
+    /* SECTION ANCHOR SCROLL MARGIN (Leaves clean breathing room below sticky navbars) */
+    .page-section {
+      scroll-margin-top: 124px;
+    }
+
+    /* SUB-NAVBAR (MATHEMATICALLY CENTERED, ALIGNED WITH FUSS NAVBAR STYLE) */
+    .quick-nav {
+      position: sticky;
+      top: 64px;
+      z-index: 15;
+      background: rgba(255, 255, 255, 0.96);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.02);
+      padding: 5px 0;
+      width: 100%;
+    }
+
+    .quick-nav-inner {
+      position: relative;
+      max-width: 90rem;
+      width: 100%;
+      margin: 0 auto;
+      padding: 0 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center; /* TRUE GEOMETRIC CENTER */
+      min-height: 40px;
+    }
+
+    .quick-nav-brand {
+      position: absolute;
+      left: 24px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-family: 'Red Hat Display', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      font-weight: 700;
+      font-size: 15px;
+      color: #111827 !important;
+      text-decoration: none !important;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      cursor: pointer;
+      transition: opacity 0.15s ease;
+      white-space: nowrap;
+    }
+
+    .quick-nav-brand:hover {
+      opacity: 0.75;
+      text-decoration: none !important;
+    }
+
+    .quick-nav-menu-wrap {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-width: 0;
+    }
+
+    .quick-nav-menu {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 3px;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      white-space: nowrap;
+    }
+
+    .quick-nav-menu li {
+      flex-shrink: 0 !important;
+      display: inline-flex;
+      align-items: center;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .section-nav-link {
+      font-family: 'Red Hat Display', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      font-size: 13.5px;
+      font-weight: 500;
+      color: #4B5563 !important;
+      text-decoration: none !important;
+      padding: 5px 9px;
+      border-radius: 6px;
+      transition: color 0.15s ease, background-color 0.15s ease;
+      display: inline-flex;
+      align-items: center;
+      line-height: 1.4;
+      white-space: nowrap !important;
+      flex-shrink: 0 !important;
+    }
+
+    .section-nav-link:hover {
+      color: #111827 !important;
+      background-color: rgba(0, 0, 0, 0.04);
+      text-decoration: none !important;
+    }
+
+    .section-nav-link.active {
+      color: #006FD1 !important;
+      font-weight: 600;
+      background-color: #EBF5FF;
+      text-decoration: none !important;
+    }
+
+    .quick-nav-actions {
+      position: absolute;
+      right: 24px;
+      top: 50%;
+      transform: translateY(-50%);
+      display: flex;
+      align-items: center;
+      padding-left: 14px;
+      border-left: 1px solid rgba(0, 0, 0, 0.08);
+    }
+
+    .quick-nav-btn {
+      background-color: #006FD1;
+      color: #ffffff !important;
+      font-family: 'Red Hat Display', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      font-size: 13.5px;
+      padding: 5px 15px;
+      border-radius: 6px;
+      font-weight: 600;
+      text-decoration: none !important;
+      transition: background-color 0.15s ease, border-color 0.15s ease;
+      white-space: nowrap;
+      cursor: pointer;
+      border: 1px solid #006FD1;
+    }
+
+    .quick-nav-btn:hover {
+      background-color: #0056A3;
+      border-color: #0056A3;
+      text-decoration: none !important;
+    }
+
+    /* FULL-WIDTH TOUCH PILL BAR ON TABLETS & MOBILE (<= 1100px) */
+    @media (max-width: 1100px) {
+      .quick-nav {
+        padding: 4px 0;
+      }
+      .quick-nav-inner {
+        display: flex;
+        width: 100%;
+        padding: 0;
+        min-height: 38px;
+        justify-content: stretch;
+      }
+      .quick-nav-brand {
+        display: none !important;
+      }
+      .quick-nav-actions {
+        display: none !important;
+      }
+      .quick-nav-menu-wrap {
+        width: 100%;
+        min-width: 0;
+        overflow: hidden;
+        position: relative;
+        display: block;
+        -webkit-mask-image: linear-gradient(to right, transparent, black 16px, black calc(100% - 16px), transparent);
+        mask-image: linear-gradient(to right, transparent, black 16px, black calc(100% - 16px), transparent);
+      }
+      .quick-nav-menu {
+        width: 100%;
+        overflow-x: auto;
+        white-space: nowrap;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 6px;
+        padding: 2px 16px;
+        scroll-padding: 0 16px;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+      }
+      .quick-nav-menu::-webkit-scrollbar {
+        display: none;
+      }
+      .quick-nav-menu li {
+        flex-shrink: 0 !important;
+        display: inline-flex;
+      }
+      .section-nav-link {
+        font-size: 13px;
+        font-weight: 600;
+        padding: 5px 12px;
+        min-height: 32px;
+        border-radius: 9999px;
+        display: inline-flex;
+        align-items: center;
+        background-color: #F1F5F9;
+        color: #475569 !important;
+        border: 1px solid #E2E8F0;
+        white-space: nowrap !important;
+        flex-shrink: 0 !important;
+        line-height: 1;
+      }
+      .section-nav-link.active {
+        background-color: #006FD1 !important;
+        color: #FFFFFF !important;
+        border-color: #006FD1 !important;
+        font-weight: 700;
+      }
+    }
+
+    /* MAIN CONTAINER - SIGNATURE CYSTAR ELEMENTOR SPEC (#F3F7FA) */
+    .page-container {
+      max-width: 1140px;
+      margin: 30px auto 60px;
+      background-color: #F3F7FA !important;
+      color: #1E293B !important;
+      border-radius: 7px;
+      padding: 48px 48px 56px;
+      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
+      border: 1px solid #DCE5ED;
+      box-sizing: border-box;
+    }
+
+    .page-container * {
+      box-sizing: border-box;
+    }
+
+    .page-container a {
+      color: #006FD1 !important;
+      text-decoration: none;
+      transition: color 0.15s ease;
+    }
+
+    .page-container a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 900px) {
+      .page-container {
+        padding: 30px 18px 42px;
+        margin: 14px 10px 40px;
+      }
+    }
+
+    /* 2-COLUMN HERO HEADER */
+    .hero-two-col {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 36px;
+      padding-bottom: 4px;
+    }
+
+    .hero-col-text {
+      flex: 1 1 54%;
+    }
+
+    .hero-col-banner {
+      flex: 1 1 46%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .hero-banner-image {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+      display: block;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+    }
+
+    @media (max-width: 840px) {
+      .hero-two-col {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+      }
+      .hero-col-banner, .hero-col-text {
+        width: 100%;
+      }
+      .hero-banner-image {
+        width: 100%;
+      }
+    }
+
+    .main-heading {
+      font-family: 'Libre Baskerville', Georgia, serif;
+      font-size: 31px;
+      font-weight: 700;
+      color: #000000;
+      margin: 0 0 14px 0;
+      line-height: 1.32;
+    }
+
+    @media (max-width: 900px) {
+      .main-heading {
+        font-size: 27px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .page-container {
+        padding: 24px 16px 36px !important;
+        margin: 10px 6px 36px !important;
+        border-radius: 8px !important;
+      }
+      .main-heading {
+        font-size: 23px !important;
+        line-height: 1.3 !important;
+        margin-bottom: 12px !important;
+      }
+      .schedule-date {
+        font-size: 15.5px !important;
+      }
+      .schedule-pill {
+        font-size: 12px !important;
+      }
+      .tagline-text {
+        font-size: 18.5px !important;
+      }
+      .intro-paragraph {
+        font-size: 16px !important;
+      }
+    }
+
+    /* HERO SCHEDULE & ORGANIZERS - CLEAN, OPEN TYPOGRAPHY (ZERO BOXES/LINES) */
+    .hero-schedule-block {
+      margin-bottom: 12px;
+    }
+
+    .hero-schedule-list {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      margin-bottom: 12px;
+    }
+
+    .schedule-phase-item {
+      display: flex;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: 8px;
+      font-size: 16px;
+      line-height: 1.5;
+    }
+
+    .schedule-pill {
+      font-family: 'Red Hat Display', sans-serif;
+      font-size: 13.5px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .schedule-pill.online {
+      color: #006FD1;
+    }
+
+    .schedule-pill.offline {
+      color: #050D4F;
+    }
+
+    .schedule-date {
+      font-family: 'Libre Baskerville', Georgia, serif;
+      font-size: 17px;
+      font-weight: 700;
+      color: #000000;
+    }
+
+    .hero-organizers-text {
+      font-family: 'Red Hat Display', sans-serif;
+      font-size: 15.5px;
+      color: #334155;
+      line-height: 1.65;
+      margin-top: 10px;
+    }
+
+    .hero-organizers-text strong {
+      color: #000000;
+      font-weight: 600;
+    }
+
+    .host-highlight {
+      color: #006FD1;
+      font-weight: 700 !important;
+    }
+
+    /* AUTHENTIC CYSTAR SECTION DIVIDERS (2.7px solid #050D4F) */
+    .section-divider {
+      border: none;
+      border-top: 2.7px solid #050D4F;
+      margin: 28px 0;
+    }
+
+    @media (max-width: 600px) {
+      .section-divider {
+        margin: 22px 0;
+      }
+    }
+
+    /* TAGLINE & INTRO PARAGRAPHS */
+    .tagline-text {
+      font-family: 'Red Hat Display', sans-serif;
+      font-size: 21px;
+      font-weight: 700;
+      font-style: italic;
+      color: #050D4F;
+      text-align: left;
+      margin-bottom: 14px;
+      line-height: 1.45;
+    }
+
+    .intro-paragraph {
+      font-family: 'Red Hat Display', sans-serif;
+      font-size: 17px;
+      color: #1E293B;
+      line-height: 1.75;
+      text-align: left;
+      margin: 0 0 14px 0;
+    }
+
+    /* SECTION TITLE WITH EXACT CYSTAR VERTICAL BLUE SVG ACCENT BAR */
+    .section-title-wrap {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 22px;
+    }
+
+    .accent-bar-svg {
+      flex-shrink: 0;
+      width: 4px;
+      height: 37px;
+    }
+
+    .section-title {
+      font-family: 'Libre Baskerville', Georgia, serif;
+      font-size: 25.5px;
+      font-weight: 700;
+      color: #000000;
+      margin: 0;
+      line-height: 1.3;
+    }
+
+    @media (max-width: 600px) {
+      .section-title {
+        font-size: 22px;
+      }
+    }
+
+    /* ORGANIZERS GRID - 5 BALANCED COLUMNS (NO HEAVY CARDS) */
+    .organizers-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin: 20px 0 10px;
+      text-align: center;
+    }
+
+    .organizer-col {
+      flex: 1 1 170px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 6px 4px;
+    }
+
+    .organizer-logo-frame {
+      width: 88px;
+      height: 88px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #FFFFFF;
+      border-radius: 8px;
+      border: 1px solid #DCE5ED;
+      padding: 8px;
+      margin-bottom: 12px;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+      transition: border-color 0.15s ease, box-shadow 0.15s ease;
+    }
+
+    .organizer-col:hover .organizer-logo-frame {
+      border-color: #B9D5ED;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+    }
+
+    .organizer-logo {
+      max-width: 74px;
+      max-height: 74px;
+      width: auto;
+      height: auto;
+      object-fit: contain;
+      display: block;
+    }
+
+    .organizer-name {
+      font-family: 'Libre Baskerville', Georgia, serif;
+      font-size: 16px;
+      font-weight: 600;
+      color: #000000;
+      line-height: 1.3;
+    }
+
+    .host-tag {
+      display: inline-block;
+      font-family: 'Red Hat Display', sans-serif;
+      font-size: 12px;
+      font-weight: 700;
+      color: #006FD1;
+      margin-top: 4px;
+      background: #E0F2FE;
+      padding: 2px 8px;
+      border-radius: 4px;
+      border: 1px solid #BAE6FD;
+    }
+
+    @media (max-width: 600px) {
+      .organizers-row {
+        gap: 12px;
+        justify-content: center;
+      }
+      .organizer-col {
+        flex: 0 1 calc(50% - 10px);
+        max-width: 155px;
+        min-width: 125px;
+      }
+      .organizer-logo-frame {
+        width: 72px;
+        height: 72px;
+        margin-bottom: 8px;
+      }
+      .organizer-logo {
+        max-width: 58px;
+        max-height: 58px;
+      }
+      .organizer-name {
+        font-size: 14.5px;
+      }
+    }
+
+    /* PROGRAM STRUCTURE - CLEAN & OPEN */
+    .phase-subheading {
+      font-family: 'Libre Baskerville', Georgia, serif;
+      font-size: 20px;
+      font-weight: 700;
+      color: #050D4F;
+      margin: 18px 0 10px 0;
+      line-height: 1.35;
+    }
+
+    .structure-meta {
+      margin-bottom: 12px;
+      font-family: 'Red Hat Display', sans-serif;
+      font-size: 16.5px;
+      line-height: 1.7;
+      color: #1E293B;
+    }
+
+    .structure-meta strong {
+      color: #000000;
+    }
+
+    .structure-label {
+      font-family: 'Red Hat Display', sans-serif;
+      font-weight: 700;
+      color: #000000;
+      font-size: 16.5px;
+      margin: 14px 0 6px 0;
+    }
+
+    .clean-list {
+      list-style-type: disc;
+      margin-left: 22px;
+      margin-bottom: 14px;
+      padding: 0;
+    }
+
+    .clean-list li {
+      margin-bottom: 6px;
+      font-family: 'Red Hat Display', sans-serif;
+      font-size: 16.5px;
+      color: #1E293B;
+      line-height: 1.7;
+    }
+
+    /* CURRICULUM - CLEAN UNCLUTTERED LIST WITH 2 BALANCED COLUMNS */
+    .curriculum-clean-list {
+      list-style-type: disc;
+      margin-left: 22px;
+      padding: 0;
+      columns: 2;
+      column-gap: 36px;
+    }
+
+    @media (max-width: 768px) {
+      .curriculum-clean-list {
+        columns: 1;
+      }
+    }
+
+    .curriculum-clean-list li {
+      margin-bottom: 12px;
+      font-family: 'Red Hat Display', sans-serif;
+      font-size: 16.5px;
+      color: #1E293B;
+      line-height: 1.7;
+      break-inside: avoid;
+    }
+
+    .curriculum-clean-list li strong {
+      color: #050D4F;
+    }
+
+    .faculty-link {
+      font-weight: 600;
+      color: #006FD1 !important;
+    }
+
+    .ext-icon {
+      display: inline-block;
+      vertical-align: middle;
+      margin-left: 2px;
+      opacity: 0.75;
+      stroke: #006FD1;
+    }
+
+    /* MAIN REGISTRATION CTA BUTTON - CLEAN LIGHT THEME */
+    .page-container a.register-btn-main,
+    .page-container a.register-btn-main:link,
+    .page-container a.register-btn-main:visited,
+    .register-btn-main {
+      background-color: #006FD1 !important;
+      color: #FFFFFF !important;
+      -webkit-text-fill-color: #FFFFFF !important;
+      font-family: 'Red Hat Display', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      font-size: 16.5px;
+      font-weight: 700;
+      border-radius: 8px;
+      text-decoration: none !important;
+      padding: 14px 36px;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      cursor: pointer;
+      border: 1px solid #006FD1;
+      box-shadow: 0 2px 6px rgba(0, 111, 209, 0.25);
+      transition: background-color 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease;
+    }
+
+    .page-container a.register-btn-main span,
+    .register-btn-main span {
+      color: #FFFFFF !important;
+      -webkit-text-fill-color: #FFFFFF !important;
+      font-weight: 700;
+      text-decoration: none !important;
+    }
+
+    .page-container a.register-btn-main:hover,
+    .register-btn-main:hover {
+      background-color: #0056A3 !important;
+      border-color: #0056A3;
+      color: #FFFFFF !important;
+      -webkit-text-fill-color: #FFFFFF !important;
+      box-shadow: 0 4px 10px rgba(0, 111, 209, 0.35);
+      text-decoration: none !important;
+    }
+
+    .page-container a.register-btn-main:hover span,
+    .register-btn-main:hover span {
+      color: #FFFFFF !important;
+      -webkit-text-fill-color: #FFFFFF !important;
+    }
+
+    .register-btn-main svg {
+      stroke: #FFFFFF !important;
+      flex-shrink: 0;
+    }
+
+    /* REGISTRATION DEADLINE (EXACT 2025 ELEMENTOR SPEC) */
+    .reg-deadline-line {
+      font-family: 'Red Hat Display', sans-serif;
+      font-size: 16px;
+      color: #1E293B;
+      margin: 14px 0 0 0;
+      line-height: 1.5;
+    }
+
+    .reg-deadline-line strong {
+      color: #000000;
+      font-weight: 700;
+    }
+
+    /* CONTACT US - CLEAN 2-COLUMN LAYOUT */
+    .contact-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 32px;
+      flex-wrap: wrap;
+    }
+
+    .contact-left {
+      flex: 1 1 320px;
+    }
+
+    .contact-right {
+      flex: 0 0 auto;
+    }
+
+    @media (max-width: 768px) {
+      .contact-row {
+        flex-direction: column;
+        gap: 16px;
+      }
+      .contact-left, .contact-right {
+        width: 100%;
+        flex: 1 1 100%;
+      }
+    }
+
+    .social-icons-list {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      list-style: none;
+      margin: 12px 0 0 0;
+      padding: 0;
+    }
+
+    @media (max-width: 768px) {
+      .social-icons-list {
+        justify-content: flex-start;
+        margin-top: 8px;
+      }
+    }
+
+    .social-icon-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 42px;
+      height: 42px;
+      border-radius: 6px;
+      background: #FFFFFF;
+      border: 1px solid #D5DCE5;
+      transition: background-color 0.15s ease, border-color 0.15s ease;
+    }
+
+    .social-icon-link:hover {
+      background-color: #F1F5F9;
+      border-color: #CBD5E1;
+    }
+
+    /* SPONSORS BANNER CONTAINER */
+    .sponsors-banner-wrap {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 18px;
+      width: 100%;
+    }
+
+    .sponsors-banner-img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+      display: block;
+      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
+      border: 1px solid #DCE5ED;
+    }
+  </style>
+</head>
+<body dir="{{ .Site.Language.LanguageDirection | default `ltr` }}">
+
+  <!-- IITGN-FUSS DEFAULT BANNER (IF CONFIGURED) -->
+  {{- partial "banner.html" . -}}
+
+  <!-- IITGN-FUSS DEFAULT HEADER / NAVBAR -->
+  {{- partial "navbar.html" . -}}
+
+  <!-- QUICK NAVIGATION SUB-BAR (CLEAN, MINIMALIST, HIGH-PRECISION) -->
+  <nav class="quick-nav" aria-label="Section Navigation">
+    <div class="quick-nav-inner">
+      <a href="#about" class="quick-nav-brand" title="ICAN FDP 2026 - Back to top">
+        <svg fill="none" height="18" viewBox="0 0 4 37" width="3" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <line stroke="#006FD1" stroke-width="4" x1="2" x2="2" y1="0.5" y2="36.5"></line>
+        </svg>
+        <span>ICAN FDP 2026</span>
+      </a>
+
+      <div class="quick-nav-menu-wrap">
+        <ul class="quick-nav-menu">
+          <li><a href="#about" class="section-nav-link active">About</a></li>
+          <li><a href="#organizers" class="section-nav-link">Organizers</a></li>
+          <li><a href="#structure" class="section-nav-link">Structure</a></li>
+          <li><a href="#curriculum" class="section-nav-link">Curriculum</a></li>
+          <li><a href="#why-participate" class="section-nav-link">Why Participate?</a></li>
+          <li><a href="#who-can-apply" class="section-nav-link">Who Can Apply?</a></li>
+          <li><a href="#registration" class="section-nav-link">Registration</a></li>
+          <li><a href="#contact" class="section-nav-link">Contact Us</a></li>
+          <li><a href="#sponsors" class="section-nav-link">Sponsors</a></li>
+        </ul>
+      </div>
+
+      <div class="quick-nav-actions">
+        <a href="#registration" class="quick-nav-btn">Register</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- MAIN CARD CONTAINER (MATCHING CYSTAR #F3F7FA) -->
+  <div class="page-container">
+    
+    <!-- SECTION 1: ABOUT & HERO -->
+    <section id="about" class="page-section">
+      <header class="hero-two-col">
+        <div class="hero-col-text">
+          <h1 class="main-heading">ICAN Faculty Development Program (FDP) on Cybersecurity</h1>
+          
+          <!-- DATES & HOSTING - CLEAN, OPEN TYPOGRAPHY (EASY FOR THE EYES TO GRAB) -->
+          <div class="hero-schedule-block">
+            <div class="hero-schedule-list">
+              <div class="schedule-phase-item">
+                <span class="schedule-pill online">Online Phase:</span>
+                <span class="schedule-date">29th November – 6th December 2026</span>
+              </div>
+              <div class="schedule-phase-item">
+                <span class="schedule-pill offline">Offline Phase:</span>
+                <span class="schedule-date">27th December 2026 – 1st January 2027</span>
+              </div>
+            </div>
+            <div class="hero-organizers-text">
+              Hosted this year at <strong class="host-highlight">IIT Gandhinagar</strong>.
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-col-banner">
+          <img src="{{ "/images/ican-fdp/banner.webp" | relURL }}"
+               data-fallback="/images/ican-fdp/banner.webp"
+               onerror="fixImgSrc(this)"
+               alt="ICAN Faculty Development Program (FDP) on Cybersecurity"
+               class="hero-banner-image"
+               width="1024"
+               height="428"
+               fetchpriority="high"
+               decoding="async">
+        </div>
+      </header>
+
+      <!-- SIGNATURE 2.7px CYSTAR NAVY DIVIDER -->
+      <hr class="section-divider">
+
+      <!-- TAGLINE & MISSION (EXACT CYSTAR WORDINGS) -->
+      <div class="tagline-text">Empowering Educators. Strengthening Cybersecurity Education.</div>
+      <p class="intro-paragraph">
+        The ICAN Faculty Development Program (FDP) is a national initiative aimed at upskilling faculty from engineering institutions across India in both foundational and emerging topics in cybersecurity. By empowering educators with the necessary knowledge and resources, we aim to strengthen the cybersecurity curriculum and foster the next generation of cybersecurity professionals.
+      </p>
+      <p class="intro-paragraph" style="margin-bottom: 0;">
+        This program offers a unique blend of lectures, hands-on labs, and curated resources led by some of the best cybersecurity faculty in the country.
+      </p>
+    </section>
+
+    <!-- SIGNATURE 2.7px CYSTAR NAVY DIVIDER -->
+    <hr class="section-divider">
+
+    <!-- SECTION 2: ORGANIZERS -->
+    <section id="organizers" class="page-section">
+      <div class="section-title-wrap">
+        <svg fill="none" height="37" viewBox="0 0 4 37" width="4" xmlns="http://www.w3.org/2000/svg" class="accent-bar-svg" aria-hidden="true">
+          <line stroke="#006FD1" stroke-width="4" x1="2" x2="2" y1="0.5" y2="36.5"></line>
+        </svg>
+        <h2 class="section-title">Organizers</h2>
+      </div>
+
+      <div class="organizers-row" style="justify-content: center;">
+        <!-- IIT Gandhinagar (Host Institute) -->
+        <div class="organizer-col" style="max-width: 220px;">
+          <div class="organizer-logo-frame" style="width: 96px; height: 96px;">
+            <img src="{{ "/images/ican-fdp/iitgn-seal.svg" | relURL }}"
+                 data-fallback="/images/ican-fdp/iitgn-seal.png"
+                 onerror="fixImgSrc(this)"
+                 alt="IIT Gandhinagar Official Seal"
+                 class="organizer-logo"
+                 loading="lazy"
+                 decoding="async"
+                 width="80"
+                 height="80">
+          </div>
+          <div class="organizer-name" style="font-size: 17px;">IIT Gandhinagar</div>
+          <div class="host-tag">Host Institute</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SIGNATURE 2.7px CYSTAR NAVY DIVIDER -->
+    <hr class="section-divider">
+
+    <!-- SECTION 3: PROGRAM STRUCTURE -->
+    <section id="structure" class="page-section">
+      <div class="section-title-wrap">
+        <svg fill="none" height="37" viewBox="0 0 4 37" width="4" xmlns="http://www.w3.org/2000/svg" class="accent-bar-svg" aria-hidden="true">
+          <line stroke="#006FD1" stroke-width="4" x1="2" x2="2" y1="0.5" y2="36.5"></line>
+        </svg>
+        <h2 class="section-title">Program Structure</h2>
+      </div>
+
+      <!-- Phase 1: Online -->
+      <h3 class="phase-subheading">Phase 1: Online (Precursor Phase)</h3>
+      <div class="structure-meta">
+        <strong>Dates:</strong> 29th November – 6th December 2026<br>
+        <strong>Platform:</strong> NPTEL Learning Portal
+      </div>
+      <p class="intro-paragraph">
+        This phase is open to all registered faculty members. It serves as both a knowledge-building stage and a selection round for the residential phase. Participants will attend live or recorded expert lectures and complete short assignments designed to evaluate their understanding.
+      </p>
+      
+      <div class="structure-label">Format:</div>
+      <ul class="clean-list">
+        <li>12 expert-led lectures (2 hours each)</li>
+        <li>Assignments after each session (MCQ/MSQ format)</li>
+      </ul>
+
+      <div class="structure-label">Certification &amp; Selection:</div>
+      <ul class="clean-list">
+        <li>Participants who score a Distinction Grade in the assignments will receive a Certificate of Participation for the online phase</li>
+        <li>Based on performance, top 25–30 faculty members will be selected for the Residential Phase at IIT Gandhinagar</li>
+      </ul>
+
+      <!-- Phase 2: Residential -->
+      <h3 class="phase-subheading" style="margin-top: 24px;">Phase 2: Residential (Advanced In-Person Training)</h3>
+      <div class="structure-meta">
+        <strong>Dates:</strong> 27th December 2026 – 1st January 2027<br>
+        <strong>Platform:</strong> IIT Gandhinagar
+      </div>
+      <p class="intro-paragraph">
+        This intensive, in-person training phase focuses on advanced concepts and practical skill-building. Selected participants will engage in a mix of expert lectures and hands-on lab sessions.
+      </p>
+      
+      <div class="structure-label">Format:</div>
+      <ul class="clean-list">
+        <li>Morning: In-depth lectures by faculty experts</li>
+        <li>Afternoon: Lab sessions aligned with the morning topics</li>
+        <li>Each faculty expert will conduct a 2–3 hour lecture + lab session</li>
+      </ul>
+
+      <div class="structure-label">Resources &amp; Support:</div>
+      <ul class="clean-list">
+        <li>All teaching materials and lab exercises will be made freely available to participants for use in their home institutions</li>
+        <li>Accommodation support will be provided by ICAN</li>
+      </ul>
+    </section>
+
+    <!-- SIGNATURE 2.7px CYSTAR NAVY DIVIDER -->
+    <hr class="section-divider">
+
+    <!-- SECTION 4: PROGRAM CURRICULUM -->
+    <section id="curriculum" class="page-section">
+      <div class="section-title-wrap">
+        <svg fill="none" height="37" viewBox="0 0 4 37" width="4" xmlns="http://www.w3.org/2000/svg" class="accent-bar-svg" aria-hidden="true">
+          <line stroke="#006FD1" stroke-width="4" x1="2" x2="2" y1="0.5" y2="36.5"></line>
+        </svg>
+        <h2 class="section-title">Program Curriculum</h2>
+      </div>
+
+      <ul class="curriculum-clean-list">
+        <li><strong>Application Security:</strong> Instructor Name, Affiliation</li>
+        <li><strong>Applied Cryptography:</strong> Instructor Name, Affiliation</li>
+        <li><strong>Cloud Security:</strong> Instructor Name, Affiliation</li>
+        <li><strong>Cybersecurity Threats, Vulnerabilities, and Risk:</strong> Instructor Name, Affiliation</li>
+        <li><strong>Hardware Security:</strong> Instructor Name, Affiliation</li>
+        <li><strong>Microarchitectural Security:</strong> Instructor Name, Affiliation</li>
+        <li><strong>Mobile Security:</strong> Instructor Name, Affiliation</li>
+        <li><strong>Secure Operating Systems:</strong> Instructor Name, Affiliation</li>
+        <li><strong>System Security:</strong> Instructor Name, Affiliation</li>
+        <li><strong>Usable Security:</strong> Instructor Name, Affiliation</li>
+        <li><strong>Web Security:</strong> Instructor Name, Affiliation</li>
+      </ul>
+    </section>
+
+    <!-- SIGNATURE 2.7px CYSTAR NAVY DIVIDER -->
+    <hr class="section-divider">
+
+    <!-- SECTION 5: WHY PARTICIPATE? -->
+    <section id="why-participate" class="page-section">
+      <div class="section-title-wrap">
+        <svg fill="none" height="37" viewBox="0 0 4 37" width="4" xmlns="http://www.w3.org/2000/svg" class="accent-bar-svg" aria-hidden="true">
+          <line stroke="#006FD1" stroke-width="4" x1="2" x2="2" y1="0.5" y2="36.5"></line>
+        </svg>
+        <h2 class="section-title">Why Participate?</h2>
+      </div>
+
+      <ul class="clean-list">
+        <li>Learn from leading experts in cybersecurity from IITs</li>
+        <li>Gain access to ready-to-use teaching materials and lab modules</li>
+        <li>Network with peers and build academic collaborations</li>
+        <li>Receive a certificate of participation and performance-based recognition</li>
+        <li>Opportunity to contribute to shaping the future of cybersecurity education in India</li>
+      </ul>
+    </section>
+
+    <!-- SIGNATURE 2.7px CYSTAR NAVY DIVIDER -->
+    <hr class="section-divider">
+
+    <!-- SECTION 6: WHO CAN APPLY? -->
+    <section id="who-can-apply" class="page-section">
+      <div class="section-title-wrap">
+        <svg fill="none" height="37" viewBox="0 0 4 37" width="4" xmlns="http://www.w3.org/2000/svg" class="accent-bar-svg" aria-hidden="true">
+          <line stroke="#006FD1" stroke-width="4" x1="2" x2="2" y1="0.5" y2="36.5"></line>
+        </svg>
+        <h2 class="section-title">Who Can Apply?</h2>
+      </div>
+
+      <ul class="clean-list">
+        <li>Faculty members from engineering colleges across India</li>
+        <li>Basic familiarity with computer science or IT is recommended</li>
+      </ul>
+    </section>
+
+    <!-- SIGNATURE 2.7px CYSTAR NAVY DIVIDER -->
+    <hr class="section-divider">
+
+    <!-- SECTION 7: REGISTRATION -->
+    <section id="registration" class="page-section">
+      <div class="section-title-wrap">
+        <svg fill="none" height="37" viewBox="0 0 4 37" width="4" xmlns="http://www.w3.org/2000/svg" class="accent-bar-svg" aria-hidden="true">
+          <line stroke="#006FD1" stroke-width="4" x1="2" x2="2" y1="0.5" y2="36.5"></line>
+        </svg>
+        <h2 class="section-title">Registration</h2>
+      </div>
+
+      <p class="intro-paragraph">
+        Ready to be part of a national effort to transform cybersecurity education?
+      </p>
+
+      <div style="margin: 20px 0 14px;">
+        <a href="#registration" class="register-btn-main" onclick="alert('Registration portal via IITGN Academic Portal will open soon. Please check back for updates.'); return false;">
+          <span style="color: #FFFFFF !important; -webkit-text-fill-color: #FFFFFF !important; font-weight: 700;">Register</span>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
+        </a>
+      </div>
+
+      <!-- REGISTRATION DEADLINE (EXACT 2025 FORMAT) -->
+      <p class="reg-deadline-line"><strong>Deadline:</strong> To be announced soon</p>
+    </section>
+
+    <!-- SIGNATURE 2.7px CYSTAR NAVY DIVIDER -->
+    <hr class="section-divider">
+
+    <!-- SECTION 8: CONTACT US -->
+    <section id="contact" class="page-section">
+      <div class="section-title-wrap">
+        <svg fill="none" height="37" viewBox="0 0 4 37" width="4" xmlns="http://www.w3.org/2000/svg" class="accent-bar-svg" aria-hidden="true">
+          <line stroke="#006FD1" stroke-width="4" x1="2" x2="2" y1="0.5" y2="36.5"></line>
+        </svg>
+        <h2 class="section-title">Contact Us</h2>
+      </div>
+
+      <div class="contact-row">
+        <div class="contact-left">
+          <p class="intro-paragraph" style="margin-bottom: 14px;">
+            For any questions or clarifications, feel free to reach out to us at <a href="mailto:cse@iitgn.ac.in"><strong>cse@iitgn.ac.in</strong></a>
+          </p>
+          <p style="margin-top: 14px; font-weight: 600; color: #000000; font-family: 'Red Hat Display', sans-serif;">
+            Follow us for updates and announcements:
+          </p>
+        </div>
+        
+        <div class="contact-right">
+          <ul class="social-icons-list">
+            <li>
+              <a href="https://twitter.com/IITGN" target="_blank" rel="noopener noreferrer" class="social-icon-link" aria-label="X (Twitter)">
+                <svg fill="none" height="14" viewBox="0 0 14 14" width="14" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M11.025 0.65625H13.172L8.482 6.03025L14 13.3442H9.68L6.294 8.90925L2.424 13.3442H0.275L5.291 7.59425L0 0.65725H4.43L7.486 4.71025L11.025 0.65625ZM10.27 12.0562H11.46L3.78 1.87725H2.504L10.27 12.0562Z" fill="#050D4F"></path>
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a href="https://www.linkedin.com/school/iitgn/" target="_blank" rel="noopener noreferrer" class="social-icon-link" aria-label="LinkedIn">
+                <svg fill="none" height="18" viewBox="0 0 20 21" width="18" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M19 0.477539H1.80916C0 0.477539 0 0.477539 0 2.2867V18.6683C0 20.4775 0 20.4775 1.80916 20.4775H18.1908C20 20.4775 20 20.4775 20 18.6683V1.47754C20 0.478379 19.9992 0.477539 19 0.477539ZM6.18885 17.7468C6.18885 18.0376 5.95314 18.2733 5.66236 18.2733H3.4212C3.13042 18.2733 2.89471 18.0376 2.89471 17.7468V8.35204C2.89471 8.06126 3.13042 7.82555 3.4212 7.82555H5.66236C5.95314 7.82555 6.18885 8.06126 6.18885 8.35204V17.7468ZM4.54178 6.93995C3.36592 6.93995 2.41267 5.9867 2.41267 4.81084C2.41267 3.63497 3.36592 2.68173 4.54178 2.68173C5.71764 2.68173 6.67089 3.63497 6.67089 4.81084C6.67089 5.9867 5.7177 6.93995 4.54178 6.93995ZM17.901 17.7892C17.901 18.0566 17.6843 18.2733 17.417 18.2733H15.012C14.7447 18.2733 14.528 18.0566 14.528 17.7892V13.3825C14.528 12.7251 14.7208 10.5018 12.81 10.5018C11.3279 10.5018 11.0272 12.0236 10.9669 12.7066V17.7892C10.9669 18.0566 10.7502 18.2733 10.4828 18.2733H8.15681C7.88948 18.2733 7.67272 18.0566 7.67272 17.7892V8.30963C7.67272 8.0423 7.88948 7.82555 8.15681 7.82555H10.4828C10.7501 7.82555 10.9669 8.0423 10.9669 8.30963V9.12927C11.5164 8.3045 12.3332 7.66791 14.0722 7.66791C17.9231 7.66791 17.901 11.2656 17.901 13.2423V17.7892Z" fill="#050D4F"></path>
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a href="https://github.com/iitgn-fuss" target="_blank" rel="noopener noreferrer" class="social-icon-link" aria-label="GitHub">
+                <svg fill="none" height="18" viewBox="0 0 24 24" width="18" stroke="#050D4F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                </svg>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- SIGNATURE 2.7px CYSTAR NAVY DIVIDER -->
+    <hr class="section-divider">
+
+    <!-- SECTION 9: SPONSORS -->
+    <section id="sponsors" class="page-section">
+      <div class="section-title-wrap">
+        <svg fill="none" height="37" viewBox="0 0 4 37" width="4" xmlns="http://www.w3.org/2000/svg" class="accent-bar-svg" aria-hidden="true">
+          <line stroke="#006FD1" stroke-width="4" x1="2" x2="2" y1="0.5" y2="36.5"></line>
+        </svg>
+        <h2 class="section-title">Sponsors</h2>
+      </div>
+
+      <div class="sponsors-banner-wrap">
+        <img src="{{ "/images/ican-fdp/sponsors.png" | relURL }}"
+             data-fallback="/images/ican-fdp/sponsors.png"
+             onerror="fixImgSrc(this)"
+             alt="ICAN FDP 2026 Sponsors and Partners"
+             class="sponsors-banner-img"
+             loading="lazy"
+             decoding="async"
+             width="1600"
+             height="320">
+      </div>
+    </section>
+
+  </div>
+
+  <!-- FUSS DEFAULT FOOTER & SCRIPTS -->
+  {{ partial "footer.html" . }}
+  {{ partial "scripts.html" . }}
+
+</body>
+</html>

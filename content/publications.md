@@ -5,7 +5,7 @@ tags: ["research", "publications"]
 ---
 ## 2027
 
-**["DigitsOnTurbo: Leveraging SIMD for Accelerating Large-number Arithmetic"](https://arxiv.org/abs/2604.21566)**   
+**["DigitsOnTurbo: Leveraging SIMD for Accelerating Large-number Arithmetic"](https://dl.acm.org/doi/10.1145/3845814.3850035)**   
 Subhrajit Das, Abhishek Bichhawat, Yuvraj Patel   
 *The 32nd ACM International Conference on Architectural Support for Programming Languages and Operating Systems (ASPLOS)*, April 2027
 
