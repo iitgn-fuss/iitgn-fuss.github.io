@@ -159,33 +159,6 @@
         });
       }
 
-      // Quick-nav Register button click -> smooth scroll to #registration
-      var quickRegisterBtn = document.querySelector('.quick-nav-btn');
-      if (quickRegisterBtn) {
-        quickRegisterBtn.addEventListener('click', function(e) {
-          var targetSec = document.getElementById('registration');
-          if (targetSec) {
-            e.preventDefault();
-            var regNavLink = document.querySelector('a[href="#registration"]');
-            if (regNavLink) setActive(regNavLink);
-            isClickNavigating = true;
-            clearTimeout(clickNavTimer);
-            clickNavTimer = setTimeout(function() {
-              isClickNavigating = false;
-            }, 800);
-
-            var targetY = targetSec.getBoundingClientRect().top + window.pageYOffset - 114;
-            window.scrollTo({
-              top: Math.max(0, targetY),
-              behavior: 'smooth'
-            });
-            if (history.pushState) {
-              history.pushState(null, null, '#registration');
-            }
-          }
-        });
-      }
-
       // ScrollSpy on window scroll
       var isTicking = false;
       function updateScrollSpy() {
@@ -1116,12 +1089,12 @@
           <li><a href="#who-can-apply" class="section-nav-link">Who Can Apply?</a></li>
           <li><a href="#registration" class="section-nav-link">Registration</a></li>
           <li><a href="#contact" class="section-nav-link">Contact Us</a></li>
-          <li><a href="#sponsors" class="section-nav-link">Sponsors</a></li>
+          <!-- <li><a href="#sponsors" class="section-nav-link">Sponsors</a></li> -->
         </ul>
       </div>
 
       <div class="quick-nav-actions">
-        <a href="#registration" class="quick-nav-btn">Register</a>
+        <a href="{{ .Params.registration.link | default "https://events.iitgn.ac.in/apply/application_ican26.php?eventid=20112026" }}" target="_blank" rel="noopener noreferrer" class="quick-nav-btn">{{ .Params.registration.btn_text | default "Register" }}</a>
       </div>
     </div>
   </nav>
@@ -1133,34 +1106,42 @@
     <section id="about" class="page-section">
       <header class="hero-two-col">
         <div class="hero-col-text">
-          <h1 class="main-heading">ICAN Faculty Development Program (FDP) on Cybersecurity</h1>
+          <h1 class="main-heading">{{ .Params.hero.title | default .Title }}</h1>
           
           <!-- DATES & HOSTING - CLEAN, OPEN TYPOGRAPHY (EASY FOR THE EYES TO GRAB) -->
           <div class="hero-schedule-block">
             <div class="hero-schedule-list">
+              {{- with .Params.hero.dates.online }}
               <div class="schedule-phase-item">
                 <span class="schedule-pill online">Online Phase:</span>
-                <span class="schedule-date">29th November – 6th December 2026</span>
+                <span class="schedule-date">{{ . }}</span>
               </div>
+              {{- end }}
+              {{- with .Params.hero.dates.offline }}
               <div class="schedule-phase-item">
                 <span class="schedule-pill offline">Offline Phase:</span>
-                <span class="schedule-date">27th December 2026 – 1st January 2027</span>
+                <span class="schedule-date">{{ . }}</span>
               </div>
+              {{- end }}
             </div>
+            {{- with .Params.hero.organized_by }}
             <div class="hero-organizers-text">
-              Organized by <strong>Trust Lab - IIT Bombay</strong>, <strong>C3iHub - IIT Kanpur</strong>, <strong>CyStar - IIT Madras</strong>, and <strong>ITEL Foundation</strong>.
+              {{ . | safeHTML }}
             </div>
+            {{- end }}
+            {{- with .Params.hero.consortium }}
             <div class="hero-host-text">
-              Hosted this year at <strong class="host-highlight">IIT Gandhinagar</strong>.
+              {{ . | safeHTML }}
             </div>
+            {{- end }}
           </div>
         </div>
 
         <div class="hero-col-banner">
-          <img src="{{ "/images/ican-fdp/banner.webp" | relURL }}"
-               data-fallback="/images/ican-fdp/banner.webp"
+          <img src="{{ .Params.hero.banner_image | default "/images/ican-fdp/banner.webp" | relURL }}"
+               data-fallback="{{ .Params.hero.banner_image | default "/images/ican-fdp/banner.webp" | relURL }}"
                onerror="fixImgSrc(this)"
-               alt="ICAN Faculty Development Program (FDP) on Cybersecurity"
+               alt="{{ .Params.hero.title | default .Title }}"
                class="hero-banner-image"
                width="1024"
                height="428"
@@ -1172,14 +1153,20 @@
       <!-- SIGNATURE 2.7px CYSTAR NAVY DIVIDER -->
       <hr class="section-divider">
 
-      <!-- TAGLINE & MISSION (EXACT CYSTAR WORDINGS) -->
-      <div class="tagline-text">Empowering Educators. Strengthening Cybersecurity Education.</div>
+      <!-- TAGLINE & MISSION -->
+      {{- with or .Params.about.tagline .Params.hero.tagline }}
+      <div class="tagline-text">{{ . }}</div>
+      {{- end }}
+      {{- with .Params.about.intro_p1 }}
       <p class="intro-paragraph">
-        The ICAN Faculty Development Program (FDP) is a national initiative aimed at upskilling faculty from engineering institutions across India in both foundational and emerging topics in cybersecurity. By empowering educators with the necessary knowledge and resources, we aim to strengthen the cybersecurity curriculum and foster the next generation of cybersecurity professionals.
+        {{ . }}
       </p>
+      {{- end }}
+      {{- with .Params.about.intro_p2 }}
       <p class="intro-paragraph" style="margin-bottom: 0;">
-        This program offers a unique blend of lectures, hands-on labs, and curated resources led by some of the best cybersecurity faculty in the country.
+        {{ . }}
       </p>
+      {{- end }}
     </section>
 
     <!-- SIGNATURE 2.7px CYSTAR NAVY DIVIDER -->
@@ -1195,92 +1182,32 @@
       </div>
 
       <div class="organizers-row">
-        <!-- IIT Gandhinagar (Host Institute) -->
+        {{- range .Params.organizers.entities }}
         <div class="organizer-col">
           <div class="organizer-logo-frame">
-            <img src="{{ "/images/ican-fdp/iitgn-seal.svg" | relURL }}"
-                 data-fallback="/images/ican-fdp/iitgn-seal.png"
+            <img src="{{ .logo | relURL }}"
+                 data-fallback="{{ .fallback_logo | default .logo | relURL }}"
                  onerror="fixImgSrc(this)"
-                 alt="IIT Gandhinagar Official Seal"
+                 alt="{{ .name }} Official Logo"
                  class="organizer-logo"
                  loading="lazy"
                  decoding="async"
                  width="80"
                  height="80">
           </div>
-          <div class="organizer-name">IIT Gandhinagar</div>
-          <div class="host-tag">Host Institute</div>
+          <div class="organizer-name">{{ .name }}</div>
+          {{- if .role }}
+          <div class="host-tag">{{ .role }}</div>
+          {{- end }}
         </div>
-
-        <!-- IIT Bombay -->
-        <div class="organizer-col">
-          <div class="organizer-logo-frame">
-            <img src="{{ "/images/ican-fdp/iitb.webp" | relURL }}"
-                 data-fallback="/images/ican-fdp/iitb.webp"
-                 onerror="fixImgSrc(this)"
-                 alt="IIT Bombay Official Logo"
-                 class="organizer-logo"
-                 loading="lazy"
-                 decoding="async"
-                 width="80"
-                 height="80">
-          </div>
-          <div class="organizer-name">IIT Bombay</div>
-        </div>
-
-        <!-- IIT Kanpur -->
-        <div class="organizer-col">
-          <div class="organizer-logo-frame">
-            <img src="{{ "/images/ican-fdp/iitk.webp" | relURL }}"
-                 data-fallback="/images/ican-fdp/iitk.webp"
-                 onerror="fixImgSrc(this)"
-                 alt="IIT Kanpur Official Logo"
-                 class="organizer-logo"
-                 loading="lazy"
-                 decoding="async"
-                 width="80"
-                 height="80">
-          </div>
-          <div class="organizer-name">IIT Kanpur</div>
-        </div>
-
-        <!-- IIT Madras -->
-        <div class="organizer-col">
-          <div class="organizer-logo-frame">
-            <img src="{{ "/images/ican-fdp/iitm.webp" | relURL }}"
-                 data-fallback="/images/ican-fdp/iitm.webp"
-                 onerror="fixImgSrc(this)"
-                 alt="IIT Madras Official Logo"
-                 class="organizer-logo"
-                 loading="lazy"
-                 decoding="async"
-                 width="80"
-                 height="80">
-          </div>
-          <div class="organizer-name">IIT Madras</div>
-        </div>
-
-        <!-- ITEL Foundation -->
-        <div class="organizer-col">
-          <div class="organizer-logo-frame">
-            <img src="{{ "/images/ican-fdp/itel.webp" | relURL }}"
-                 data-fallback="/images/ican-fdp/itel.webp"
-                 onerror="fixImgSrc(this)"
-                 alt="ITEL Foundation Official Logo"
-                 class="organizer-logo"
-                 loading="lazy"
-                 decoding="async"
-                 width="80"
-                 height="80">
-          </div>
-          <div class="organizer-name">ITEL Foundation</div>
-        </div>
+        {{- end }}
       </div>
 
-      <!-- ICAN CONSORTIUM DESCRIPTION PARAGRAPH (EXACT CYSTAR WORDING) -->
+      {{- with .Params.organizers.description }}
       <p class="intro-paragraph" style="margin-top: 24px; margin-bottom: 0;">
-        Indian Cybersecurity Academic Network (ICAN) is an independent academic group in the Cybersecurity and Encryption Technology domain. The lead entities that form ICAN are IIT Bombay, IIT Kanpur, IIT Madras and ITEL (Immersive Technology and Entrepreneurship Labs) Foundation with participation from premier institutes in India.
+        {{ . }}
       </p>
+      {{- end }}
     </section>
 
     <!-- SIGNATURE 2.7px CYSTAR NAVY DIVIDER -->
@@ -1295,50 +1222,69 @@
         <h2 class="section-title">Program Structure</h2>
       </div>
 
+      {{- with .Params.structure.phase1 }}
       <!-- Phase 1: Online -->
-      <h3 class="phase-subheading">Phase 1: Online (Precursor Phase)</h3>
+      <h3 class="phase-subheading">{{ .title }}</h3>
       <div class="structure-meta">
-        <strong>Dates:</strong> 29th November – 6th December 2026<br>
-        <strong>Platform:</strong> NPTEL Learning Portal
+        <strong>Dates:</strong> {{ .dates }}<br>
+        <strong>Platform:</strong> {{ .platform }}
       </div>
+      {{- with .summary }}
       <p class="intro-paragraph">
-        This phase is open to all registered faculty members. It serves as both a knowledge-building stage and a selection round for the residential phase. Participants will attend live or recorded expert lectures and complete short assignments designed to evaluate their understanding.
+        {{ . }}
       </p>
+      {{- end }}
       
+      {{- with .format }}
       <div class="structure-label">Format:</div>
       <ul class="clean-list">
-        <li>12 expert-led lectures (2 hours each)</li>
-        <li>Assignments after each session (MCQ/MSQ format)</li>
+        {{- range . }}
+        <li>{{ . }}</li>
+        {{- end }}
       </ul>
+      {{- end }}
 
+      {{- with .certification }}
       <div class="structure-label">Certification &amp; Selection:</div>
       <ul class="clean-list">
-        <li>Participants who score a Distinction Grade in the assignments will receive a Certificate of Participation for the online phase</li>
-        <li>Based on performance, top 25–30 faculty members will be selected for the Residential Phase at IIT Gandhinagar</li>
+        {{- range . }}
+        <li>{{ . }}</li>
+        {{- end }}
       </ul>
+      {{- end }}
+      {{- end }}
 
+      {{- with .Params.structure.phase2 }}
       <!-- Phase 2: Residential -->
-      <h3 class="phase-subheading" style="margin-top: 24px;">Phase 2: Residential (Advanced In-Person Training)</h3>
+      <h3 class="phase-subheading" style="margin-top: 24px;">{{ .title }}</h3>
       <div class="structure-meta">
-        <strong>Dates:</strong> 27th December 2026 – 1st January 2027<br>
-        <strong>Platform:</strong> IIT Gandhinagar
+        <strong>Dates:</strong> {{ .dates }}<br>
+        <strong>Platform:</strong> {{ .platform }}
       </div>
+      {{- with .summary }}
       <p class="intro-paragraph">
-        This intensive, in-person training phase focuses on advanced concepts and practical skill-building. Selected participants will engage in a mix of expert lectures and hands-on lab sessions.
+        {{ . }}
       </p>
+      {{- end }}
       
+      {{- with .format }}
       <div class="structure-label">Format:</div>
       <ul class="clean-list">
-        <li>Morning: In-depth lectures by faculty experts</li>
-        <li>Afternoon: Lab sessions aligned with the morning topics</li>
-        <li>Each faculty expert will conduct a 2–3 hour lecture + lab session</li>
+        {{- range . }}
+        <li>{{ . }}</li>
+        {{- end }}
       </ul>
+      {{- end }}
 
+      {{- with .support }}
       <div class="structure-label">Resources &amp; Support:</div>
       <ul class="clean-list">
-        <li>All teaching materials and lab exercises will be made freely available to participants for use in their home institutions</li>
-        <li>Accommodation support will be provided by ICAN</li>
+        {{- range . }}
+        <li>{{ . }}</li>
+        {{- end }}
       </ul>
+      {{- end }}
+      {{- end }}
     </section>
 
     <!-- SIGNATURE 2.7px CYSTAR NAVY DIVIDER -->
@@ -1354,17 +1300,17 @@
       </div>
 
       <ul class="curriculum-clean-list">
-        <li><strong>Application Security:</strong> Instructor Name, Affiliation</li>
-        <li><strong>Applied Cryptography:</strong> Instructor Name, Affiliation</li>
-        <li><strong>Cloud Security:</strong> Instructor Name, Affiliation</li>
-        <li><strong>Cybersecurity Threats, Vulnerabilities, and Risk:</strong> Instructor Name, Affiliation</li>
-        <li><strong>Hardware Security:</strong> Instructor Name, Affiliation</li>
-        <li><strong>Microarchitectural Security:</strong> Instructor Name, Affiliation</li>
-        <li><strong>Mobile Security:</strong> Instructor Name, Affiliation</li>
-        <li><strong>Secure Operating Systems:</strong> Instructor Name, Affiliation</li>
-        <li><strong>System Security:</strong> Instructor Name, Affiliation</li>
-        <li><strong>Usable Security:</strong> Instructor Name, Affiliation</li>
-        <li><strong>Web Security:</strong> Instructor Name, Affiliation</li>
+        {{- range .Params.curriculum }}
+          {{- $speaker := or .speaker .instructor -}}
+          {{- $affiliation := or .affiliation .institution -}}
+          <li>
+            <strong>{{ .topic }}{{ if or $speaker $affiliation }}:{{ end }}</strong>
+            {{- if and $speaker $affiliation }} {{ $speaker }}, {{ $affiliation }}
+            {{- else if $speaker }} {{ $speaker }}
+            {{- else if $affiliation }} {{ $affiliation }}
+            {{- end }}
+          </li>
+        {{- end }}
       </ul>
     </section>
 
@@ -1381,11 +1327,9 @@
       </div>
 
       <ul class="clean-list">
-        <li>Learn from leading experts in cybersecurity from IITs</li>
-        <li>Gain access to ready-to-use teaching materials and lab modules</li>
-        <li>Network with peers and build academic collaborations</li>
-        <li>Receive a certificate of participation and performance-based recognition</li>
-        <li>Opportunity to contribute to shaping the future of cybersecurity education in India</li>
+        {{- range .Params.why_participate }}
+        <li>{{ . }}</li>
+        {{- end }}
       </ul>
     </section>
 
@@ -1402,8 +1346,9 @@
       </div>
 
       <ul class="clean-list">
-        <li>Faculty members from engineering colleges across India</li>
-        <li>Basic familiarity with computer science or IT is recommended</li>
+        {{- range .Params.who_can_apply }}
+        <li>{{ . }}</li>
+        {{- end }}
       </ul>
     </section>
 
@@ -1419,13 +1364,15 @@
         <h2 class="section-title">Registration</h2>
       </div>
 
+      {{- with .Params.registration.callout }}
       <p class="intro-paragraph">
-        Ready to be part of a national effort to transform cybersecurity education?
+        {{ . }}
       </p>
+      {{- end }}
 
       <div style="margin: 20px 0 14px;">
-        <a href="#registration" class="register-btn-main" onclick="alert('Registration portal via IITGN Academic Portal will open soon. Please check back for updates.'); return false;">
-          <span style="color: #FFFFFF !important; -webkit-text-fill-color: #FFFFFF !important; font-weight: 700;">Register</span>
+        <a href="{{ .Params.registration.link | default "https://events.iitgn.ac.in/apply/application_ican26.php?eventid=20112026" }}" target="_blank" rel="noopener noreferrer" class="register-btn-main">
+          <span style="color: #FFFFFF !important; -webkit-text-fill-color: #FFFFFF !important; font-weight: 700;">{{ .Params.registration.btn_text | default "Register" }}</span>
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <line x1="5" y1="12" x2="19" y2="12"></line>
             <polyline points="12 5 19 12 12 19"></polyline>
@@ -1433,8 +1380,9 @@
         </a>
       </div>
 
-      <!-- REGISTRATION DEADLINE (EXACT 2025 FORMAT) -->
-      <p class="reg-deadline-line"><strong>Deadline:</strong> To be announced soon</p>
+      {{- with .Params.registration.deadline }}
+      <p class="reg-deadline-line"><strong>Deadline:</strong> {{ . }}</p>
+      {{- end }}
     </section>
 
     <!-- SIGNATURE 2.7px CYSTAR NAVY DIVIDER -->
@@ -1451,14 +1399,17 @@
 
       <div class="contact-row">
         <div class="contact-left">
-          <p class="intro-paragraph" style="margin-bottom: 14px;">
-            For any questions or clarifications, feel free to reach out to us at <a href="mailto:cse@iitgn.ac.in"><strong>cse@iitgn.ac.in</strong></a>
+          <p class="intro-paragraph" style="margin-bottom: 0;">
+            For any questions or clarifications, feel free to reach out to us at <a href="mailto:{{ .Params.contact.email | default "cse@iitgn.ac.in" }}"><strong>{{ .Params.contact.email | default "cse@iitgn.ac.in" }}</strong></a>
           </p>
+          <!--
           <p style="margin-top: 14px; font-weight: 600; color: #000000; font-family: 'Red Hat Display', sans-serif;">
             Follow us for updates and announcements:
           </p>
+          -->
         </div>
         
+        <!--
         <div class="contact-right">
           <ul class="social-icons-list">
             <li>
@@ -1484,13 +1435,13 @@
             </li>
           </ul>
         </div>
+        -->
       </div>
     </section>
 
-    <!-- SIGNATURE 2.7px CYSTAR NAVY DIVIDER -->
+    <!-- SECTION 9: SPONSORS (COMMENTED OUT)
     <hr class="section-divider">
 
-    <!-- SECTION 9: SPONSORS -->
     <section id="sponsors" class="page-section">
       <div class="section-title-wrap">
         <svg fill="none" height="37" viewBox="0 0 4 37" width="4" xmlns="http://www.w3.org/2000/svg" class="accent-bar-svg" aria-hidden="true">
@@ -1511,6 +1462,7 @@
              height="320">
       </div>
     </section>
+    -->
 
   </div>
 
