@@ -1,0 +1,33 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>FUSS Group @ IITGn – Cybersecurity</title>
+    <link>http://localhost:1313/tags/cybersecurity/</link>
+    <description>Recent content in Cybersecurity on FUSS Group @ IITGn</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 01 Nov 2026 00:00:00 +0000</lastBuildDate>
+    
+	  <atom:link href="http://localhost:1313/tags/cybersecurity/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+    <item>
+      <title>ICAN Faculty Development Program on Cybersecurity @ IITGN</title>
+      <link>http://localhost:1313/news/ican-fdp/</link>
+      <pubDate>Sun, 01 Nov 2026 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/news/ican-fdp/</guid>
+      <description>
+        
+        
+        &lt;p&gt;We are organizing this year&amp;rsquo;s ICAN Faculty Development Program (FDP) on Cybersecurity at IIT Gandhinagar. More details here: &lt;a href=&#34;https://iitgn-fuss.github.io/ican-fdp/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;link&lt;/a&gt;&lt;/p&gt;
+
+      </description>
+    </item>
+    
+  </channel>
+</rss>
