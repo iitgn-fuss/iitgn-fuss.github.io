@@ -9,7 +9,6 @@ aliases:
 
 hero:
   title: "ICAN Faculty Development Program (FDP) on Cybersecurity"
-  organized_by: "Organized by <a href=\"https://trustlab.iitb.ac.in/\" target=\"_blank\" rel=\"noopener noreferrer\"><strong>Trust Lab - IIT Bombay</strong></a>, <a href=\"https://cystar.iitm.ac.in/\" target=\"_blank\" rel=\"noopener noreferrer\"><strong>CyStar - IIT Madras</strong></a>, <a href=\"https://www.daiict.ac.in/\" target=\"_blank\" rel=\"noopener noreferrer\"><strong>Dhirubhai Ambani University</strong></a>, and <a href=\"https://itelfoundation.in/\" target=\"_blank\" rel=\"noopener noreferrer\"><strong>ITEL Foundation</strong></a>."
   consortium: "Hosted this year at <a href=\"https://iitgn.ac.in/\" target=\"_blank\" rel=\"noopener noreferrer\"><strong class=\"host-highlight\">IIT Gandhinagar</strong></a>."
   banner_image: "/images/ican-fdp/banner.webp"
 
@@ -19,7 +18,7 @@ about:
   intro_p2: "This program offers a unique blend of lectures, hands-on labs, and curated resources led by some of the best cybersecurity faculty in the country."
 
 organizers:
-  description: "Indian Cybersecurity Academic Network (ICAN) is an independent academic group in the Cybersecurity and Encryption Technology domain. The lead entities that form ICAN are IIT Bombay, IIT Madras, Dhirubhai Ambani University, and ITEL (Immersive Technology and Entrepreneurship Labs) Foundation with participation from premier institutes in India."
+  description: "The Indian Cybersecurity Academic Network (ICAN) has been launched as a collaborative academic effort across IITs, IISc, and other premier institutes. At its core, ICAN seeks to build capacity and strengthen research by preparing faculty from all over India, who will in turn help mould the next generation of cybersecurity leaders for India."
   entities:
     - name: "IIT Gandhinagar"
       role: "Host Institute"
