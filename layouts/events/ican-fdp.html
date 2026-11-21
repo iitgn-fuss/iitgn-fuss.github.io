@@ -363,7 +363,7 @@
       text-decoration: none !important;
       padding: 5px 9px;
       border-radius: 6px;
-      transition: color 0.15s ease, background-color 0.15s ease;
+      transition: color 0.1s ease-out, background-color 0.1s ease-out;
       display: inline-flex;
       align-items: center;
       line-height: 1.4;
@@ -372,8 +372,8 @@
     }
 
     .section-nav-link:hover {
-      color: #111827 !important;
-      background-color: rgba(0, 0, 0, 0.04);
+      color: #006FD1 !important;
+      background-color: #F0F7FF;
       text-decoration: none !important;
     }
 
@@ -404,7 +404,7 @@
       border-radius: 6px;
       font-weight: 600;
       text-decoration: none !important;
-      transition: background-color 0.15s ease, border-color 0.15s ease;
+      transition: background-color 0.1s ease-out, border-color 0.1s ease-out;
       white-space: nowrap;
       cursor: pointer;
       border: 1px solid #006FD1;
@@ -614,35 +614,44 @@
       margin-bottom: 12px;
     }
 
+    .hero-schedule-block {
+      margin-top: 14px;
+      margin-bottom: 10px;
+    }
+
+    .hero-schedule-list {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      margin-bottom: 12px;
+    }
+
     .schedule-phase-item {
       display: flex;
       align-items: baseline;
-      flex-wrap: wrap;
       gap: 8px;
-      font-size: 16px;
-      line-height: 1.5;
+      flex-wrap: wrap;
     }
 
-    .schedule-pill {
+    .schedule-label {
       font-family: 'Red Hat Display', sans-serif;
-      font-size: 13.5px;
+      font-size: 15px;
       font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.04em;
+      color: #050D4F;
     }
 
-    .schedule-pill.online {
-      color: #006FD1;
-    }
-
-    .schedule-pill.offline {
+    .schedule-label.deadline {
       color: #050D4F;
     }
 
     .schedule-date {
       font-family: 'Libre Baskerville', Georgia, serif;
-      font-size: 17px;
+      font-size: 16.5px;
       font-weight: 700;
+      color: #000000;
+    }
+
+    .schedule-date.deadline-date {
       color: #000000;
     }
 
@@ -767,12 +776,7 @@
       padding: 8px;
       margin-bottom: 12px;
       box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
-      transition: border-color 0.15s ease, box-shadow 0.15s ease;
-    }
-
-    .organizer-col:hover .organizer-logo-frame {
-      border-color: #B9D5ED;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+      transition: border-color 0.1s ease-out, box-shadow 0.1s ease-out;
     }
 
     .organizer-logo {
@@ -790,6 +794,36 @@
       font-weight: 600;
       color: #000000;
       line-height: 1.3;
+      transition: color 0.1s ease-out;
+    }
+
+    .organizer-link {
+      text-decoration: none !important;
+      color: inherit !important;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      cursor: pointer;
+    }
+
+    .organizer-link:hover .organizer-logo-frame {
+      border-color: #006FD1;
+      box-shadow: 0 2px 8px rgba(0, 111, 209, 0.14);
+    }
+
+    .organizer-link:hover .organizer-name {
+      color: #006FD1 !important;
+      text-decoration: none !important;
+    }
+
+    .hero-schedule-block a {
+      color: #006FD1 !important;
+      text-decoration: none !important;
+    }
+
+    .hero-schedule-block a:hover {
+      text-decoration: underline !important;
     }
 
     .host-tag {
@@ -924,24 +958,25 @@
       color: #FFFFFF !important;
       -webkit-text-fill-color: #FFFFFF !important;
       font-family: 'Red Hat Display', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      font-size: 16.5px;
+      font-size: 18px;
       font-weight: 700;
       border-radius: 8px;
       text-decoration: none !important;
-      padding: 14px 36px;
+      padding: 16px 44px;
       display: inline-flex;
       align-items: center;
-      gap: 10px;
+      gap: 12px;
       cursor: pointer;
       border: 1px solid #006FD1;
       box-shadow: 0 2px 6px rgba(0, 111, 209, 0.25);
-      transition: background-color 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease;
+      transition: background-color 0.1s ease-out, border-color 0.1s ease-out, box-shadow 0.1s ease-out;
     }
 
     .page-container a.register-btn-main span,
     .register-btn-main span {
       color: #FFFFFF !important;
       -webkit-text-fill-color: #FFFFFF !important;
+      font-size: 18px;
       font-weight: 700;
       text-decoration: none !important;
     }
@@ -967,7 +1002,55 @@
       flex-shrink: 0;
     }
 
-    /* REGISTRATION DEADLINE (EXACT 2025 ELEMENTOR SPEC) */
+    /* REGISTRATION CTA GROUP */
+    .registration-cta-group {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin: 24px 0 16px;
+    }
+
+    /* REGISTRATION DEADLINE - HARMONIZED WITH WEBPAGE FONTS & TYPES */
+    .reg-deadline-highlight {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      background: #F0F7FF;
+      border: 1.5px solid #BAE6FD;
+      border-left: 4px solid #006FD1;
+      border-radius: 6px;
+      padding: 12px 20px;
+      margin-top: 14px;
+      box-shadow: 0 1px 3px rgba(0, 111, 209, 0.06);
+    }
+
+    .reg-deadline-highlight svg {
+      stroke: #006FD1;
+      flex-shrink: 0;
+    }
+
+    .reg-deadline-content {
+      display: inline-flex;
+      align-items: baseline;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .reg-deadline-label {
+      font-family: 'Red Hat Display', sans-serif;
+      font-size: 15.5px;
+      font-weight: 700;
+      color: #050D4F;
+    }
+
+    .reg-deadline-date {
+      font-family: 'Libre Baskerville', Georgia, serif;
+      font-size: 17px;
+      font-weight: 700;
+      color: #000000;
+    }
+
     .reg-deadline-line {
       font-family: 'Red Hat Display', sans-serif;
       font-size: 16px;
@@ -1110,20 +1193,14 @@
           
           <!-- DATES & HOSTING - CLEAN, OPEN TYPOGRAPHY (EASY FOR THE EYES TO GRAB) -->
           <div class="hero-schedule-block">
+            {{- with .Params.registration.deadline }}
             <div class="hero-schedule-list">
-              {{- with .Params.hero.dates.online }}
-              <div class="schedule-phase-item">
-                <span class="schedule-pill online">Online Phase:</span>
+              <div class="schedule-phase-item deadline-item">
+                <span class="schedule-label deadline">Registration Deadline:</span>
                 <span class="schedule-date">{{ . }}</span>
               </div>
-              {{- end }}
-              {{- with .Params.hero.dates.offline }}
-              <div class="schedule-phase-item">
-                <span class="schedule-pill offline">Offline Phase:</span>
-                <span class="schedule-date">{{ . }}</span>
-              </div>
-              {{- end }}
             </div>
+            {{- end }}
             {{- with .Params.hero.organized_by }}
             <div class="hero-organizers-text">
               {{ . | safeHTML }}
@@ -1184,6 +1261,17 @@
       <div class="organizers-row">
         {{- range .Params.organizers.entities }}
         <div class="organizer-col">
+          {{- if .url }}
+          <a href="{{ .url }}" target="_blank" rel="noopener noreferrer" class="organizer-link"
+            title="{{ .name }} (Opens website in new tab)">
+            <div class="organizer-logo-frame">
+              <img src="{{ .logo | relURL }}" data-fallback="{{ .fallback_logo | default .logo | relURL }}"
+                onerror="fixImgSrc(this)" alt="{{ .name }} Official Logo" class="organizer-logo" loading="lazy" decoding="async"
+                width="80" height="80">
+            </div>
+            <div class="organizer-name">{{ .name }}</div>
+          </a>
+          {{- else }}
           <div class="organizer-logo-frame">
             <img src="{{ .logo | relURL }}"
                  data-fallback="{{ .fallback_logo | default .logo | relURL }}"
@@ -1196,6 +1284,7 @@
                  height="80">
           </div>
           <div class="organizer-name">{{ .name }}</div>
+          {{- end }}
           {{- if .role }}
           <div class="host-tag">{{ .role }}</div>
           {{- end }}
@@ -1370,10 +1459,10 @@
       </p>
       {{- end }}
 
-      <div style="margin: 20px 0 14px;">
+      <div class="registration-cta-group">
         <a href="{{ .Params.registration.link | default "https://events.iitgn.ac.in/apply/application_ican26.php?eventid=20112026" }}" target="_blank" rel="noopener noreferrer" class="register-btn-main">
-          <span style="color: #FFFFFF !important; -webkit-text-fill-color: #FFFFFF !important; font-weight: 700;">{{ .Params.registration.btn_text | default "Register" }}</span>
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <span>{{ .Params.registration.btn_text | default "Register" }}</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <line x1="5" y1="12" x2="19" y2="12"></line>
             <polyline points="12 5 19 12 12 19"></polyline>
           </svg>
@@ -1381,7 +1470,18 @@
       </div>
 
       {{- with .Params.registration.deadline }}
-      <p class="reg-deadline-line"><strong>Deadline:</strong> {{ . }}</p>
+      <div class="reg-deadline-highlight">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#006FD1" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+          <line x1="16" y1="2" x2="16" y2="6"></line>
+          <line x1="8" y1="2" x2="8" y2="6"></line>
+          <line x1="3" y1="10" x2="21" y2="10"></line>
+        </svg>
+        <span class="reg-deadline-content">
+          <span class="reg-deadline-label">Registration Deadline:</span>
+          <strong class="reg-deadline-date">{{ . }}</strong>
+        </span>
+      </div>
       {{- end }}
     </section>
 
@@ -1400,7 +1500,9 @@
       <div class="contact-row">
         <div class="contact-left">
           <p class="intro-paragraph" style="margin-bottom: 0;">
-            For any questions or clarifications, feel free to reach out to us at <a href="mailto:{{ .Params.contact.email | default "cse@iitgn.ac.in" }}"><strong>{{ .Params.contact.email | default "cse@iitgn.ac.in" }}</strong></a>
+            For any questions or clarifications, feel free to reach out to us at <a
+              href="mailto:{{ .Params.contact.email | default " abhishek.b@iitgn.ac.in" }}"><strong>{{ .Params.contact.email |
+                default "abhishek.b@iitgn.ac.in" }}</strong></a>
           </p>
           <!--
           <p style="margin-top: 14px; font-weight: 600; color: #000000; font-family: 'Red Hat Display', sans-serif;">
