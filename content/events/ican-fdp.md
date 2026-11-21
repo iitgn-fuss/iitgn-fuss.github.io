@@ -39,26 +39,9 @@ organizers:
       logo: "/images/ican-fdp/itel.png"
 
 structure:
-  timeline:
-    - step: "1"
-      phase: "Phase 1: Online"
-      dates: "29 Nov – 6 Dec 2026"
-      badge: "Virtual (NPTEL Portal)"
-      desc: "Expert-led lectures & assessment. Open to all registered faculty across India."
-    - step: "2"
-      phase: "Selection Round"
-      dates: "7 – 26 Dec 2026"
-      badge: "Evaluation & Shortlisting"
-      desc: "Top 25–30 faculty scoring Distinction Grade selected for the Residential Phase."
-    - step: "3"
-      phase: "Phase 2: Residential"
-      dates: "27 – 31 Dec 2026"
-      badge: "IIT Gandhinagar Campus"
-      desc: "Intensive lectures & hands-on lab sessions with accommodation support."
   phase1:
     title: "Phase 1: Online (Precursor Phase)"
     dates: "29th November – 6th December 2026"
-    platform: "NPTEL Learning Portal"
     summary: "Open to all registered faculty members. It serves as both a knowledge-building stage and a selection round for the residential phase."
     format:
       - "Expert-led lectures (2 hours each)"
@@ -69,7 +52,7 @@ structure:
   phase2:
     title: "Phase 2: Residential (Advanced In-Person Training)"
     dates: "27th – 31st December 2026"
-    platform: "IIT Gandhinagar"
+    mode: "To be held in person at IIT Gandhinagar"
     summary: "This intensive, in-person training phase focuses on advanced concepts and practical skill-building. Selected participants engage in a mix of expert lectures and hands-on lab sessions."
     format:
       - "Morning: in-depth lectures by faculty experts"

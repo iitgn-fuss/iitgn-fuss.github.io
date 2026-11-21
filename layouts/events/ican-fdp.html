@@ -1315,8 +1315,9 @@
       <!-- Phase 1: Online -->
       <h3 class="phase-subheading">{{ .title }}</h3>
       <div class="structure-meta">
-        <strong>Dates:</strong> {{ .dates }}<br>
-        <strong>Platform:</strong> {{ .platform }}
+        <strong>Dates:</strong> {{ .dates }}
+        {{- with .platform }}<br><strong>Platform:</strong> {{ . }}{{- end }}
+        {{- with .mode }}<br><strong>Mode:</strong> {{ . }}{{- end }}
       </div>
       {{- with .summary }}
       <p class="intro-paragraph">
@@ -1347,8 +1348,10 @@
       <!-- Phase 2: Residential -->
       <h3 class="phase-subheading" style="margin-top: 24px;">{{ .title }}</h3>
       <div class="structure-meta">
-        <strong>Dates:</strong> {{ .dates }}<br>
-        <strong>Platform:</strong> {{ .platform }}
+        <strong>Dates:</strong> {{ .dates }}
+        {{- with .mode }}<br><strong>Mode:</strong> {{ . }}{{- end }}
+        {{- with .platform }}<br><strong>Platform:</strong> {{ . }}{{- end }}
+        {{- with .location }}<br><strong>Location:</strong> {{ . }}{{- end }}
       </div>
       {{- with .summary }}
       <p class="intro-paragraph">
