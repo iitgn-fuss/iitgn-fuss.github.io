@@ -44,7 +44,7 @@ organizers:
 structure:
   phase1:
     title: "Phase 1: Online (Precursor Phase)"
-    dates: "29th November – 6th December 2026"
+    dates: "1st – 6th December 2026"
     summary: "Open to all registered faculty members. It serves as both a knowledge-building stage and a selection round for the residential phase."
     format:
       - "Expert-led lectures (2 hours each)"
@@ -68,14 +68,10 @@ structure:
 curriculum:
   - topic: "AI in Cybersecurity"
   - topic: "Cloud Security"
-  - topic: "Cyberlaws, Compliance and Regulatory Bodies"
-  - topic: "Cybersecurity Threats, Vulnerabilities, and Risk"
-  - topic: "Hardware Security"
+  - topic: "Security Threats, Policies and Compliance"
   - topic: "Infrastructure Security"
-  - topic: "Network and Web Security"
   - topic: "Security of AI Systems"
   - topic: "Software Security"
-  - topic: "System Security"
 
 why_participate:
   - "Learn from leading experts in cybersecurity from IITs"
