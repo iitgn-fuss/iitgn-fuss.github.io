@@ -40,6 +40,12 @@ organizers:
     - name: "ITEL Foundation"
       url: "https://itelfoundation.in/"
       logo: "/images/ican-fdp/itel.png"
+    - name: "State Street"
+      url: "https://www.statestreet.com/"
+      logo: "/images/ican-fdp/state-street.png"
+    - name: "ICAN"
+      url: "https://itelfoundation.in/cyber-security.html"
+      logo: "/images/ican-fdp/ican-vertical.png"
 
 structure:
   phase1:
