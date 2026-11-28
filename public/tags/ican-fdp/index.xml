@@ -1,13 +1,13 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>FUSS Group @ IITGn – ICAN FDP</title>
-    <link>https://iitgn-fuss.github.io/tags/ican-fdp/</link>
+    <link>http://localhost:1313/tags/ican-fdp/</link>
     <description>Recent content in ICAN FDP on FUSS Group @ IITGn</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 01 Nov 2026 00:00:00 +0000</lastBuildDate>
     
-	  <atom:link href="https://iitgn-fuss.github.io/tags/ican-fdp/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="http://localhost:1313/tags/ican-fdp/index.xml" rel="self" type="application/rss+xml" />
     
     
       
@@ -17,10 +17,10 @@
     
     <item>
       <title>ICAN Faculty Development Program on Cybersecurity @ IITGN</title>
-      <link>https://iitgn-fuss.github.io/news/ican-fdp/</link>
+      <link>http://localhost:1313/news/ican-fdp/</link>
       <pubDate>Sun, 01 Nov 2026 00:00:00 +0000</pubDate>
       
-      <guid>https://iitgn-fuss.github.io/news/ican-fdp/</guid>
+      <guid>http://localhost:1313/news/ican-fdp/</guid>
       <description>
         
         

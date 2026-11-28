@@ -94,7 +94,8 @@ registration:
   callout: "Ready to be part of a national effort to transform cybersecurity education?"
   btn_text: "Register"
   link: "https://events.iitgn.ac.in/apply/application_ican26.php?eventid=20112026"
-  deadline: "Saturday, 28th November 2026"
+  previous_deadline: "Saturday, 28th November 2026"
+  deadline: "Monday, 30th November 2026"
 
 contact:
   email: "abhishek.b@iitgn.ac.in"

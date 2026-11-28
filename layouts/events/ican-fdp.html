@@ -591,6 +591,9 @@
       .schedule-date {
         font-size: 15.5px !important;
       }
+      .deadline-strike {
+        font-size: 13.5px;
+      }
       .schedule-pill {
         font-size: 12px !important;
       }
@@ -653,6 +656,37 @@
 
     .schedule-date.deadline-date {
       color: #000000;
+    }
+
+    .deadline-strike {
+      font-family: 'Libre Baskerville', Georgia, serif;
+      font-size: 14.5px;
+      font-weight: 400;
+      color: #64748B;
+      text-decoration: line-through;
+      text-decoration-color: #94A3B8;
+      text-decoration-thickness: 1.5px;
+    }
+
+    .deadline-current-wrap {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .deadline-extended-badge {
+      display: inline-block;
+      font-family: 'Red Hat Display', sans-serif;
+      font-size: 11.5px;
+      font-weight: 700;
+      color: #006FD1;
+      background: #E0F2FE;
+      border: 1px solid #BAE6FD;
+      border-radius: 4px;
+      padding: 1px 7px;
+      line-height: 1.45;
+      letter-spacing: 0.01em;
     }
 
     .hero-organizers-text {
@@ -1210,7 +1244,15 @@
             <div class="hero-schedule-list">
               <div class="schedule-phase-item deadline-item">
                 <span class="schedule-label deadline">Registration Deadline:</span>
-                <span class="schedule-date">{{ . }}</span>
+                {{- with $.Params.registration.previous_deadline }}
+                <del class="deadline-strike">{{ . }}</del>
+                {{- end }}
+                <span class="deadline-current-wrap">
+                  <span class="schedule-date">{{ . }}</span>
+                  {{- if $.Params.registration.previous_deadline }}
+                  <span class="deadline-extended-badge">Extended</span>
+                  {{- end }}
+                </span>
               </div>
             </div>
             {{- end }}
@@ -1495,7 +1537,15 @@
         </svg>
         <span class="reg-deadline-content">
           <span class="reg-deadline-label">Registration Deadline:</span>
-          <strong class="reg-deadline-date">{{ . }}</strong>
+          {{- with $.Params.registration.previous_deadline }}
+          <del class="deadline-strike">{{ . }}</del>
+          {{- end }}
+          <span class="deadline-current-wrap">
+            <strong class="reg-deadline-date">{{ . }}</strong>
+            {{- if $.Params.registration.previous_deadline }}
+            <span class="deadline-extended-badge">Extended</span>
+            {{- end }}
+          </span>
         </span>
       </div>
       {{- end }}
